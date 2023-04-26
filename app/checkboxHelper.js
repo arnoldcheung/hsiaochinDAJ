@@ -47,13 +47,13 @@ function checkboxSetup(){
 function resetCheckboxes(){
 
 	if(width > height) {
-		puntoCheckbox.position(iroPickerDiv.y + iroPickerDiv.style('width') + 10, iroPickerDiv.y);	
+		puntoCheckbox.position(iroPickerDiv.y + parseFloat(iroPickerDiv.style('width')) + 10, iroPickerDiv.y);	
 
 
 	} else {
 		puntoCheckbox.position(10, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) * 1.1);	
 	}
-	
+
 	energyCheckbox.position(puntoCheckbox.x, puntoCheckbox.y + sliderSpacing);
 	orbitCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 3 * sliderSpacing);
 	radiationCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 4 * sliderSpacing);
