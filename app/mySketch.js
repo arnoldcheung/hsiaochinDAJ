@@ -268,7 +268,7 @@ function setup() {
 }
 
 function draw() {
-  clear(); // reset base canvas
+ 	clear(); // reset base canvas
 	mainCanvas.background(colorList[0]); // reset background
 	orbitGraphics.clear();  // reset orbit
 	radiationGraphics.clear();  // reset radiation

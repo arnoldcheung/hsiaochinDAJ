@@ -85,7 +85,7 @@ function resetUniverse() {
 
 	// reset colors
 
-	let colorList = [
+	colorList = [
 		'#021E3A', // bg
 		'#FFFFFF', // stars
 		'#FF6400', // Punto
@@ -98,8 +98,10 @@ function resetUniverse() {
 
 	currentColorSelectionIndex = 0;
 
+	generated = false;
+
 	clear();
-	mainCanvas.clear();
+	mainCanvas.background(colorList[0]);
 	starsGraphics.clear();
 	puntoGraphics.clear();
 	orbitGraphics.clear();
@@ -126,6 +128,8 @@ function resetUniverse() {
 	resetSliders();
 	resetNameInput();
 	resetButtonMenu();
+
+	elementName.html(colorNameList[currentColorSelectionIndex]);
 }
 
 // function touchStarted() {
