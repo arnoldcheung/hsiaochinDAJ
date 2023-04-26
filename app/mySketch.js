@@ -9,7 +9,7 @@
 // let deviceWidth = 2796 / 2;
 // let deviceHeight = 1290 / 2;
 
-currentPixelDensity = 1;
+currentPixelDensity = 2;
 
 // Control Panel Setup
 let panelVisible = true; // boolean to check if controlPanel is currently visible
@@ -74,7 +74,7 @@ let font = 'Courier New';
 
 // color selection toggle
 
-let colorList = ['#00FF00', // bg
+let colorList = ['#021E3A', // bg
 				'#FFFFFF', // stars
 				'#FF6400', // Punto
 				'#DBFF26', // energy 1
@@ -107,9 +107,11 @@ function setup() {
   // createCanvas(400, 800);
 	// createCanvas(deviceWidth * 2, deviceHeight * 2);
 	// createCanvas(deviceWidth, deviceHeight);
-	createCanvas(window.innerWidth, window.innerHeight);
-	background(0);
 	pixelDensity(currentPixelDensity);
+
+	createCanvas(window.innerHeight, window.innerWidth);
+
+	background(0);
 	
 	angleMode(DEGREES);
 	
@@ -370,7 +372,7 @@ function draw() {
 	mainCanvas.textFont(font);
 	mainCanvas.textAlign(LEFT, TOP);
 	mainCanvas.textSize(50);
-	mainCanvas.text('Test 2', 0, 0);
+	mainCanvas.text('Test 3', 0, 0);
 	mainCanvas.pop();
 
 
