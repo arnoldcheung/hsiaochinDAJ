@@ -108,8 +108,8 @@ function setup() {
 	pixelDensity(currentPixelDensity);
 
   // createCanvas(400, 800);
-	// createCanvas(deviceWidth * 2, deviceHeight * 2);
-	createCanvas(deviceWidth, deviceHeight);
+	createCanvas(deviceWidth * 2, deviceHeight * 2);
+	// createCanvas(deviceWidth, deviceHeight);
 
 	// createCanvas(window.innerWidth, window.innerHeight);
 

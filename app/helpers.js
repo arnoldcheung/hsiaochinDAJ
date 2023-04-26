@@ -108,8 +108,8 @@ function resetUniverse() {
 	radiationGraphics.clear();
 	waveGraphics.clear();
 
- 	resizeCanvas(deviceWidth, deviceHeight);
-	// resizeCanvas(window.innerWidth, window.innerHeight);
+ 	// resizeCanvas(deviceWidth, deviceHeight);
+	resizeCanvas(window.innerWidth, window.innerHeight);
 	mainCanvas.resizeCanvas(width, height);
 	starsGraphics.resizeCanvas(width, height);
 	puntoGraphics.resizeCanvas(width, height);
