@@ -74,25 +74,25 @@ let font = 'Courier New';
 
 // color selection toggle
 
-let colorList = ['#021E3A', // bg
-								 '#FFFFFF', // stars
-								 '#FF6400', // Punto
-								 '#DBFF26', // energy 1
-								 '#3DE049', // energy 2
-								 '#FFFFFF', // orbit
-								 '#AEF064', // radiation
-								 '#FF8AFF', // wave
-								 '#FFFFFF'] // signature
+let colorList = ['#FF0000', // bg
+				'#FFFFFF', // stars
+				'#FF6400', // Punto
+				'#DBFF26', // energy 1
+				'#3DE049', // energy 2
+				'#FFFFFF', // orbit
+				'#AEF064', // radiation
+				'#FF8AFF', // wave
+				'#FFFFFF'] // signature
 
 let colorNameList = ['Space',
-										 'Stars',
-										 'Punto',
-										 'Energy One',
-										 'Energy Two',
-										 'Orbit',
-										 'Radiation', 
-										 'Wave',
-										 'Signature'];
+					'Stars',
+					'Punto',
+					'Energy One',
+					'Energy Two',
+					'Orbit',
+					'Radiation', 
+					'Wave',
+					'Signature'];
 
 let numSelectableColors = colorList.length;
 let currentColorSelectionIndex = 0;
