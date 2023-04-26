@@ -47,7 +47,7 @@ function checkboxSetup(){
 function resetCheckboxes(){
 
 	if(width > height) {
-		puntoCheckbox.position(iroPickerDiv.y + parseFloat(iroPickerDiv.style('width')) + 10, iroPickerDiv.y);	
+		puntoCheckbox.position(iroPickerDiv.x + parseFloat(iroPickerDiv.style('width')) + 10, iroPickerDiv.y);	
 
 
 	} else {
