@@ -128,10 +128,10 @@ function resetUniverse() {
 	resetButtonMenu();
 }
 
-function touchStarted() {
-	return false;
-  }
+// function touchStarted() {
+// 	return false;
+//   }
   
-  function touchMoved() {
-	return false;
-  }
+//   function touchMoved() {
+// 	return false;
+//   }

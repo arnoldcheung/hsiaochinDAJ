@@ -384,7 +384,7 @@ function draw() {
 	mainCanvas.textFont(font);
 	mainCanvas.textAlign(LEFT, TOP);
 	mainCanvas.textSize(50);
-	mainCanvas.text('Test 20', 0, 0);
+	mainCanvas.text('Test 21', 0, 0);
 	mainCanvas.pop();
 
 
