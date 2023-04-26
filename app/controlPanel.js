@@ -73,7 +73,8 @@ function setupNameInput(){
 	nameInput.style('width', controlPanel.width * 0.9 - nameInput.x + 'px');
 	nameInput.elt.addEventListener('focus', function() {
     signatureCheckbox.checked(true);
-		// this.value = '';
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
   });
 	nameInput.input(sanitizeNameInput);
 	
