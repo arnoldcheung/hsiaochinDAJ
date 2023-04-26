@@ -1,7 +1,7 @@
 
 // Screen size definition
-// let deviceWidth = 2360 / 2;
-// let deviceHeight = 1640 / 2;
+let deviceWidth = 2360 / 2;
+let deviceHeight = 1640 / 2;
 
 // let deviceWidth = 1290 / 2;
 // let deviceHeight = 2796 / 2;
@@ -105,12 +105,13 @@ let circleData = [];
 
 function setup() {
 	createMetaTag();
-  // createCanvas(400, 800);
-	// createCanvas(deviceWidth * 2, deviceHeight * 2);
-	// createCanvas(deviceWidth, deviceHeight);
 	pixelDensity(currentPixelDensity);
 
-	createCanvas(window.innerWidth, window.innerHeight);
+  // createCanvas(400, 800);
+	// createCanvas(deviceWidth * 2, deviceHeight * 2);
+	createCanvas(deviceWidth, deviceHeight);
+
+	// createCanvas(window.innerWidth, window.innerHeight);
 
 	background(0);
 	
