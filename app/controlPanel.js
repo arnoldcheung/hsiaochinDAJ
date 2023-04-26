@@ -66,14 +66,14 @@ function setupColorPicker(){
 
 function setupNameInput(){
   // Create the name input field
-  nameInput = createInput('Your Name');
+  nameInput = createInput('');
 	nameInput.parent(controlPanel);
   nameInput.attribute('type', 'text');
 	nameInput.position(size_slider.x, signatureCheckbox.y + 3);
 	nameInput.style('width', controlPanel.width * 0.9 - nameInput.x + 'px');
 	nameInput.elt.addEventListener('focus', function() {
     signatureCheckbox.checked(true);
-		this.value = '';
+		// this.value = '';
   });
 	nameInput.input(sanitizeNameInput);
 	
