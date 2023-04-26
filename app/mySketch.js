@@ -378,11 +378,11 @@ function draw() {
 	// for testing
 
 	mainCanvas.push();
-	mainCanvas.fill(0);
+	mainCanvas.fill('#FF0000');
 	mainCanvas.textFont(font);
 	mainCanvas.textAlign(LEFT, TOP);
 	mainCanvas.textSize(50);
-	mainCanvas.text('Test 6', 0, 0);
+	mainCanvas.text('Test 9', 0, 0);
 	mainCanvas.pop();
 
 
