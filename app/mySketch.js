@@ -142,71 +142,76 @@ function setup() {
 	setupRadiation();
 	
   // Create control panel ----------------------------------------------------------------------------------------
-	controlPanel = createDiv();
-	controlPanel.position(0, 0);
-	controlPanel.style('width', width * 0.4 + 'px');
-	controlPanel.style('height', height + 'px');
-	controlPanel.style('background-color', 'rgba(255,255,255,0.75)');
-	controlPanel.style('display', 'block');
+	// controlPanel = createDiv();
+	// controlPanel.position(0, 0);
+	// controlPanel.style('width', width * 0.4 + 'px');
+	// controlPanel.style('height', height + 'px');
+	// controlPanel.style('background-color', 'rgba(255,255,255,0.75)');
+	// controlPanel.style('display', 'block');
+	setupControlPanel();
 		
 	// Create number input ----------------------------------------------------------------------------------------
 	
-	numberInput = createInput('Create your universe with 8 Numbers ...');
-	numberInput.parent(controlPanel);
+	// numberInput = createInput('Create your universe with 8 Numbers ...');
+	// numberInput.parent(controlPanel);
 	
-	numberInput.elt.addEventListener('focus', function() {
-    this.value = '';
-  });
+	// numberInput.elt.addEventListener('focus', function() {
+   	// 	this.value = '';
+  	// });
 
-	numberInput.style('width', controlPanel.width * 0.75 + 'px');
-	numberInput.style('height', '20px');
+	// numberInput.style('width', controlPanel.width * 0.75 + 'px');
+	// numberInput.style('height', '20px');
 	
-	numberInput.attribute('type', 'tel');
-	numberInput.attribute('pattern', '\\d*');
-	numberInput.attribute('maxlength', '8');
-	numberInput.input(validateNumberInput);
-	numberInput.position(30, 20);
+	// numberInput.attribute('type', 'tel');
+	// numberInput.attribute('pattern', '\\d*');
+	// numberInput.attribute('maxlength', '8');
+	// numberInput.input(validateNumberInput);
+	// numberInput.position(30, 20);
 	
-	generateButton = createButton('Go');
-	generateButton.parent(controlPanel);
-	generateButton.position(numberInput.x + numberInput.width + 20, numberInput.y);
-	generateButton.mouseClicked(generateUniverse);
-	generateButton.touchEnded(generateUniverse);
+	// generateButton = createButton('Go');
+	// generateButton.parent(controlPanel);
+	// generateButton.position(numberInput.x + numberInput.width + 20, numberInput.y);
+	// generateButton.mouseClicked(generateUniverse);
+	// generateButton.touchEnded(generateUniverse);
+
+	setupNumberInput();
 	
 	
 	// or text section ----------------------------------------------------------------------------------------
 
-	orTxt = createDiv('or create your universe manually ...');
-	orTxt.parent(controlPanel);
-	orTxt.position(30, 50);
+	// orTxt = createDiv('or create your universe manually ...');
+	// orTxt.parent(controlPanel);
+	// orTxt.position(30, 50);
 
 	
 	// Create Element Name ----------------------------------------------------------------------------------------
 	
-	elementName = createDiv(colorNameList[currentColorSelectionIndex]);
-	elementName.id("elementName")
-	elementName.style('color', colorList[currentColorSelectionIndex]);
-	elementName.position(30, 80);
-	elementName.parent(controlPanel);
+	// elementName = createDiv(colorNameList[currentColorSelectionIndex]);
+	// elementName.id("elementName")
+	// elementName.style('color', colorList[currentColorSelectionIndex]);
+	// elementName.position(30, 80);
+	// elementName.parent(controlPanel);
 	
-	// print(elementName.width + 10);
+	// // print(elementName.width + 10);
 	
-	// Create a button to toggle color selection ----------------------------------------------------------------------------------------
-  nextElementButton = createButton("Next Element");
-	// nextElementButton.class('button-74');
-  nextElementButton.position(elementName.x, elementName.y + parseFloat(elementName.style('height')) + 10);
-  nextElementButton.mouseClicked(toggleColorSelection);
-	nextElementButton.parent(controlPanel);
+	// // Create a button to toggle color selection ----------------------------------------------------------------------------------------
+  	// nextElementButton = createButton("Next Element");
+	// // nextElementButton.class('button-74');
+ 	// nextElementButton.position(elementName.x, elementName.y + parseFloat(elementName.style('height')) + 10);
+  	// nextElementButton.mouseClicked(toggleColorSelection);
+	// nextElementButton.parent(controlPanel);
 	
 	// Create iro picker ----------------------------------------------------------------------------------------
-	iroPickerDiv = createDiv();
-	iroPickerDiv.parent(controlPanel);
-	iroPickerDiv.id("iroPickerDiv")
+	// iroPickerDiv = createDiv();
+	// iroPickerDiv.parent(controlPanel);
+	// iroPickerDiv.id("iroPickerDiv")
 
-	iroPickerDiv.position(30, nextElementButton.y + 30);
+	// iroPickerDiv.position(30, nextElementButton.y + 30);
 	
-	iroP = new iro.ColorPicker('#iroPickerDiv',  {width: controlPanel.height * 0.3});
-	iroP.on('color:change', setColor)
+	// iroP = new iro.ColorPicker('#iroPickerDiv',  {width: controlPanel.height * 0.3});
+	// iroP.on('color:change', setColor)#
+	
+	setupColorPicker();
 
 	
 	// Create Checkboxes ----------------------------------------------------------------------------------------
@@ -215,36 +220,40 @@ function setup() {
 	// Create sliders ----------------------------------------------------------------------------------------
 	sliderSetup();
 	
-  // Create the name input field
-  nameInput = createInput('Your Name');
-	nameInput.parent(controlPanel);
-  nameInput.attribute('type', 'text');
-	nameInput.position(size_slider.x, signatureCheckbox.y + 3);
-	nameInput.style('width', controlPanel.width * 0.9 - nameInput.x + 'px');
-	nameInput.elt.addEventListener('focus', function() {
-    signatureCheckbox.checked(true);
-		this.value = '';
-  });
-	nameInput.input(sanitizeNameInput);
+//   // Create the name input field
+//   nameInput = createInput('Your Name');
+// 	nameInput.parent(controlPanel);
+//   nameInput.attribute('type', 'text');
+// 	nameInput.position(size_slider.x, signatureCheckbox.y + 3);
+// 	nameInput.style('width', controlPanel.width * 0.9 - nameInput.x + 'px');
+// 	nameInput.elt.addEventListener('focus', function() {
+//     signatureCheckbox.checked(true);
+// 		this.value = '';
+//   });
+// 	nameInput.input(sanitizeNameInput);
 	
-	nameInput.touchStarted(signatureEvent);
-	nameInput.mouseClicked(signatureEvent);
+// 	nameInput.touchStarted(signatureEvent);
+// 	nameInput.mouseClicked(signatureEvent);
 
-  // Create a button to toggle the control panel ----------------------------------------------------------------------------------------
-  hideShowButton = createButton("Hide Control");
-  hideShowButton.position(10, height - 30);
-  hideShowButton.mouseClicked(togglePanel);
+	setupNameInput();
+
+//   // Create a button to toggle the control panel ----------------------------------------------------------------------------------------
+//   hideShowButton = createButton("Hide Control");
+//   hideShowButton.position(10, height - 30);
+//   hideShowButton.mouseClicked(togglePanel);
 	
-	// Create a button to capture the canvas ----------------------------------------------------------------------------------------
-  captureButton = createButton("Capture");
-  captureButton.position(hideShowButton.x + hideShowButton.width + 10, height - 30);
-  captureButton.mouseClicked(captureCanvas);
+// 	// Create a button to capture the canvas ----------------------------------------------------------------------------------------
+//   captureButton = createButton("Capture");
+//   captureButton.position(hideShowButton.x + hideShowButton.width + 10, height - 30);
+//   captureButton.mouseClicked(captureCanvas);
 	
-	// Create a button to reset ----------------------------------------------------------------------------------------
-  resetButton = createButton("Reset Universe");
-  resetButton.position(captureButton.x + captureButton.width + 10, height - 30);
-  resetButton.mouseClicked(resetUniverse);
+// 	// Create a button to reset ----------------------------------------------------------------------------------------
+//   resetButton = createButton("Reset Universe");
+//   resetButton.position(captureButton.x + captureButton.width + 10, height - 30);
+//   resetButton.mouseClicked(resetUniverse);
 	
+	setupButtonMenu();
+
 	// // Create a button to toggle font selection ----------------------------------------------------------------------------------------
 	// fontToggle = createButton("Font Toggle");
 	// fontToggle.position(nameInput.x + parseFloat(nameInput.style('width')) + 20, nameInput.y);

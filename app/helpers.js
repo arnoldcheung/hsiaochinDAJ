@@ -82,65 +82,102 @@ function resetPunto(){
 }
 
 function resetUniverse() {
- 	resizeCanvas(window.innerWidth, window.innerHeight);
-	mainCanvas.resizeCanvas(width, height);
-	puntoGraphics.resizeCanvas(width, height);
-	orbitGraphics.resizeCanvas(width, height);
-	energyGraphics.resizeCanvas(min(width, height), min(width, height));
-	radiationGraphics.resizeCanvas(max(width, height), max(width, height));
-	waveGraphics.resizeCanvas(width, height);
-	
-	clear();
-	mainCanvas.clear();
-	orbitGraphics.clear();
-	radiationGraphics.clear();
-	puntoGraphics.clear();
-	waveGraphics.clear();
-	
-	punto_r = initial_punto_r;
-	
-	controlPanel.position(0, 0);
-	controlPanel.style('width', str(width * 0.4) + 'px');
-    controlPanel.style('height', str(height) + 'px');
-	controlPanel.style('background-color', 'rgba(255,255,255,0.75)');
 
-  hideShowButton.position(10, height - 30);
-  captureButton.position(hideShowButton.x + hideShowButton.width + 10, height - 30);
-  resetButton.position(captureButton.x + captureButton.width + 10, height - 30);
-	
 	// reset colors
-	
-let colorList = ['#021E3A', // bg
-								 '#FFFFFF', // stars
-								 '#FF6400', // Punto
-								 '#DBFF26', // energy 1
-								 '#3DE049', // energy 2
-								 '#FFFFFF', // orbit
-								 '#AEF064', // radiation
-								 '#FF8AFF', // wave
-								 '#FFFFFF'] // signature
+
+	let colorList = [
+		'#021E3A', // bg
+		'#FFFFFF', // stars
+		'#FF6400', // Punto
+		'#DBFF26', // energy 1
+		'#3DE049', // energy 2
+		'#FFFFFF', // orbit
+		'#AEF064', // radiation
+		'#FF8AFF', // wave
+		'#FFFFFF'] // signature
 
 	currentColorSelectionIndex = 0;
-	
-	// reset checkbox
 
-	puntoCheckbox.checked(false);
-	orbitCheckbox.checked(false);
-	energyCheckbox.checked(false);
-	radiationCheckbox.checked(false);
-	waveCheckbox.checked(false);
-	signatureCheckbox.checked(false);
+
+	clear();
+	mainCanvas.clear();
+	starsGraphics.clear();
+	puntoGraphics.clear();
+	orbitGraphics.clear();
+	energyGraphics.clear();
+	radiationGraphics.clear();
+	waveGraphics.clear();
+
+ 	resizeCanvas(window.innerWidth, window.innerHeight);
+	mainCanvas.resizeCanvas(width, height);
+	// starsGraphics.resizeCanvas(width, height);
+	// puntoGraphics.resizeCanvas(width, height);
+	// orbitGraphics.resizeCanvas(width, height);
+	// energyGraphics.resizeCanvas(min(width, height), min(width, height));
+	// radiationGraphics.resizeCanvas(max(width, height), max(width, height));
+	// waveGraphics.resizeCanvas(width, height);
+
+
+	// create orbit cancvas ----------------------------------------------------------------------------------------
+	setupOrbit();
 	
-	// reset sliders
+	// Create punto grapghics ----------------------------------------------------------------------------------------
+	setupPunto();
 	
-	size_slider.value(10);
+	// Create scatter grapghics ----------------------------------------------------------------------------------------
+	setupStars();
 	
-	energySizeSlider.value(20);
+	// Create energy grapghics ----------------------------------------------------------------------------------------
+	setupEnergy();
 	
-	waveFrequencySlider.value(0.001);
-	energyHeightSlider.value(0);
+	// Create wave grapghics ----------------------------------------------------------------------------------------
+	setupWaves();	
 	
-	orbit_speed_slider.value(0.5);
+	// Create radiation graphics ----------------------------------------------------------------------------------------
+	setupRadiation();
 	
-	radiationSizeSlider.value(0.5);	
+
+	
+	// punto_r = initial_punto_r;
+	
+	// controlPanel.position(0, 0);
+	// controlPanel.style('width', str(width * 0.4) + 'px');
+    // controlPanel.style('height', str(height) + 'px');
+	// controlPanel.style('background-color', 'rgba(255,255,255,0.75)');
+
+	setupControlPanel();
+	setupNumberInput();
+	setupColorPicker();
+	checkboxSetup();
+	sliderSetup();
+	setupNameInput();
+	setupButtonMenu();
+
+	// hideShowButton.position(10, height - 30);
+	// captureButton.position(hideShowButton.x + hideShowButton.width + 10, height - 30);
+	// resetButton.position(captureButton.x + captureButton.width + 10, height - 30);
+	
+
+	
+	// // reset checkbox
+
+	// puntoCheckbox.checked(false);
+	// orbitCheckbox.checked(false);
+	// energyCheckbox.checked(false);
+	// radiationCheckbox.checked(false);
+	// waveCheckbox.checked(false);
+	// signatureCheckbox.checked(false);
+	
+	// // reset sliders
+	
+	// size_slider.value(10);
+	
+	// energySizeSlider.value(20);
+	
+	// waveFrequencySlider.value(0.001);
+	// energyHeightSlider.value(0);
+	
+	// orbit_speed_slider.value(0.5);
+	
+	// radiationSizeSlider.value(0.5);	
 }
