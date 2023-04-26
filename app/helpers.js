@@ -132,6 +132,6 @@ function resetUniverse() {
 // 	return false;
 //   }
   
-//   function touchMoved() {
-// 	return false;
-//   }
+  function touchMoved() {
+	return false;
+  }
