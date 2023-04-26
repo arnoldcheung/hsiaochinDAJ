@@ -370,7 +370,7 @@ function draw() {
 	mainCanvas.textFont(font);
 	mainCanvas.textAlign(LEFT, TOP);
 	mainCanvas.textSize(15);
-	mainCanvas.text('Test 1');
+	mainCanvas.text('Test 1', 0, 0);
 	mainCanvas.pop();
 
 
