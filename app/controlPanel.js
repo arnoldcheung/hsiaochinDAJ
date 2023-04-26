@@ -1,7 +1,7 @@
 function setupControlPanel(){
   controlPanel = createDiv();
   controlPanel.position(0, 0);
-	controlPanel.style('width', width * 0.5 + 'px');
+	controlPanel.style('width', width * 0.4 + 'px');
   controlPanel.style('height', height + 'px');
   controlPanel.style('background-color', 'rgba(255,255,255,0.5)');
   controlPanel.style('display', 'block');
@@ -32,7 +32,7 @@ function setupNumberInput(){
 
   orTxt = createDiv('or create your universe manually ...');
 	orTxt.parent(controlPanel);
-	orTxt.position(30, 70);
+	orTxt.position(30, 90);
 
 }
 
@@ -41,7 +41,7 @@ function setupColorPicker(){
 	elementName = createDiv(colorNameList[currentColorSelectionIndex]);
 	elementName.id("elementName")
 	elementName.style('color', colorList[currentColorSelectionIndex]);
-	elementName.position(30, 80);
+	elementName.position(30, 100);
 	elementName.parent(controlPanel);
 	
 	// print(elementName.width + 10);
@@ -104,7 +104,7 @@ function setupButtonMenu(){
 function resetControlPanel(){
   // controlPanel = createDiv();
   controlPanel.position(0, 0);
-	controlPanel.style('width', width * 0.5 + 'px');
+	controlPanel.style('width', width * 0.4 + 'px');
   controlPanel.style('height', height + 'px');
   // controlPanel.style('background-color', 'rgba(255,255,255,0.75)');
   // controlPanel.style('display', 'block');
@@ -135,7 +135,7 @@ function resetNumberInput(){
 
   // orTxt = createDiv('or create your universe manually ...');
 	// orTxt.parent(controlPanel);
-	orTxt.position(30, 70);
+	orTxt.position(30, 90);
 
 }
 
@@ -144,7 +144,7 @@ function resetColorPicker(){
 	// elementName = createDiv(colorNameList[currentColorSelectionIndex]);
 	// elementName.id("elementName")
 	// elementName.style('color', colorList[currentColorSelectionIndex]);
-	elementName.position(30, 80);
+	elementName.position(30, 100);
 	// elementName.parent(controlPanel);
 	
 	// print(elementName.width + 10);
