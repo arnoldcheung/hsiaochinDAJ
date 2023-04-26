@@ -140,12 +140,12 @@ function setup() {
 	setupRadiation();
 	
   // Create control panel ----------------------------------------------------------------------------------------
-  controlPanel = createDiv();
-  controlPanel.position(0, 0);
+	controlPanel = createDiv();
+	controlPanel.position(0, 0);
 	controlPanel.style('width', width * 0.4 + 'px');
-  controlPanel.style('height', height + 'px');
-  controlPanel.style('background-color', 'rgba(255,255,255,0.75)');
-  controlPanel.style('display', 'block');
+	controlPanel.style('height', height + 'px');
+	controlPanel.style('background-color', 'rgba(255,255,255,0.75)');
+	controlPanel.style('display', 'block');
 		
 	// Create number input ----------------------------------------------------------------------------------------
 	
@@ -366,11 +366,11 @@ function draw() {
 	// for testing
 
 	mainCanvas.push();
-	mainCanvas.fill(colorList[8]);
+	mainCanvas.fill(0);
 	mainCanvas.textFont(font);
 	mainCanvas.textAlign(LEFT, TOP);
-	mainCanvas.textSize(15);
-	mainCanvas.text('Test 1', 0, 0);
+	mainCanvas.textSize(50);
+	mainCanvas.text('Test 2', 0, 0);
 	mainCanvas.pop();
 
 
