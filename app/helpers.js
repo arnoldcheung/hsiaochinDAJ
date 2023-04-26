@@ -83,6 +83,7 @@ function resetPunto(){
 
 function resetUniverse() {
  	resizeCanvas(window.innerWidth, window.innerHeight);
+	mainCanvas.resizeCanvas(width, height);
 	puntoGraphics.resizeCanvas(width, height);
 	orbitGraphics.resizeCanvas(width, height);
 	energyGraphics.resizeCanvas(min(width, height), min(width, height));

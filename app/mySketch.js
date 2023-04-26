@@ -169,8 +169,8 @@ function setup() {
 	
 	generateButton = createButton('Go');
 	generateButton.parent(controlPanel);
-  generateButton.position(numberInput.x + numberInput.width + 20, numberInput.y);
-  generateButton.mouseClicked(generateUniverse);
+	generateButton.position(numberInput.x + numberInput.width + 20, numberInput.y);
+	generateButton.mouseClicked(generateUniverse);
 	generateButton.touchEnded(generateUniverse);
 	
 	
