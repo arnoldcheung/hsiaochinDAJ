@@ -32,7 +32,7 @@ function setupNumberInput(){
 
   orTxt = createDiv('or create your universe manually ...');
 	orTxt.parent(controlPanel);
-	orTxt.position(30, 90);
+	orTxt.position(30, 80);
 
 }
 
@@ -59,7 +59,7 @@ function setupColorPicker(){
 
 	iroPickerDiv.position(30, nextElementButton.y + 30);
 	
-	iroP = new iro.ColorPicker('#iroPickerDiv',  {width: min(width * 0.9, controlPanel.height * 0.3)});
+	iroP = new iro.ColorPicker('#iroPickerDiv',  {width: min(width * 0.7, controlPanel.height * 0.3)});
 	iroP.on('color:change', setColor)
 }
 
@@ -135,7 +135,7 @@ function resetNumberInput(){
 
   // orTxt = createDiv('or create your universe manually ...');
 	// orTxt.parent(controlPanel);
-	orTxt.position(30, 90);
+	orTxt.position(30, 80);
 
 }
 
@@ -163,7 +163,7 @@ function resetColorPicker(){
 	iroPickerDiv.position(30, nextElementButton.y + 30);
 	
 	// iroP = new iro.ColorPicker('#iroPickerDiv',  {width: controlPanel.height * 0.3});
-  iroP.resize(min(width * 0.9, controlPanel.height * 0.3))
+  iroP.resize(min(width * 0.7, controlPanel.height * 0.3))
 	// iroP.on('color:change', setColor)
 }
 
