@@ -9,7 +9,7 @@
 let deviceWidth = 2796 / 2;
 let deviceHeight = 1290 / 2;
 
-currentPixelDensity = 2;
+currentPixelDensity = 1;
 
 // Control Panel Setup
 let panelVisible = true; // boolean to check if controlPanel is currently visible
