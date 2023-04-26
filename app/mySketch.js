@@ -109,7 +109,7 @@ function setup() {
 	// createCanvas(deviceWidth, deviceHeight);
 	pixelDensity(currentPixelDensity);
 
-	createCanvas(window.innerHeight, window.innerWidth);
+	createCanvas(window.innerWidth, window.innerHeight);
 
 	background(0);
 	
@@ -372,7 +372,7 @@ function draw() {
 	mainCanvas.textFont(font);
 	mainCanvas.textAlign(LEFT, TOP);
 	mainCanvas.textSize(50);
-	mainCanvas.text('Test 5', 0, 0);
+	mainCanvas.text('Test 6', 0, 0);
 	mainCanvas.pop();
 
 
