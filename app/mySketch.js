@@ -35,6 +35,7 @@ let orbitGraphics;
 let energyGraphics;
 let radiationGraphics;
 let waveGraphics;
+let buttonMenuDiv;
 
 var initial_punto_r;
 var punto_r;
@@ -383,7 +384,7 @@ function draw() {
 	mainCanvas.textFont(font);
 	mainCanvas.textAlign(LEFT, TOP);
 	mainCanvas.textSize(50);
-	mainCanvas.text('Test 19', 0, 0);
+	mainCanvas.text('Test 20', 0, 0);
 	mainCanvas.pop();
 
 

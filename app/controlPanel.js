@@ -82,20 +82,27 @@ function setupNameInput(){
 }
 
 function setupButtonMenu(){
-    // Create a button to toggle the control panel ----------------------------------------------------------------------------------------
-    hideShowButton = createButton("Hide Control");
-    hideShowButton.position(10, height - 50);
-    hideShowButton.mouseClicked(togglePanel);
-    
-    // Create a button to capture the canvas ----------------------------------------------------------------------------------------
-    captureButton = createButton("Capture");
-    captureButton.position(hideShowButton.x + hideShowButton.width + 10, height - 50);
-    captureButton.mouseClicked(captureCanvas);
-    
-    // Create a button to reset ----------------------------------------------------------------------------------------
-    resetButton = createButton("Reset Universe");
-    resetButton.position(captureButton.x + captureButton.width + 10, height - 50);
-    resetButton.mouseClicked(resetUniverse);
+  
+  buttonMenuDiv = createDiv();
+  buttonMenuDiv.addClass('controlPanel');
+
+  // Create a button to toggle the control panel ----------------------------------------------------------------------------------------
+  hideShowButton = createButton("Hide Control");
+  hideShowButton.position(10, height - 50);
+  hideShowButton.mouseClicked(togglePanel);
+  hideShowButton.parent(buttonMenuDiv);
+  
+  // Create a button to capture the canvas ----------------------------------------------------------------------------------------
+  captureButton = createButton("Capture");
+  captureButton.position(hideShowButton.x + hideShowButton.width + 10, height - 50);
+  captureButton.mouseClicked(captureCanvas);
+  hideShowButton.parent(buttonMenuDiv);
+
+  // Create a button to reset ----------------------------------------------------------------------------------------
+  resetButton = createButton("Reset Universe");
+  resetButton.position(captureButton.x + captureButton.width + 10, height - 50);
+  resetButton.mouseClicked(resetUniverse);
+  hideShowButton.parent(buttonMenuDiv);
 }
 
 
