@@ -163,6 +163,7 @@ function resetColorPicker(){
 	iroPickerDiv.position(30, nextElementButton.y + 30);
 	
 	// iroP = new iro.ColorPicker('#iroPickerDiv',  {width: controlPanel.height * 0.3});
+  iroP.resize(controlPanel.height * 0.3)
 	// iroP.on('color:change', setColor)
 }
 
