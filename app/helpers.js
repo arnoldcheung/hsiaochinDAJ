@@ -132,6 +132,11 @@ function resetUniverse() {
 // 	return false;
 //   }
   
-  function touchMoved() {
-	return false;
-  }
+//   function touchMoved() {
+
+// 	if(panelVisible){
+
+// 	}
+
+// 	return false;
+//   }
