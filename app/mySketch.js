@@ -3,8 +3,8 @@
 // let deviceWidth = 2360 / 2;
 // let deviceHeight = 1640 / 2;
 
-let deviceWidth = 1290 / 2;
-let deviceHeight = 2796 / 2;
+// let deviceWidth = 1290 / 2;
+// let deviceHeight = 2796 / 2;
 
 // let deviceWidth = 2796 / 2;
 // let deviceHeight = 1290 / 2;
@@ -74,7 +74,7 @@ let font = 'Courier New';
 
 // color selection toggle
 
-let colorList = ['#FF0000', // bg
+let colorList = ['#00FF00', // bg
 				'#FFFFFF', // stars
 				'#FF6400', // Punto
 				'#DBFF26', // energy 1
@@ -106,8 +106,8 @@ function setup() {
 	createMetaTag();
   // createCanvas(400, 800);
 	// createCanvas(deviceWidth * 2, deviceHeight * 2);
-	createCanvas(deviceWidth, deviceHeight);
-	// createCanvas(window.innerWidth, window.innerHeight);
+	// createCanvas(deviceWidth, deviceHeight);
+	createCanvas(window.innerWidth, window.innerHeight);
 	background(0);
 	pixelDensity(currentPixelDensity);
 	
