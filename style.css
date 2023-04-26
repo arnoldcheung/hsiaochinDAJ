@@ -1,7 +1,13 @@
 body {
+  -webkit-user-select: none; /* Disable text selection for Safari */
+  user-select: none; /* Disable text selection for other browsers */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Disable tap highlight color for Safari */
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+  touch-action: manipulation; /* Prevents scrolling, panning and zooming */
 }
 
 canvas {

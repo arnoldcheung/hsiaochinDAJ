@@ -98,7 +98,6 @@ function resetUniverse() {
 
 	currentColorSelectionIndex = 0;
 
-
 	clear();
 	mainCanvas.clear();
 	starsGraphics.clear();
@@ -120,34 +119,6 @@ function resetUniverse() {
 
 	drawStars(3000, {minSize: 1, maxSize: 5, canvas: starsGraphics});
 
-
-	// // create orbit cancvas ----------------------------------------------------------------------------------------
-	// setupOrbit();
-	
-	// // Create punto grapghics ----------------------------------------------------------------------------------------
-	// setupPunto();
-	
-	// // Create scatter grapghics ----------------------------------------------------------------------------------------
-	// setupStars();
-	
-	// // Create energy grapghics ----------------------------------------------------------------------------------------
-	// setupEnergy();
-	
-	// // Create wave grapghics ----------------------------------------------------------------------------------------
-	// setupWaves();	
-	
-	// // Create radiation graphics ----------------------------------------------------------------------------------------
-	// setupRadiation();
-	
-
-	
-	// punto_r = initial_punto_r;
-	
-	// controlPanel.position(0, 0);
-	// controlPanel.style('width', str(width * 0.4) + 'px');
-    // controlPanel.style('height', str(height) + 'px');
-	// controlPanel.style('background-color', 'rgba(255,255,255,0.75)');
-
 	resetControlPanel();
 	resetNumberInput();
 	resetColorPicker();
@@ -155,32 +126,12 @@ function resetUniverse() {
 	resetSliders();
 	resetNameInput();
 	resetButtonMenu();
-
-	// hideShowButton.position(10, height - 30);
-	// captureButton.position(hideShowButton.x + hideShowButton.width + 10, height - 30);
-	// resetButton.position(captureButton.x + captureButton.width + 10, height - 30);
-	
-
-	
-	// reset checkbox
-
-	// puntoCheckbox.checked(false);
-	// orbitCheckbox.checked(false);
-	// energyCheckbox.checked(false);
-	// radiationCheckbox.checked(false);
-	// waveCheckbox.checked(false);
-	// signatureCheckbox.checked(false);
-	
-	// reset sliders
-	
-	// size_slider.value(10);
-	
-	// energySizeSlider.value(20);
-	
-	// waveFrequencySlider.value(0.001);
-	// energyHeightSlider.value(0);
-	
-	// orbit_speed_slider.value(0.5);
-	
-	// radiationSizeSlider.value(0.5);	
 }
+
+function touchStarted() {
+	return false;
+  }
+  
+  function touchMoved() {
+	return false;
+  }
