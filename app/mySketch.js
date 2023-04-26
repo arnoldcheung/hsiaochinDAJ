@@ -363,6 +363,16 @@ function draw() {
 	//		|- Universe Number
 	//
 
+	// for testing
+
+	mainCanvas.push();
+	mainCanvas.fill(colorList[8]);
+	mainCanvas.textFont(font);
+	mainCanvas.textAlign(LEFT, TOP);
+	mainCanvas.textSize(15);
+	mainCanvas.text('Test 1');
+	mainCanvas.pop();
+
 
 	image(mainCanvas, 0, 0);
 	
