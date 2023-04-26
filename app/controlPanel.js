@@ -1,9 +1,9 @@
 function setupControlPanel(){
   controlPanel = createDiv();
   controlPanel.position(0, 0);
-	controlPanel.style('width', width * 0.4 + 'px');
+	controlPanel.style('width', width * 0.5 + 'px');
   controlPanel.style('height', height + 'px');
-  controlPanel.style('background-color', 'rgba(255,255,255,0.75)');
+  controlPanel.style('background-color', 'rgba(255,255,255,0.5)');
   controlPanel.style('display', 'block');
 }
 
@@ -59,7 +59,7 @@ function setupColorPicker(){
 
 	iroPickerDiv.position(30, nextElementButton.y + 30);
 	
-	iroP = new iro.ColorPicker('#iroPickerDiv',  {width: controlPanel.height * 0.3});
+	iroP = new iro.ColorPicker('#iroPickerDiv',  {width: min(width * 0.9, controlPanel.height * 0.3)});
 	iroP.on('color:change', setColor)
 }
 
@@ -104,7 +104,7 @@ function setupButtonMenu(){
 function resetControlPanel(){
   // controlPanel = createDiv();
   controlPanel.position(0, 0);
-	controlPanel.style('width', width * 0.4 + 'px');
+	controlPanel.style('width', width * 0.5 + 'px');
   controlPanel.style('height', height + 'px');
   // controlPanel.style('background-color', 'rgba(255,255,255,0.75)');
   // controlPanel.style('display', 'block');
@@ -163,7 +163,7 @@ function resetColorPicker(){
 	iroPickerDiv.position(30, nextElementButton.y + 30);
 	
 	// iroP = new iro.ColorPicker('#iroPickerDiv',  {width: controlPanel.height * 0.3});
-  iroP.resize(controlPanel.height * 0.3)
+  iroP.resize(min(width * 0.9, controlPanel.height * 0.3))
 	// iroP.on('color:change', setColor)
 }
 
