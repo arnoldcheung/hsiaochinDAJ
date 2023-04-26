@@ -1,6 +1,6 @@
 function setupControlPanel(){
   controlPanel = createDiv();
-  controlPanel.addClass('controlPanel');
+  controlPanel.class('controlPanel');
   controlPanel.position(0, 0);
 	controlPanel.style('width', width * 0.4 + 'px');
   controlPanel.style('height', height + 'px');

@@ -13,6 +13,7 @@ function sliderSetup(){
 	radiationSizeSlider = createSlider(0.1, 1, 0.5, 0.01);
 	
 	// set slider parent
+
 	
 	size_slider.parent(controlPanel);
 
@@ -24,6 +25,19 @@ function sliderSetup(){
 	orbit_speed_slider.parent(controlPanel);
 	
 	radiationSizeSlider.parent(controlPanel);
+
+
+	size_slider.class('custom-slider');
+
+
+	energySizeSlider.class('custom-slider');
+	
+	waveFrequencySlider.class('custom-slider');
+	energyHeightSlider.class('custom-slider');
+	
+	orbit_speed_slider.class('custom-slider');
+	
+	radiationSizeSlider.class('custom-slider');
 
 	// // slider positions
 	

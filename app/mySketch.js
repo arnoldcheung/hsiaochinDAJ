@@ -46,7 +46,7 @@ let universeNumber;
 
 // sliders ----------------------------------------------------------------------------------------
 
-let sliderSpacing = 30;
+let sliderSpacing = 35;
 
 let size_slider;
 
