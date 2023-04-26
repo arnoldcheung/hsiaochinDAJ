@@ -148,7 +148,7 @@ function resetUniverse() {
 	resetControlPanel();
 	resetNumberInput();
 	resetColorPicker();
-	resetcheckboxes();
+	resetCheckboxes();
 	resetSliders();
 	resetNameInput();
 	resetButtonMenu();
