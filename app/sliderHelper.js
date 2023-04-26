@@ -84,6 +84,10 @@ function sliderSetup(){
 function resetSliders(){
 	// slider positions
 		
+	// if(width > height) {
+	// 	size_slider.position(radiationCheckbox.x + parseFloat(radiationCheckbox.style('width')) + 10, puntoCheckbox.y);
+	// }
+
 	size_slider.position(radiationCheckbox.x + parseFloat(radiationCheckbox.style('width')) + 10, puntoCheckbox.y);
 		
 	energyHeightSlider.position(size_slider.x, energyCheckbox.y);
