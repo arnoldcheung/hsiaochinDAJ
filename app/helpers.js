@@ -117,6 +117,8 @@ function resetUniverse() {
 	radiationGraphics.resizeCanvas(max(width, height), max(width, height));
 	waveGraphics.resizeCanvas(width, height);
 
+	drawStars(3000, {minSize: 1, maxSize: 5, canvas: starsGraphics});
+
 
 	// // create orbit cancvas ----------------------------------------------------------------------------------------
 	// setupOrbit();
