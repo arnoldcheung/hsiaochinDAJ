@@ -46,14 +46,15 @@ function checkboxSetup(){
 
 function resetCheckboxes(){
 
-	if(width > height) {
-		puntoCheckbox.position(iroPickerDiv.x + parseFloat(iroPickerDiv.style('width')) + 10, iroPickerDiv.y);	
+	// if(width > height) {
+	// 	puntoCheckbox.position(iroPickerDiv.x + parseFloat(iroPickerDiv.style('width')) + 10, iroPickerDiv.y);	
 
 
-	} else {
-		puntoCheckbox.position(10, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) * 1.1);	
-	}
+	// } else {
+	// 	puntoCheckbox.position(10, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) * 1.1);	
+	// }
 
+	puntoCheckbox.position(iroPickerDiv.x, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) * 1.1);	
 	energyCheckbox.position(puntoCheckbox.x, puntoCheckbox.y + sliderSpacing);
 	orbitCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 3 * sliderSpacing);
 	radiationCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 4 * sliderSpacing);

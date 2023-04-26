@@ -22,7 +22,7 @@ function setupNumberInput(){
 	numberInput.attribute('pattern', '\\d*');
 	numberInput.attribute('maxlength', '8');
 	numberInput.input(validateNumberInput);
-	numberInput.position(30, 20);
+	numberInput.position(30, 50);
 	
 	generateButton = createButton('Go');
 	generateButton.parent(controlPanel);
@@ -187,16 +187,16 @@ function resetNameInput(){
 function resetButtonMenu(){
     // Create a button to toggle the control panel ----------------------------------------------------------------------------------------
     // hideShowButton = createButton("Hide Control");
-    hideShowButton.position(10, height - 30);
+    hideShowButton.position(30, height - 50);
     // hideShowButton.mouseClicked(togglePanel);
     
     // Create a button to capture the canvas ----------------------------------------------------------------------------------------
     // captureButton = createButton("Capture");
-    captureButton.position(hideShowButton.x + hideShowButton.width + 10, height - 30);
+    captureButton.position(hideShowButton.x + hideShowButton.width + 10, height - 50);
     // captureButton.mouseClicked(captureCanvas);
     
     // Create a button to reset ----------------------------------------------------------------------------------------
     // resetButton = createButton("Reset Universe");
-    resetButton.position(captureButton.x + captureButton.width + 10, height - 30);
+    resetButton.position(captureButton.x + captureButton.width + 10, height - 50);
     // resetButton.mouseClicked(resetUniverse);
 }
