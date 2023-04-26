@@ -82,12 +82,12 @@ function resetPunto(){
 }
 
 function resetUniverse() {
-  resizeCanvas(deviceWidth, deviceHeight);
-	puntoGraphics.resizeCanvas(deviceWidth, deviceHeight);
-	orbitGraphics.resizeCanvas(deviceWidth, windowHeight);
-	energyGraphics.resizeCanvas(min(deviceWidth, windowHeight), min(deviceWidth, windowHeight));
-	radiationGraphics.resizeCanvas(max(deviceWidth, windowHeight), max(deviceWidth, windowHeight));
-	waveGraphics.resizeCanvas(deviceWidth, windowHeight);
+ 	resizeCanvas(window.innerWidth, window.innerHeight);
+	puntoGraphics.resizeCanvas(width, height);
+	orbitGraphics.resizeCanvas(width, height);
+	energyGraphics.resizeCanvas(min(width, height), min(width, height));
+	radiationGraphics.resizeCanvas(max(width, height), max(width, height));
+	waveGraphics.resizeCanvas(width, height);
 	
 	clear();
 	mainCanvas.clear();
@@ -99,8 +99,8 @@ function resetUniverse() {
 	punto_r = initial_punto_r;
 	
 	controlPanel.position(0, 0);
-	controlPanel.style('width', str(deviceWidth * 0.4) + 'px');
-  controlPanel.style('height', str(deviceHeight) + 'px');
+	controlPanel.style('width', str(width * 0.4) + 'px');
+    controlPanel.style('height', str(height) + 'px');
 	controlPanel.style('background-color', 'rgba(255,255,255,0.75)');
 
   hideShowButton.position(10, height - 30);
