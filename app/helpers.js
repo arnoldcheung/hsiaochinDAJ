@@ -110,31 +110,31 @@ function resetUniverse() {
 
  	resizeCanvas(window.innerWidth, window.innerHeight);
 	mainCanvas.resizeCanvas(width, height);
-	// starsGraphics.resizeCanvas(width, height);
-	// puntoGraphics.resizeCanvas(width, height);
-	// orbitGraphics.resizeCanvas(width, height);
-	// energyGraphics.resizeCanvas(min(width, height), min(width, height));
-	// radiationGraphics.resizeCanvas(max(width, height), max(width, height));
-	// waveGraphics.resizeCanvas(width, height);
+	starsGraphics.resizeCanvas(width, height);
+	puntoGraphics.resizeCanvas(width, height);
+	orbitGraphics.resizeCanvas(width, height);
+	energyGraphics.resizeCanvas(min(width, height), min(width, height));
+	radiationGraphics.resizeCanvas(max(width, height), max(width, height));
+	waveGraphics.resizeCanvas(width, height);
 
 
-	// create orbit cancvas ----------------------------------------------------------------------------------------
-	setupOrbit();
+	// // create orbit cancvas ----------------------------------------------------------------------------------------
+	// setupOrbit();
 	
-	// Create punto grapghics ----------------------------------------------------------------------------------------
-	setupPunto();
+	// // Create punto grapghics ----------------------------------------------------------------------------------------
+	// setupPunto();
 	
-	// Create scatter grapghics ----------------------------------------------------------------------------------------
-	setupStars();
+	// // Create scatter grapghics ----------------------------------------------------------------------------------------
+	// setupStars();
 	
-	// Create energy grapghics ----------------------------------------------------------------------------------------
-	setupEnergy();
+	// // Create energy grapghics ----------------------------------------------------------------------------------------
+	// setupEnergy();
 	
-	// Create wave grapghics ----------------------------------------------------------------------------------------
-	setupWaves();	
+	// // Create wave grapghics ----------------------------------------------------------------------------------------
+	// setupWaves();	
 	
-	// Create radiation graphics ----------------------------------------------------------------------------------------
-	setupRadiation();
+	// // Create radiation graphics ----------------------------------------------------------------------------------------
+	// setupRadiation();
 	
 
 	
@@ -145,13 +145,13 @@ function resetUniverse() {
     // controlPanel.style('height', str(height) + 'px');
 	// controlPanel.style('background-color', 'rgba(255,255,255,0.75)');
 
-	setupControlPanel();
-	setupNumberInput();
-	setupColorPicker();
-	checkboxSetup();
-	sliderSetup();
-	setupNameInput();
-	setupButtonMenu();
+	resetControlPanel();
+	resetNumberInput();
+	resetColorPicker();
+	resetcheckboxes();
+	resetSliders();
+	resetNameInput();
+	resetButtonMenu();
 
 	// hideShowButton.position(10, height - 30);
 	// captureButton.position(hideShowButton.x + hideShowButton.width + 10, height - 30);
@@ -159,7 +159,7 @@ function resetUniverse() {
 	
 
 	
-	// // reset checkbox
+	// reset checkbox
 
 	// puntoCheckbox.checked(false);
 	// orbitCheckbox.checked(false);
@@ -168,7 +168,7 @@ function resetUniverse() {
 	// waveCheckbox.checked(false);
 	// signatureCheckbox.checked(false);
 	
-	// // reset sliders
+	// reset sliders
 	
 	// size_slider.value(10);
 	

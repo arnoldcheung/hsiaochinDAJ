@@ -15,13 +15,15 @@ function checkboxSetup(){
 	waveCheckbox.parent(controlPanel);
 	signatureCheckbox.parent(controlPanel);
 	
-	puntoCheckbox.position(10, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) * 1.1);	
-	energyCheckbox.position(puntoCheckbox.x, puntoCheckbox.y + sliderSpacing);
-	orbitCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 3 * sliderSpacing);
-	radiationCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 4 * sliderSpacing);
-	waveCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 5 * sliderSpacing);
-	signatureCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 6 * sliderSpacing);
-	
+	// puntoCheckbox.position(10, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) * 1.1);	
+	// energyCheckbox.position(puntoCheckbox.x, puntoCheckbox.y + sliderSpacing);
+	// orbitCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 3 * sliderSpacing);
+	// radiationCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 4 * sliderSpacing);
+	// waveCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 5 * sliderSpacing);
+	// signatureCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 6 * sliderSpacing);
+
+	resetCheckboxes();
+
 	// checkbox events
 	puntoCheckbox.touchStarted(puntoEvent);
 	puntoCheckbox.mouseClicked(puntoEvent);
@@ -40,6 +42,24 @@ function checkboxSetup(){
 	
 	signatureCheckbox.touchStarted(signatureEvent);
 	signatureCheckbox.mouseClicked(signatureEvent);
+}
+
+function resetCheckboxes(){
+	puntoCheckbox.position(10, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) * 1.1);	
+	energyCheckbox.position(puntoCheckbox.x, puntoCheckbox.y + sliderSpacing);
+	orbitCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 3 * sliderSpacing);
+	radiationCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 4 * sliderSpacing);
+	waveCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 5 * sliderSpacing);
+	signatureCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 6 * sliderSpacing);
+
+	// reset checkbox values
+
+	puntoCheckbox.checked(false);
+	orbitCheckbox.checked(false);
+	energyCheckbox.checked(false);
+	radiationCheckbox.checked(false);
+	waveCheckbox.checked(false);
+	signatureCheckbox.checked(false);
 }
 
 function puntoEvent(){

@@ -18,6 +18,7 @@ let controlPanel; // the Div that is the control panel
 let hideShowButton; // the button toggle that turns the controlPanel on & off (will rename)
 
 let iroPicker; // iro color picker
+let iroPickerDiv;
 
 let elementName; // element name Div element
 

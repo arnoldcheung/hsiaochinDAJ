@@ -25,32 +25,34 @@ function sliderSetup(){
 	
 	radiationSizeSlider.parent(controlPanel);
 
-	// slider positions
+	// // slider positions
 	
-	size_slider.position(radiationCheckbox.x + parseFloat(radiationCheckbox.style('width')) + 10, puntoCheckbox.y);
+	// size_slider.position(radiationCheckbox.x + parseFloat(radiationCheckbox.style('width')) + 10, puntoCheckbox.y);
 	
-	energyHeightSlider.position(size_slider.x, energyCheckbox.y);
+	// energyHeightSlider.position(size_slider.x, energyCheckbox.y);
 	
-	energySizeSlider.position(size_slider.x, energyCheckbox.y + sliderSpacing);
+	// energySizeSlider.position(size_slider.x, energyCheckbox.y + sliderSpacing);
 	
-	orbit_speed_slider.position(size_slider.x, orbitCheckbox.y);
+	// orbit_speed_slider.position(size_slider.x, orbitCheckbox.y);
 		
-	radiationSizeSlider.position(size_slider.x, radiationCheckbox.y);
+	// radiationSizeSlider.position(size_slider.x, radiationCheckbox.y);
 	
-	waveFrequencySlider.position(size_slider.x, waveCheckbox.y);
+	// waveFrequencySlider.position(size_slider.x, waveCheckbox.y);
 
-	// slider style
+	// // slider style
 	
-  size_slider.style('width', controlPanel.width * 0.9 - size_slider.x + 'px');
+  	// size_slider.style('width', controlPanel.width * 0.9 - size_slider.x + 'px');
 
-	energySizeSlider.style('width', size_slider.style('width'));
+	// energySizeSlider.style('width', size_slider.style('width'));
 	
-	waveFrequencySlider.style('width', size_slider.style('width'));
-	energyHeightSlider.style('width', size_slider.style('width'));
+	// waveFrequencySlider.style('width', size_slider.style('width'));
+	// energyHeightSlider.style('width', size_slider.style('width'));
 	
-	orbit_speed_slider.style('width', size_slider.style('width'));
+	// orbit_speed_slider.style('width', size_slider.style('width'));
 	
-	radiationSizeSlider.style('width', size_slider.style('width'));
+	// radiationSizeSlider.style('width', size_slider.style('width'));
+
+	resetSliders();
 	
 	
 	// slider events
@@ -77,6 +79,48 @@ function sliderSetup(){
 	waveFrequencySlider.mousePressed(WaveSliderEvent);
 
 	
+}
+
+function resetSliders(){
+	// slider positions
+		
+	size_slider.position(radiationCheckbox.x + parseFloat(radiationCheckbox.style('width')) + 10, puntoCheckbox.y);
+		
+	energyHeightSlider.position(size_slider.x, energyCheckbox.y);
+
+	energySizeSlider.position(size_slider.x, energyCheckbox.y + sliderSpacing);
+
+	orbit_speed_slider.position(size_slider.x, orbitCheckbox.y);
+		
+	radiationSizeSlider.position(size_slider.x, radiationCheckbox.y);
+
+	waveFrequencySlider.position(size_slider.x, waveCheckbox.y);
+
+	// slider style
+
+	size_slider.style('width', controlPanel.width * 0.9 - size_slider.x + 'px');
+
+	energySizeSlider.style('width', size_slider.style('width'));
+
+	waveFrequencySlider.style('width', size_slider.style('width'));
+	energyHeightSlider.style('width', size_slider.style('width'));
+
+	orbit_speed_slider.style('width', size_slider.style('width'));
+
+	radiationSizeSlider.style('width', size_slider.style('width'));
+
+	// reset slider values
+
+	size_slider.value(10);
+	
+	energySizeSlider.value(20);
+	
+	waveFrequencySlider.value(0.001);
+	energyHeightSlider.value(0);
+	
+	orbit_speed_slider.value(0.5);
+	
+	radiationSizeSlider.value(0.5);	
 }
 
 function resetSizeSlider(){
