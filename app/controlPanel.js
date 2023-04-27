@@ -89,7 +89,7 @@ function setupColorPicker(){
 	iroPickerDiv.parent(controlPanel);
 	iroPickerDiv.id("iroPickerDiv")
 
-	iroPickerDiv.position(30, nextElementButton.y + 30);
+	iroPickerDiv.position(30, nextElementButton.y + 40);
 	
 	iroP = new iro.ColorPicker('#iroPickerDiv',  {
     width: min(width * 0.7, controlPanel.height * 0.25),
@@ -214,7 +214,7 @@ function resetColorPicker(){
 	// iroPickerDiv.parent(controlPanel);
 	// iroPickerDiv.id("iroPickerDiv")
 
-	iroPickerDiv.position(30, nextElementButton.y + 30);
+	iroPickerDiv.position(30, nextElementButton.y + 40);
 	
 	// iroP = new iro.ColorPicker('#iroPickerDiv',  {width: controlPanel.height * 0.3});
   iroP.resize(min(width * 0.7, controlPanel.height * 0.25))
