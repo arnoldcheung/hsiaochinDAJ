@@ -4,7 +4,7 @@ function setupControlPanel(){
   controlPanel.position(0, 0);
 	controlPanel.style('width', width * 0.4 + 'px');
   controlPanel.style('height', height + 'px');
-  controlPanel.style('background-color', 'rgba(255,255,255,0.5)');
+  controlPanel.style('background-color', 'rgba(255,255,255,0.6)');
   controlPanel.style('display', 'block');
 }
 
@@ -14,11 +14,11 @@ function setupNameInput(){
 	nameInput.parent(controlPanel);
   nameInput.attribute('type', 'text');
 	// nameInput.position(size_slider.x, signatureCheckbox.y + 3);
-  nameInput.position(30, 30);
+  nameInput.position(30, 40);
 	nameInput.style('width', controlPanel.width * 0.6 + 'px');
   nameInput.style('height', '20px');
   nameInput.elt.addEventListener('focus', () => {
-    this.value('')
+    this.value = '';
     signature = true;
     signatureEvent();
     // window.scrollTo(0, 0);
@@ -74,10 +74,16 @@ function setupColorPicker(){
 	
 	// Create a button to toggle color selection ----------------------------------------------------------------------------------------
   nextElementButton = createButton("Next Element");
+  nextElementButton.parent(controlPanel);
+
 	// nextElementButton.class('button-74');
- 	nextElementButton.position(elementName.x, elementName.y + parseFloat(elementName.style('height')) + 10);
+ 	// nextElementButton.position(numberInput.x + numberInput.width + 20, elementName.y + parseFloat(elementName.style('height')) + 10);
+  nextElementButton.position(elementName.x, elementName.y + parseFloat(elementName.style('height')) + 10);
+
   nextElementButton.mouseClicked(toggleColorSelection);
-	nextElementButton.parent(controlPanel);
+
+  nextElementButton.style('height', '20px');
+  nextElementButton.style('font-size', '16px');
 
 	iroPickerDiv = createDiv();
 	iroPickerDiv.parent(controlPanel);
@@ -85,7 +91,10 @@ function setupColorPicker(){
 
 	iroPickerDiv.position(30, nextElementButton.y + 30);
 	
-	iroP = new iro.ColorPicker('#iroPickerDiv',  {width: min(width * 0.7, controlPanel.height * 0.25)});
+	iroP = new iro.ColorPicker('#iroPickerDiv',  {
+    width: min(width * 0.7, controlPanel.height * 0.25),
+    layoutDirection: 'horizontal',
+  });
 	iroP.on('color:change', setColor)
 }
 
@@ -141,7 +150,7 @@ function resetNameInput(){
   // nameInput = createInput('Your Name');
 	// nameInput.parent(controlPanel);
   // nameInput.attribute('type', 'text');
-	nameInput.position(30, 50);
+	nameInput.position(30, 40);
 	nameInput.style('width', controlPanel.width * 0.6 + 'px');
   nameInput.style('height', '20px');
 

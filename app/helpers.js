@@ -53,9 +53,10 @@ function validateNumberInput() {
 }
 
 function sanitizeNameInput(inputText) {
+	signature = true;
 	const currentNameInput = nameInput.value();
 	const sanitizedName = currentNameInput
-		.replace(/</g, '')
+	.replace(/</g, '')
     .replace(/>/g, '')
     .replace(/&/g, '');
 	nameInput.value(sanitizedName);
@@ -99,6 +100,7 @@ function resetUniverse() {
 	currentColorSelectionIndex = 0;
 
 	generated = false;
+	signature = false;
 
 	clear();
 	mainCanvas.background(colorList[0]);
