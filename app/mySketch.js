@@ -396,7 +396,7 @@ function draw() {
 	mainCanvas.textFont(font);
 	mainCanvas.textAlign(LEFT, TOP);
 	mainCanvas.textSize(50);
-	mainCanvas.text('Test 32', 0, 0);
+	mainCanvas.text('Test 33', 0, 0);
 	mainCanvas.pop();
 
 	mainCanvas.image(signatureGraphics, 0, 0); // the radiating squares
