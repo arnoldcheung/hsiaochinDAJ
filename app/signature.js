@@ -19,43 +19,43 @@ function setupSignature(){
 
 function setupEventListeners() {
     // Touch event listeners
-    overlayCanvas.elt.addEventListener('touchstart', (e) => {
+    signatureGraphics.elt.addEventListener('touchstart', (e) => {
       e.preventDefault();
       drawing = true;
-      overlayContext.beginPath();
-      overlayContext.moveTo(e.touches[0].clientX, e.touches[0].clientY);
+      signatureContext.beginPath();
+      signatureContext.moveTo(e.touches[0].clientX, e.touches[0].clientY);
     });
   
-    overlayCanvas.elt.addEventListener('touchmove', (e) => {
+    signatureGraphics.elt.addEventListener('touchmove', (e) => {
       e.preventDefault();
       if (drawing) {
-        overlayContext.lineTo(e.touches[0].clientX, e.touches[0].clientY);
-        overlayContext.stroke();
+        signatureContext.lineTo(e.touches[0].clientX, e.touches[0].clientY);
+        signatureContext.stroke();
       }
     });
   
-    overlayCanvas.elt.addEventListener('touchend', (e) => {
+    signatureGraphics.elt.addEventListener('touchend', (e) => {
       e.preventDefault();
       drawing = false;
     });
   
     // Mouse event listeners
-    overlayCanvas.elt.addEventListener('mousedown', (e) => {
+    signatureGraphics.elt.addEventListener('mousedown', (e) => {
       e.preventDefault();
       drawing = true;
-      overlayContext.beginPath();
-      overlayContext.moveTo(e.clientX, e.clientY);
+      signatureContext.beginPath();
+      signatureContext.moveTo(e.clientX, e.clientY);
     });
   
-    overlayCanvas.elt.addEventListener('mousemove', (e) => {
+    signatureGraphics.elt.addEventListener('mousemove', (e) => {
       e.preventDefault();
       if (drawing) {
-        overlayContext.lineTo(e.clientX, e.clientY);
-        overlayContext.stroke();
+        signatureContext.lineTo(e.clientX, e.clientY);
+        signatureContext.stroke();
       }
     });
   
-    overlayCanvas.elt.addEventListener('mouseup', (e) => {
+    signatureGraphics.elt.addEventListener('mouseup', (e) => {
       e.preventDefault();
       drawing = false;
     });
