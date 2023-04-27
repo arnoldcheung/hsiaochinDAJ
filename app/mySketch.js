@@ -122,8 +122,8 @@ function setup() {
 	// createCanvas(deviceWidth, deviceHeight);
 
 	// createCanvas(window.innerWidth, window.innerHeight);
-	// createCanvas(windowWidth, windowHeight);
-	createCanvas(displayWidth, displayHeight);
+	createCanvas(windowWidth, windowHeight);
+	// createCanvas(displayWidth, displayHeight);
 
 	background(0);
 	
@@ -156,7 +156,7 @@ function setup() {
 	setupRadiation();
 	
 
-	setupSignature();
+	// setupSignature();
 
   // Create control panel ----------------------------------------------------------------------------------------
 	// controlPanel = createDiv();
@@ -364,7 +364,7 @@ function draw() {
 		mainCanvas.text(nameInput.value() + '@MGM', width - 10, height - 5);
 		mainCanvas.pop();
 
-		mainCanvas.image(signatureGraphics, 0, 0); // the radiating squares
+		// mainCanvas.image(signatureGraphics, 0, 0); // the radiating squares
 	}
 	
 	// generate universe number ----------------------------------------------------------------------------------------
@@ -399,7 +399,7 @@ function draw() {
 	mainCanvas.textFont(font);
 	mainCanvas.textAlign(LEFT, TOP);
 	mainCanvas.textSize(50);
-	mainCanvas.text('Test 37', 0, 0);
+	mainCanvas.text('Test 38', 0, 0);
 	mainCanvas.pop();
 
 

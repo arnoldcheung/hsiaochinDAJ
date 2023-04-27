@@ -8,6 +8,26 @@ function setupControlPanel(){
   controlPanel.style('display', 'block');
 }
 
+function setupNameInput(){
+  // Create the name input field
+  nameInput = createInput('');
+	nameInput.parent(controlPanel);
+  nameInput.attribute('type', 'text');
+	nameInput.position(size_slider.x, signatureCheckbox.y + 3);
+	nameInput.style('width', controlPanel.width * 0.8 - nameInput.x + 'px');
+  numberInput.style('height', '20px');
+  nameInput.elt.addEventListener('focus', () => {
+    signatureCheckbox.checked(true);
+    // window.scrollTo(0, 0);
+    // document.body.scrollTop = 0;
+    // event.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+	nameInput.input(sanitizeNameInput);
+	
+	nameInput.touchStarted(signatureEvent);
+	nameInput.mouseClicked(signatureEvent);
+}
+
 function setupNumberInput(){
 	numberInput = createInput('Create your universe with 8 Numbers ...');
 	numberInput.parent(controlPanel);
@@ -23,7 +43,7 @@ function setupNumberInput(){
 	numberInput.attribute('pattern', '\\d*');
 	numberInput.attribute('maxlength', '8');
 	numberInput.input(validateNumberInput);
-	numberInput.position(30, 50);
+	numberInput.position(30, 80);
 	
 	generateButton = createButton('Go');
 	generateButton.parent(controlPanel);
@@ -33,7 +53,7 @@ function setupNumberInput(){
 
   orTxt = createDiv('or create your universe manually ...');
 	orTxt.parent(controlPanel);
-	orTxt.position(30, 80);
+	orTxt.position(numberInput.x, numberInput.y + 30);
 
 }
 
@@ -42,7 +62,7 @@ function setupColorPicker(){
 	elementName = createDiv(colorNameList[currentColorSelectionIndex]);
 	elementName.id("elementName")
 	elementName.style('color', colorList[currentColorSelectionIndex]);
-	elementName.position(30, 100);
+	elementName.position(numberInput.x, 130);
 	elementName.parent(controlPanel);
 	
 	// print(elementName.width + 10);
@@ -64,26 +84,6 @@ function setupColorPicker(){
 	iroP.on('color:change', setColor)
 }
 
-function setupNameInput(){
-  // Create the name input field
-  nameInput = createInput('');
-	nameInput.parent(controlPanel);
-  nameInput.attribute('type', 'text');
-	nameInput.position(size_slider.x, signatureCheckbox.y + 3);
-	nameInput.style('width', controlPanel.width * 0.9 - nameInput.x + 'px');
-  numberInput.style('height', '20px');
-  nameInput.elt.addEventListener('focus', () => {
-    signatureCheckbox.checked(true);
-    // window.scrollTo(0, 0);
-    // document.body.scrollTop = 0;
-    // event.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  });
-	nameInput.input(sanitizeNameInput);
-	
-	nameInput.touchStarted(signatureEvent);
-	nameInput.mouseClicked(signatureEvent);
-}
-
 function setupButtonMenu(){
   
   buttonMenuDiv = createDiv();
@@ -91,7 +91,7 @@ function setupButtonMenu(){
 
   // Create a button to toggle the control panel ----------------------------------------------------------------------------------------
   hideShowButton = createButton("Hide Control");
-  hideShowButton.position(10, height - 50);
+  hideShowButton.position(30, height - 50);
   hideShowButton.mouseClicked(togglePanel);
   hideShowButton.parent(buttonMenuDiv);
   
@@ -121,6 +121,26 @@ function resetControlPanel(){
   // controlPanel.style('display', 'block');
 }
 
+
+function resetNameInput(){
+  // Create the name input field
+  // nameInput = createInput('Your Name');
+	// nameInput.parent(controlPanel);
+  // nameInput.attribute('type', 'text');
+	nameInput.position(size_slider.x, signatureCheckbox.y + 3);
+	nameInput.style('width', controlPanel.width * 0.9 - nameInput.x + 'px');
+  nameInput.style('height', '20px');
+
+	// nameInput.elt.addEventListener('focus', function() {
+  //   signatureCheckbox.checked(true);
+	// 	this.value = '';
+  // });
+	// nameInput.input(sanitizeNameInput);
+	
+	// nameInput.touchStarted(signatureEvent);
+	// nameInput.mouseClicked(signatureEvent);
+}
+
 function resetNumberInput(){
 	// numberInput = createInput('Create your universe with 8 Numbers ...');
 	// numberInput.parent(controlPanel);
@@ -136,7 +156,7 @@ function resetNumberInput(){
 	// numberInput.attribute('pattern', '\\d*');
 	// numberInput.attribute('maxlength', '8');
 	// numberInput.input(validateNumberInput);
-	numberInput.position(30, 50);
+	numberInput.position(30, 80);
 	
 	// generateButton = createButton('Go');
 	// generateButton.parent(controlPanel);
@@ -146,7 +166,7 @@ function resetNumberInput(){
 
   // orTxt = createDiv('or create your universe manually ...');
 	// orTxt.parent(controlPanel);
-	orTxt.position(30, 80);
+	orTxt.position(numberInput.x, numberInput.y + 30);
 
 }
 
@@ -155,7 +175,7 @@ function resetColorPicker(){
 	// elementName = createDiv(colorNameList[currentColorSelectionIndex]);
 	// elementName.id("elementName")
 	// elementName.style('color', colorList[currentColorSelectionIndex]);
-	elementName.position(30, 100);
+	elementName.position(numberInput, 130);
 	// elementName.parent(controlPanel);
 	
 	// print(elementName.width + 10);
@@ -178,22 +198,6 @@ function resetColorPicker(){
 	// iroP.on('color:change', setColor)
 }
 
-function resetNameInput(){
-  // Create the name input field
-  // nameInput = createInput('Your Name');
-	// nameInput.parent(controlPanel);
-  // nameInput.attribute('type', 'text');
-	nameInput.position(size_slider.x, signatureCheckbox.y + 3);
-	nameInput.style('width', controlPanel.width * 0.9 - nameInput.x + 'px');
-	// nameInput.elt.addEventListener('focus', function() {
-  //   signatureCheckbox.checked(true);
-	// 	this.value = '';
-  // });
-	// nameInput.input(sanitizeNameInput);
-	
-	// nameInput.touchStarted(signatureEvent);
-	// nameInput.mouseClicked(signatureEvent);
-}
 
 function resetButtonMenu(){
     // Create a button to toggle the control panel ----------------------------------------------------------------------------------------

@@ -59,7 +59,10 @@ function resetCheckboxes(){
 	orbitCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 3 * sliderSpacing);
 	radiationCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 4 * sliderSpacing);
 	waveCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 5 * sliderSpacing);
-	signatureCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 6 * sliderSpacing);
+	// signatureCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 6 * sliderSpacing);
+
+	signatureCheckbox.position(energyCheckbox.x, 30);
+
 
 	// reset checkbox values
 

@@ -109,11 +109,11 @@ function resetUniverse() {
 	radiationGraphics.clear();
 	waveGraphics.clear();
 
-	signatureGraphics.clear();
+	// signatureGraphics.clear();
 
  	// resizeCanvas(deviceWidth, deviceHeight);
 	// resizeCanvas(window.innerWidth, window.innerHeight);
-	resizeCanvas(displayWidth, displayHeight);
+	resizeCanvas(windowWidth, windowHeight);
 	mainCanvas.resizeCanvas(width, height);
 	starsGraphics.resizeCanvas(width, height);
 	puntoGraphics.resizeCanvas(width, height);
@@ -122,7 +122,7 @@ function resetUniverse() {
 	radiationGraphics.resizeCanvas(max(width, height), max(width, height));
 	waveGraphics.resizeCanvas(width, height);
 
-	signatureGraphics.resizeCanvas(width, height);
+	// signatureGraphics.resizeCanvas(width, height);
 
 	drawStars(3000, {minSize: 1, maxSize: 5, canvas: starsGraphics});
 
