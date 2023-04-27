@@ -71,10 +71,11 @@ function setupNameInput(){
   nameInput.attribute('type', 'text');
 	nameInput.position(size_slider.x, signatureCheckbox.y + 3);
 	nameInput.style('width', controlPanel.width * 0.9 - nameInput.x + 'px');
-	nameInput.elt.addEventListener('focus', function() {
+	nameInput.elt.addEventListener('focus', (event) => {
     signatureCheckbox.checked(true);
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
+    event.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 	nameInput.input(sanitizeNameInput);
 	
