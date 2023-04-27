@@ -1,26 +1,6 @@
 function setupSignature(){
     signatureGraphics = createGraphics(width, height);
-    // signatureContext = signatureGraphics.drawingContext;
-
-    // // Customize the appearance of the drawn lines
-    // signatureContext.strokeStyle = 'black';
-    // signatureContext.lineWidth = 5;
-    // signatureContext.lineJoin = 'round';
-    // signatureContext.lineCap = 'round';
-
-    // // Set up touch and mouse event listeners
-    // setupEventListeners();
 }
-
-// function drawSignature(){
-
-
-// }
-
-
-
-
-
 
 function mousePressed() {
   drawing = true;
@@ -34,9 +14,7 @@ function mouseReleased() {
 
 function mouseDragged() {
   if (drawing) {
-    signatureGraphics.strokeWeight(5);
-    signatureGraphics.stroke(0); // Set the stroke color to black
-    signatureGraphics.line(prevX, prevY, mouseX, mouseY);
+    drawLine(prevX, prevY, mouseX, mouseY);
 
     prevX = mouseX;
     prevY = mouseY;
@@ -44,9 +22,11 @@ function mouseDragged() {
 }
 
 function touchStarted() {
-  drawing = true;
-  prevX = mouseX;
-  prevY = mouseY;
+  if (touches.length > 0) {
+    drawing = true;
+    prevX = touches[0].x;
+    prevY = touches[0].y;
+  }
 }
 
 function touchEnded() {
@@ -54,13 +34,16 @@ function touchEnded() {
 }
 
 function touchMoved() {
-  if (drawing) {
-    signatureGraphics.strokeWeight(5);
-    signatureGraphics.stroke(0); // Set the stroke color to black
-    signatureGraphics.line(prevX, prevY, mouseX, mouseY);
-
-    prevX = mouseX;
-    prevY = mouseY;
+  if (drawing && touches.length > 0) {
+    drawLine(prevX, prevY, touches[0].x, touches[0].y);
+    prevX = touches[0].x;
+    prevY = touches[0].y;
   }
   // return false; // Prevent default touch behavior
+}
+
+function drawLine(x1, y1, x2, y2) {
+  signatureGraphics.strokeWeight(5);
+  signatureGraphics.stroke(0); // Set the stroke color to black
+  signatureGraphics.line(x1, y1, x2, y2);
 }
