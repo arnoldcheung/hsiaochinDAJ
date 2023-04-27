@@ -20,6 +20,4 @@ function drawRadiation(){
     radiationGraphics.triangle(-baseLength / 2, -heightLength, baseLength / 2, -heightLength, 0, 0);
     radiationGraphics.pop(); // Restore the original drawing style and transformation
   }
-
-
 }

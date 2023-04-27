@@ -1,8 +1,12 @@
+// function that toggles on and off the control panel ----------------------------------------------------------------------------------------
+
 function togglePanel() {
   panelVisible = !panelVisible;
   controlPanel.style('display', panelVisible ? 'block' : 'none');
   hideShowButton.html(panelVisible ? 'Hide Control' : 'Show Control');
 }
+
+// function that toggles the color selection cycle ----------------------------------------------------------------------------------------
 
 function toggleColorSelection() {
   currentColorSelectionIndex = (currentColorSelectionIndex + 1) % numSelectableColors;
@@ -24,11 +28,7 @@ function toggleColorSelection() {
 	}
 }
 
-// function toggleFontSelection() {
-//   currentFontIndex = (currentFontIndex + 1) % numSelectableFonts;
-// 	// elementName.html(colorNameList[currentColorSelectionIndex]);
-// 	currentFont = fonts[currentFontIndex];
-// }
+// Event for when a new color is selected ----------------------------------------------------------------------------------------
 
 function setColor(){
 	colorList[currentColorSelectionIndex] = iroP.color.hexString;
@@ -41,9 +41,13 @@ function setColor(){
 	}
 }
 
+// function that resets the sketch when screen is resized ----------------------------------------------------------------------------------------
+
 function windowResized() {
   resetUniverse();
 }
+
+// Event function for number input, allow only numbers ----------------------------------------------------------------------------------------
 
 function validateNumberInput() {
   let currentValue = numberInput.value();
@@ -51,6 +55,8 @@ function validateNumberInput() {
 	
   numberInput.value(sanitizedValue);
 }
+
+// Event function for number input, sanitises input ----------------------------------------------------------------------------------------
 
 function sanitizeNameInput(inputText) {
 	signature = true;
@@ -63,6 +69,7 @@ function sanitizeNameInput(inputText) {
 }
 
 
+// function that adds metatag ----------------------------------------------------------------------------------------
 
 function createMetaTag() {
 	let meta = createElement('meta');
@@ -73,14 +80,20 @@ function createMetaTag() {
 	meta.parent(head);
 }
 
+// Event function for capturing the canvas, to be added with qr code function ----------------------------------------------------------------------------------------
+
 function captureCanvas(){
 	mainCanvas.save('universe.png');
 }
+
+// resets punto, (can remove) ----------------------------------------------------------------------------------------
 
 function resetPunto(){
 	puntoGraphics.clear();
 	punto_r = initial_punto_r;
 }
+
+// resets the entire sketch ----------------------------------------------------------------------------------------
 
 function resetUniverse() {
 
@@ -99,9 +112,11 @@ function resetUniverse() {
 
 	currentColorSelectionIndex = 0;
 
+	// resets flags
 	generated = false;
 	signature = false;
 
+	// clears all the canvas and graphics
 	clear();
 	mainCanvas.background(colorList[0]);
 	starsGraphics.clear();
@@ -111,10 +126,7 @@ function resetUniverse() {
 	radiationGraphics.clear();
 	waveGraphics.clear();
 
-	// signatureGraphics.clear();
-
- 	// resizeCanvas(deviceWidth, deviceHeight);
-	// resizeCanvas(window.innerWidth, window.innerHeight);
+	// resize the canvas, incase of device rotation / screensize change
 	resizeCanvas(windowWidth, windowHeight);
 	mainCanvas.resizeCanvas(width, height);
 	starsGraphics.resizeCanvas(width, height);
@@ -124,10 +136,10 @@ function resetUniverse() {
 	radiationGraphics.resizeCanvas(max(width, height), max(width, height));
 	waveGraphics.resizeCanvas(width, height);
 
-	// signatureGraphics.resizeCanvas(width, height);
-
+	// re-setup the star graphics
 	drawStars(3000, {minSize: 1, maxSize: 5, canvas: starsGraphics});
 
+	// reset the control panels and their buttons / sliders
 	resetControlPanel();
 	resetNumberInput();
 	resetColorPicker();
@@ -136,18 +148,6 @@ function resetUniverse() {
 	resetNameInput();
 	resetButtonMenu();
 
+	// change element name back to space (colorList[0])
 	elementName.html(colorNameList[currentColorSelectionIndex]);
 }
-
-// function touchStarted() {
-// 	return false;
-//   }
-  
-//   function touchMoved() {
-
-// 	if(panelVisible){
-
-// 	}
-
-// 	return false;
-//   }
