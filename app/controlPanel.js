@@ -72,11 +72,11 @@ function setupNameInput(){
 	nameInput.position(size_slider.x, signatureCheckbox.y + 3);
 	nameInput.style('width', controlPanel.width * 0.9 - nameInput.x + 'px');
   numberInput.style('height', '20px');
-  nameInput.elt.addEventListener('focus', (event) => {
+  nameInput.elt.addEventListener('focus', () => {
     signatureCheckbox.checked(true);
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
-    event.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // window.scrollTo(0, 0);
+    // document.body.scrollTop = 0;
+    // event.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 	nameInput.input(sanitizeNameInput);
 	

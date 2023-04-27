@@ -37,6 +37,9 @@ let radiationGraphics;
 let waveGraphics;
 let buttonMenuDiv;
 
+let signatureGraphics;
+let signatureContext;
+
 var initial_punto_r;
 var punto_r;
 
@@ -144,6 +147,9 @@ function setup() {
 	// Create radiation graphics ----------------------------------------------------------------------------------------
 	setupRadiation();
 	
+
+	setupSignature();
+
   // Create control panel ----------------------------------------------------------------------------------------
 	// controlPanel = createDiv();
 	// controlPanel.position(0, 0);
@@ -350,6 +356,8 @@ function draw() {
 		mainCanvas.textSize(15);
 		mainCanvas.text(nameInput.value() + '@MGM', width - 10, height - 5);
 		mainCanvas.pop();
+
+		mainCanvas.image(signatureGraphics, 0, 0); // the radiating squares
 	}
 	
 	// generate universe number ----------------------------------------------------------------------------------------
