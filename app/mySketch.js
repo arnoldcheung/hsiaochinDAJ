@@ -39,6 +39,8 @@ let buttonMenuDiv;
 
 // draw signature
 
+let signature = false;
+
 let signatureGraphics;
 let signatureContext;
 
@@ -355,7 +357,7 @@ function draw() {
 	}
 	
 	// signature ----------------------------------------------------------------------------------------
-	if(signatureCheckbox.checked()){
+	if(signature){
 		mainCanvas.push();
 		mainCanvas.fill(colorList[8]);
 		mainCanvas.textFont(font);

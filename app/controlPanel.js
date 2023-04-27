@@ -18,7 +18,7 @@ function setupNameInput(){
 	nameInput.style('width', controlPanel.width * 0.6 + 'px');
   nameInput.style('height', '20px');
   nameInput.elt.addEventListener('focus', () => {
-    signatureCheckbox.checked(true);
+    signature = true;
     signatureEvent();
     // window.scrollTo(0, 0);
     // document.body.scrollTop = 0;
@@ -105,7 +105,7 @@ function setupButtonMenu(){
   // Create a button to capture the canvas ----------------------------------------------------------------------------------------
   captureButton = createButton("Capture");
   captureButton.parent(buttonMenuDiv);
-  captureButton.position(hideShowButton.x + hideShowButton.width + 10, height - 50);
+  captureButton.position(hideShowButton.x + hideShowButton.width + 60, height - 50);
   captureButton.mouseClicked(captureCanvas);
 
   captureButton.style('height', '20px');
@@ -114,7 +114,7 @@ function setupButtonMenu(){
   // Create a button to reset ----------------------------------------------------------------------------------------
   resetButton = createButton("Reset Universe");
   resetButton.parent(buttonMenuDiv);
-  resetButton.position(captureButton.x + captureButton.width + 10, height - 50);
+  resetButton.position(captureButton.x + captureButton.width + 60, height - 50);
   resetButton.mouseClicked(resetUniverse);
 
   resetButton.style('height', '20px');
@@ -220,11 +220,11 @@ function resetButtonMenu(){
     
     // Create a button to capture the canvas ----------------------------------------------------------------------------------------
     // captureButton = createButton("Capture");
-    captureButton.position(hideShowButton.x + hideShowButton.width + 10, height - 50);
+    captureButton.position(hideShowButton.x + hideShowButton.width + 60, height - 50);
     // captureButton.mouseClicked(captureCanvas);
     
     // Create a button to reset ----------------------------------------------------------------------------------------
     // resetButton = createButton("Reset Universe");
-    resetButton.position(captureButton.x + captureButton.width + 10, height - 50);
+    resetButton.position(captureButton.x + captureButton.width + 60, height - 50);
     // resetButton.mouseClicked(resetUniverse);
 }
