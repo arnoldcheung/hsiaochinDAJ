@@ -37,8 +37,14 @@ let radiationGraphics;
 let waveGraphics;
 let buttonMenuDiv;
 
+// draw signature
+
 let signatureGraphics;
 let signatureContext;
+
+let overlayCanvas;
+let drawing = false;
+let prevX, prevY;
 
 var initial_punto_r;
 var punto_r;

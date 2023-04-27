@@ -1,15 +1,15 @@
 function setupSignature(){
     signatureGraphics = createGraphics(width, height);
-    signatureContext = signatureGraphics.drawingContext;
+    // signatureContext = signatureGraphics.drawingContext;
 
-    // Customize the appearance of the drawn lines
-    signatureContext.strokeStyle = 'black';
-    signatureContext.lineWidth = 5;
-    signatureContext.lineJoin = 'round';
-    signatureContext.lineCap = 'round';
+    // // Customize the appearance of the drawn lines
+    // signatureContext.strokeStyle = 'black';
+    // signatureContext.lineWidth = 5;
+    // signatureContext.lineJoin = 'round';
+    // signatureContext.lineCap = 'round';
 
-    // Set up touch and mouse event listeners
-    setupEventListeners();
+    // // Set up touch and mouse event listeners
+    // setupEventListeners();
 }
 
 // function drawSignature(){
@@ -17,46 +17,50 @@ function setupSignature(){
 
 // }
 
-function setupEventListeners() {
-    // Touch event listeners
-    signatureGraphics.elt.addEventListener('touchstart', (e) => {
-      e.preventDefault();
-      drawing = true;
-      signatureContext.beginPath();
-      signatureContext.moveTo(e.touches[0].clientX, e.touches[0].clientY);
-    });
-  
-    signatureGraphics.elt.addEventListener('touchmove', (e) => {
-      e.preventDefault();
-      if (drawing) {
-        signatureContext.lineTo(e.touches[0].clientX, e.touches[0].clientY);
-        signatureContext.stroke();
-      }
-    });
-  
-    signatureGraphics.elt.addEventListener('touchend', (e) => {
-      e.preventDefault();
-      drawing = false;
-    });
-  
-    // Mouse event listeners
-    signatureGraphics.elt.addEventListener('mousedown', (e) => {
-      e.preventDefault();
-      drawing = true;
-      signatureContext.beginPath();
-      signatureContext.moveTo(e.clientX, e.clientY);
-    });
-  
-    signatureGraphics.elt.addEventListener('mousemove', (e) => {
-      e.preventDefault();
-      if (drawing) {
-        signatureContext.lineTo(e.clientX, e.clientY);
-        signatureContext.stroke();
-      }
-    });
-  
-    signatureGraphics.elt.addEventListener('mouseup', (e) => {
-      e.preventDefault();
-      drawing = false;
-    });
+
+
+
+
+
+function mousePressed() {
+  drawing = true;
+  prevX = mouseX;
+  prevY = mouseY;
+}
+
+function mouseReleased() {
+  drawing = false;
+}
+
+function mouseDragged() {
+  if (drawing) {
+    signatureGraphics.strokeWeight(5);
+    signatureGraphics.stroke(0); // Set the stroke color to black
+    signatureGraphics.line(prevX, prevY, mouseX, mouseY);
+
+    prevX = mouseX;
+    prevY = mouseY;
+  }
+}
+
+function touchStarted() {
+  drawing = true;
+  prevX = mouseX;
+  prevY = mouseY;
+}
+
+function touchEnded() {
+  drawing = false;
+}
+
+function touchMoved() {
+  if (drawing) {
+    signatureGraphics.strokeWeight(5);
+    signatureGraphics.stroke(0); // Set the stroke color to black
+    signatureGraphics.line(prevX, prevY, mouseX, mouseY);
+
+    prevX = mouseX;
+    prevY = mouseY;
+  }
+  // return false; // Prevent default touch behavior
 }
