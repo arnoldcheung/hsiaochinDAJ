@@ -13,11 +13,13 @@ function setupNameInput(){
   nameInput = createInput('');
 	nameInput.parent(controlPanel);
   nameInput.attribute('type', 'text');
-	nameInput.position(size_slider.x, signatureCheckbox.y + 3);
-	nameInput.style('width', controlPanel.width * 0.8 - nameInput.x + 'px');
-  numberInput.style('height', '20px');
+	// nameInput.position(size_slider.x, signatureCheckbox.y + 3);
+  nameInput.position(30, 50);
+	nameInput.style('width', controlPanel.width * 0.6 + 'px');
+  nameInput.style('height', '20px');
   nameInput.elt.addEventListener('focus', () => {
     signatureCheckbox.checked(true);
+    signatureEvent();
     // window.scrollTo(0, 0);
     // document.body.scrollTop = 0;
     // event.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -36,7 +38,7 @@ function setupNumberInput(){
    		this.value = '';
   	});
 
-	numberInput.style('width', controlPanel.width * 0.75 + 'px');
+	numberInput.style('width', controlPanel.width * 0.6 + 'px');
 	numberInput.style('height', '20px');
 	
 	numberInput.attribute('type', 'tel');
@@ -47,6 +49,8 @@ function setupNumberInput(){
 	
 	generateButton = createButton('Go');
 	generateButton.parent(controlPanel);
+  generateButton.style('height', '20px');
+  generateButton.style('font-size', '16px');
 	generateButton.position(numberInput.x + numberInput.width + 20, numberInput.y);
 	generateButton.mouseClicked(generateUniverse);
 	generateButton.touchEnded(generateUniverse);
@@ -91,21 +95,30 @@ function setupButtonMenu(){
 
   // Create a button to toggle the control panel ----------------------------------------------------------------------------------------
   hideShowButton = createButton("Hide Control");
+  hideShowButton.parent(buttonMenuDiv);
   hideShowButton.position(30, height - 50);
   hideShowButton.mouseClicked(togglePanel);
-  hideShowButton.parent(buttonMenuDiv);
+
+  hideShowButton.style('height', '20px');
+  hideShowButton.style('font-size', '16px');
   
   // Create a button to capture the canvas ----------------------------------------------------------------------------------------
   captureButton = createButton("Capture");
+  captureButton.parent(buttonMenuDiv);
   captureButton.position(hideShowButton.x + hideShowButton.width + 10, height - 50);
   captureButton.mouseClicked(captureCanvas);
-  hideShowButton.parent(buttonMenuDiv);
+
+  captureButton.style('height', '20px');
+  captureButton.style('font-size', '16px');
 
   // Create a button to reset ----------------------------------------------------------------------------------------
   resetButton = createButton("Reset Universe");
+  resetButton.parent(buttonMenuDiv);
   resetButton.position(captureButton.x + captureButton.width + 10, height - 50);
   resetButton.mouseClicked(resetUniverse);
-  hideShowButton.parent(buttonMenuDiv);
+
+  resetButton.style('height', '20px');
+  resetButton.style('font-size', '16px');
 }
 
 
@@ -127,8 +140,8 @@ function resetNameInput(){
   // nameInput = createInput('Your Name');
 	// nameInput.parent(controlPanel);
   // nameInput.attribute('type', 'text');
-	nameInput.position(size_slider.x, signatureCheckbox.y + 3);
-	nameInput.style('width', controlPanel.width * 0.9 - nameInput.x + 'px');
+	nameInput.position(30, 50);
+	nameInput.style('width', controlPanel.width * 0.6 + 'px');
   nameInput.style('height', '20px');
 
 	// nameInput.elt.addEventListener('focus', function() {

@@ -5,7 +5,7 @@ function checkboxSetup(){
 	energyCheckbox = createCheckbox('Energy', false);
 	radiationCheckbox = createCheckbox('Radiation', false);
 	waveCheckbox = createCheckbox('Wave', false);
-	signatureCheckbox = createCheckbox('Signature', false);
+	// signatureCheckbox = createCheckbox('Signature', false);
 	
 	// checkbox parent
 	puntoCheckbox.parent(controlPanel);
@@ -13,7 +13,7 @@ function checkboxSetup(){
 	energyCheckbox.parent(controlPanel);
 	radiationCheckbox.parent(controlPanel);
 	waveCheckbox.parent(controlPanel);
-	signatureCheckbox.parent(controlPanel);
+	// signatureCheckbox.parent(controlPanel);
 	
 	// puntoCheckbox.position(10, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) * 1.1);	
 	// energyCheckbox.position(puntoCheckbox.x, puntoCheckbox.y + sliderSpacing);
@@ -40,8 +40,8 @@ function checkboxSetup(){
 	waveCheckbox.touchStarted(WaveEvent);
 	waveCheckbox.mouseClicked(WaveEvent);
 	
-	signatureCheckbox.touchStarted(signatureEvent);
-	signatureCheckbox.mouseClicked(signatureEvent);
+	// signatureCheckbox.touchStarted(signatureEvent);
+	// signatureCheckbox.mouseClicked(signatureEvent);
 }
 
 function resetCheckboxes(){
@@ -61,7 +61,7 @@ function resetCheckboxes(){
 	waveCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 5 * sliderSpacing);
 	// signatureCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 6 * sliderSpacing);
 
-	signatureCheckbox.position(energyCheckbox.x, 30);
+	// signatureCheckbox.position(energyCheckbox.x, 50);
 
 
 	// reset checkbox values
@@ -71,7 +71,7 @@ function resetCheckboxes(){
 	energyCheckbox.checked(false);
 	radiationCheckbox.checked(false);
 	waveCheckbox.checked(false);
-	signatureCheckbox.checked(false);
+	// signatureCheckbox.checked(false);
 }
 
 function puntoEvent(){
