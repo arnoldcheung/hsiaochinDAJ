@@ -10,14 +10,15 @@ function setupControlPanel(){
 
 function setupNameInput(){
   // Create the name input field
-  nameInput = createInput('');
+  nameInput = createInput('A message for yourself ...');
 	nameInput.parent(controlPanel);
   nameInput.attribute('type', 'text');
 	// nameInput.position(size_slider.x, signatureCheckbox.y + 3);
-  nameInput.position(30, 50);
+  nameInput.position(30, 30);
 	nameInput.style('width', controlPanel.width * 0.6 + 'px');
   nameInput.style('height', '20px');
   nameInput.elt.addEventListener('focus', () => {
+    this.value('')
     signature = true;
     signatureEvent();
     // window.scrollTo(0, 0);
@@ -84,7 +85,7 @@ function setupColorPicker(){
 
 	iroPickerDiv.position(30, nextElementButton.y + 30);
 	
-	iroP = new iro.ColorPicker('#iroPickerDiv',  {width: min(width * 0.7, controlPanel.height * 0.3)});
+	iroP = new iro.ColorPicker('#iroPickerDiv',  {width: min(width * 0.7, controlPanel.height * 0.25)});
 	iroP.on('color:change', setColor)
 }
 
@@ -112,7 +113,7 @@ function setupButtonMenu(){
   captureButton.style('font-size', '16px');
 
   // Create a button to reset ----------------------------------------------------------------------------------------
-  resetButton = createButton("Reset Universe");
+  resetButton = createButton("Reset");
   resetButton.parent(buttonMenuDiv);
   resetButton.position(captureButton.x + captureButton.width + 60, height - 50);
   resetButton.mouseClicked(resetUniverse);
@@ -162,7 +163,7 @@ function resetNumberInput(){
   //  		this.value = '';
   // 	});
 
-	numberInput.style('width', controlPanel.width * 0.75 + 'px');
+	numberInput.style('width', controlPanel.width * 0.6 + 'px');
 	numberInput.style('height', '20px');
 	
 	// numberInput.attribute('type', 'tel');
@@ -207,7 +208,7 @@ function resetColorPicker(){
 	iroPickerDiv.position(30, nextElementButton.y + 30);
 	
 	// iroP = new iro.ColorPicker('#iroPickerDiv',  {width: controlPanel.height * 0.3});
-  iroP.resize(min(width * 0.7, controlPanel.height * 0.3))
+  iroP.resize(min(width * 0.7, controlPanel.height * 0.25))
 	// iroP.on('color:change', setColor)
 }
 

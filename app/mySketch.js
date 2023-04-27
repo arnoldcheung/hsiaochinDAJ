@@ -362,7 +362,7 @@ function draw() {
 		mainCanvas.fill(colorList[8]);
 		mainCanvas.textFont(font);
 		mainCanvas.textAlign(RIGHT, BOTTOM);
-		mainCanvas.textSize(15);
+		mainCanvas.textSize(20);
 		mainCanvas.text(nameInput.value() + '@MGM', width - 10, height - 5);
 		mainCanvas.pop();
 
@@ -376,7 +376,7 @@ function draw() {
 		mainCanvas.fill(colorList[8]);
 		mainCanvas.textFont(font);
 		mainCanvas.textAlign(CENTER, BOTTOM);
-		mainCanvas.textSize(15);
+		mainCanvas.textSize(20);
 		mainCanvas.text(universeNumber, width / 2, height - 5);
 		mainCanvas.pop();
 	}
@@ -401,7 +401,7 @@ function draw() {
 	mainCanvas.textFont(font);
 	mainCanvas.textAlign(LEFT, TOP);
 	mainCanvas.textSize(50);
-	mainCanvas.text('Test 38', 0, 0);
+	mainCanvas.text('Test 39', 0, 0);
 	mainCanvas.pop();
 
 
