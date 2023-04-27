@@ -122,7 +122,8 @@ function setup() {
 	// createCanvas(deviceWidth, deviceHeight);
 
 	// createCanvas(window.innerWidth, window.innerHeight);
-	createCanvas(windowWidth, windowHeight);
+	// createCanvas(windowWidth, windowHeight);
+	createCanvas(displayWidth, displayHeight);
 
 	background(0);
 	
@@ -398,7 +399,7 @@ function draw() {
 	mainCanvas.textFont(font);
 	mainCanvas.textAlign(LEFT, TOP);
 	mainCanvas.textSize(50);
-	mainCanvas.text('Test 36', 0, 0);
+	mainCanvas.text('Test 37', 0, 0);
 	mainCanvas.pop();
 
 

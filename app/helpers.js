@@ -113,7 +113,7 @@ function resetUniverse() {
 
  	// resizeCanvas(deviceWidth, deviceHeight);
 	// resizeCanvas(window.innerWidth, window.innerHeight);
-	resizeCanvas(windowWidth, windowHeight);
+	resizeCanvas(displayWidth, displayHeight);
 	mainCanvas.resizeCanvas(width, height);
 	starsGraphics.resizeCanvas(width, height);
 	puntoGraphics.resizeCanvas(width, height);
