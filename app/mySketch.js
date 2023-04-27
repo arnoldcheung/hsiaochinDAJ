@@ -396,13 +396,13 @@ function draw() {
 
 	// for testing
 
-	mainCanvas.push();
-	mainCanvas.fill('#FF0000');
-	mainCanvas.textFont(font);
-	mainCanvas.textAlign(LEFT, TOP);
-	mainCanvas.textSize(50);
-	mainCanvas.text('Test 40', 0, 0);
-	mainCanvas.pop();
+	// mainCanvas.push();
+	// mainCanvas.fill('#FF0000');
+	// mainCanvas.textFont(font);
+	// mainCanvas.textAlign(LEFT, TOP);
+	// mainCanvas.textSize(50);
+	// mainCanvas.text('Test 40', 0, 0);
+	// mainCanvas.pop();
 
 
 	image(mainCanvas, 0, 0);
