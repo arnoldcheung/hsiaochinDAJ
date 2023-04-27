@@ -44,6 +44,6 @@ function touchMoved() {
 
 function drawLine(x1, y1, x2, y2) {
   signatureGraphics.strokeWeight(5);
-  signatureGraphics.stroke(0); // Set the stroke color to black
+  signatureGraphics.stroke(colorList[8]); // Set the stroke color to black
   signatureGraphics.line(x1, y1, x2, y2);
 }

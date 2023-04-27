@@ -121,7 +121,8 @@ function setup() {
 	// createCanvas(deviceWidth * 2, deviceHeight * 2);
 	// createCanvas(deviceWidth, deviceHeight);
 
-	createCanvas(window.innerWidth, window.innerHeight);
+	// createCanvas(window.innerWidth, window.innerHeight);
+	createCanvas(windowWidth, windowHeight);
 
 	background(0);
 	
@@ -362,6 +363,7 @@ function draw() {
 		mainCanvas.text(nameInput.value() + '@MGM', width - 10, height - 5);
 		mainCanvas.pop();
 
+		mainCanvas.image(signatureGraphics, 0, 0); // the radiating squares
 	}
 	
 	// generate universe number ----------------------------------------------------------------------------------------
@@ -396,10 +398,9 @@ function draw() {
 	mainCanvas.textFont(font);
 	mainCanvas.textAlign(LEFT, TOP);
 	mainCanvas.textSize(50);
-	mainCanvas.text('Test 33', 0, 0);
+	mainCanvas.text('Test 36', 0, 0);
 	mainCanvas.pop();
 
-	mainCanvas.image(signatureGraphics, 0, 0); // the radiating squares
 
 	image(mainCanvas, 0, 0);
 	
