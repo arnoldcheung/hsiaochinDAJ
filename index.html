@@ -22,8 +22,10 @@
 	<script src="app/helpers.js"></script>
 	<script src="app/generateUniverse.js"></script>
 	<script src="app/signature.js"></script>
+	<script src="app/qrcode.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="qrcodeModal.css">
 	<link rel="manifest" href="/manifest.json">
 	
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
@@ -32,7 +34,22 @@
 </head>
 
 <body>   
-	
+	<div class="modal" id="modal">
+		<div class="modal-bg modal-exit"></div>
+		<div class="modal-container">
+			<h1>Scan to retrieve your Sketch!</h1>
+			<button class="modal-close modal-exit">X</button>
+			<div id="modal-loading">
+				<h2>Please wait a moment...</h2>
+				<svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+				 <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+				</svg>
+			</div>
+			<div id="modal-qrcode">
+			</div>
+		</div>
+	</div>
+	<script src="setupQrcodeModal.js"></script>	
 </body>
 
 </html>

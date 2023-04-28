@@ -81,9 +81,55 @@ function createMetaTag() {
 }
 
 // Event function for capturing the canvas, to be added with qr code function ----------------------------------------------------------------------------------------
+async function captureCanvas(){
+	// mainCanvas.save('universe.png');
 
-function captureCanvas(){
-	mainCanvas.save('universe.png');
+	// Initialize Cloudinary
+	const cloudName = 'dbvqnmaio';
+	const unsignedUploadPreset = 'nomzit8e';
+
+	// get elements
+	const modal = document.getElementById('modal');
+	const modalLoadingDiv = document.getElementById('modal-loading');
+	const qrcodeDiv = document.getElementById('modal-qrcode');
+	
+	// open modal
+	modal.classList.add('open');
+	modalLoadingDiv.style.display = "block";
+	qrcodeDiv.style.display = "none";
+	
+	// Get image data from canvas
+  const imageData = mainCanvas.canvas.toDataURL('image/png');
+
+  // Upload image to Cloudinary
+	const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/upload`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			upload_preset: unsignedUploadPreset,
+			file: imageData
+		})
+	});
+
+	if (response.ok) {
+		const data = await response.json();
+		const imageUrl = data.secure_url;
+		
+		qrcodeDiv.replaceChildren();
+		const qrCode = new QRCode(qrcodeDiv);
+
+		// generate the qrcode from the imageUrl
+		qrCode.makeCode(imageUrl);
+		
+		// show the qrcode
+		modalLoadingDiv.style.display = "none";
+		qrcodeDiv.style.display = "block";
+	} else {
+		console.log(await response.json());
+		throw new Error('Failed to upload image to Cloudinary');
+	}
 }
 
 // resets punto, (can remove) ----------------------------------------------------------------------------------------
