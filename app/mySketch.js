@@ -77,8 +77,8 @@ let fonts = [
 	'Georgia',
 	'Times New Roman',
 	'Verdana' ];
-let currentFont;
 let currentFontIndex = 0;
+let currentFont = fonts[currentFontIndex];
 let numSelectableFonts = fonts.length;
 
 // text and messages ----------------------------------------------------------------------------------------
@@ -290,7 +290,7 @@ function draw() {
 	mainCanvas.textFont(font);
 	mainCanvas.textAlign(LEFT, TOP);
 	mainCanvas.textSize(100);
-	mainCanvas.text('Test 42', 0, 0);
+	mainCanvas.text('Test 43', 0, 0);
 	mainCanvas.pop();
 
 
