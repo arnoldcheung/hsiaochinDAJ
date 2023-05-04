@@ -257,7 +257,7 @@ function draw() {
 	}
 
 	// Message ----------------------------------------------------------------------------------------
-	displayMessageWithLineBreaks(myMessage);
+	// displayMessageWithLineBreaks(myMessage);
 
 	mainCanvas.push();
 	mainCanvas.rectMode(CORNERS);
