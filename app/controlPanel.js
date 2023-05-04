@@ -12,7 +12,7 @@ function setupControlPanel(){
 // sets up the Name input field ----------------------------------------------------------------------------------------
 function setupNameInput(){
   // Create the name input field
-  nameInput = createInput('A message for yourself ...'); // create the input
+  nameInput = createInput('Your Signature (Optional)'); // create the input
 	nameInput.parent(controlPanel);
   nameInput.attribute('type', 'text');
   nameInput.position(30, 40); // ***************************************************************************
@@ -37,8 +37,8 @@ function setupNameInput(){
   fontButton.style('height', '20px');
   fontButton.style('font-size', '16px');
   fontButton.position(nameInput.x + nameInput.width + 20, nameInput.y);
-  fontButton.mouseClicked();
-  fontButton.touchEnded(generateUnivrse);
+  fontButton.mouseClicked(toggleFontSelection);
+  fontButton.touchEnded(toggleFontSelection);
 }
 
 
