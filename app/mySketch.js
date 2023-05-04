@@ -22,7 +22,7 @@ let starsGraphics;
 let orbitGraphics;
 let energyGraphics;
 let radiationGraphics;
-let waveGraphics;
+// let waveGraphics;
 let buttonMenuDiv;
 
 // flag to show signature or not ----------------------------------------------------------------------------------------
@@ -46,7 +46,7 @@ let size_slider;
 
 let energySizeSlider;
 
-let waveFrequencySlider;
+// let waveFrequencySlider;
 let energyHeightSlider;
 
 let orbit_speed_slider;
@@ -58,10 +58,11 @@ let puntoCheckbox;
 let orbitCheckbox;
 let energyCheckbox;
 let radiationCheckbox
-let waveCheckbox;
+// let waveCheckbox;
 
 // text inputs ----------------------------------------------------------------------------------------
 let nameInput;
+let messageInput;
 let numberInput;
 
 // energy variables ----------------------------------------------------------------------------------------
@@ -70,6 +71,10 @@ let layerSize; // thickness of the energy
 
 // font ----------------------------------------------------------------------------------------
 let font = 'Courier New'; // on sketch label font
+
+// text and messages ----------------------------------------------------------------------------------------
+let mySignature = '';
+let myMessage = '';
 
 
 // color selection toggle ----------------------------------------------------------------------------------------
@@ -128,7 +133,7 @@ function setup() {
 	setupEnergy();
 	
 	// Create wave grapghics ----------------------------------------------------------------------------------------
-	setupWaves();	
+	// setupWaves();	
 	
 	// Create radiation graphics ----------------------------------------------------------------------------------------
 	setupRadiation();
@@ -137,6 +142,8 @@ function setup() {
 	setupControlPanel();
 
 	setupNameInput();
+
+	setupMessageInput();
 	
 	setupNumberInput();
 	
@@ -160,14 +167,14 @@ function draw() {
 	mainCanvas.background(colorList[0]); // reset background
 	orbitGraphics.clear();  // reset orbit
 	radiationGraphics.clear();  // reset radiation
-	waveGraphics.clear();  // reset wave
+	// waveGraphics.clear();  // reset wave
 	
 	// get values from sliders ----------------------------------------------------------------------------------------
 	layerSize = energySizeSlider.value();
 	
 	stroke_w = energySizeSlider.value();
 	
-	waveFrequency = waveFrequencySlider.value();
+	// waveFrequency = waveFrequencySlider.value();
 	energyHeight = energyHeightSlider.value();
 		
 	size_slider.input(() => {
@@ -185,11 +192,11 @@ function draw() {
 	mainCanvas.image(starsGraphics, 0, 0);
 	mainCanvas.pop();
 	
-	// wave grapghics ----------------------------------------------------------------------------------------
-	if(waveCheckbox.checked()){
-		drawWave();
-		mainCanvas.image(waveGraphics, 0, 0);	
-	}
+	// // wave grapghics ----------------------------------------------------------------------------------------
+	// if(waveCheckbox.checked()){
+	// 	drawWave();
+	// 	mainCanvas.image(waveGraphics, 0, 0);	
+	// }
 	
 	// radiation graphics ----------------------------------------------------------------------------------------
 	if(radiationCheckbox.checked()){
@@ -239,6 +246,16 @@ function draw() {
 		mainCanvas.text(nameInput.value() + '@MGM', width - 10, height - 5);
 		mainCanvas.pop();
 	}
+
+	// Message ----------------------------------------------------------------------------------------
+	mainCanvas.push();
+	mainCanvas.fill(colorList[8]);
+	mainCanvas.textFont(font);
+	mainCanvas.textAlign(LEFT, TOP);
+	mainCanvas.textSize(20);
+	mainCanvas.text(messageInput.value(), 10, 5);
+	mainCanvas.pop();
+	
 	
 	// generate universe number ----------------------------------------------------------------------------------------
 	
@@ -264,6 +281,18 @@ function draw() {
 	//    |- Signature
 	//	  |- Universe Number
 	//
+
+
+	mainCanvas.push();
+	mainCanvas.fill('#FF0000');
+	mainCanvas.textFont(font);
+	mainCanvas.textAlign(LEFT, TOP);
+	mainCanvas.textSize(100);
+	mainCanvas.text('Test 40', 0, 0);
+	mainCanvas.pop();
+
+
+
 
 	image(mainCanvas, 0, 0); // drawing the main canvas onto the base canvas
 }

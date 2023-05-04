@@ -28,6 +28,15 @@ function toggleColorSelection() {
 	}
 }
 
+// function that toggles the font selection cycle ----------------------------------------------------------------------------------------
+
+function toggleFontSelection() {
+  currentFontIndex = (currentFontIndex + 1) % numSelectableFonts;
+	// elementName.html(colorNameList[currentColorSelectionIndex]);
+	currentFont = fonts[currentFontIndex];
+}
+
+
 // Event for when a new color is selected ----------------------------------------------------------------------------------------
 
 function setColor(){
@@ -56,7 +65,7 @@ function validateNumberInput() {
   numberInput.value(sanitizedValue);
 }
 
-// Event function for number input, sanitises input ----------------------------------------------------------------------------------------
+// Event function for name input, sanitises input ----------------------------------------------------------------------------------------
 
 function sanitizeNameInput(inputText) {
 	signature = true;
@@ -67,6 +76,20 @@ function sanitizeNameInput(inputText) {
     .replace(/&/g, '');
 	nameInput.value(sanitizedName);
 }
+
+// Event function for message input, sanitises input ----------------------------------------------------------------------------------------
+
+function sanitizeMessageInput(inputText) {
+	// signature = true;
+	const currentMessageInput = messageInput.value();
+	const sanitizedMessage = currentmessageInput
+	.replace(/</g, '')
+    .replace(/>/g, '')
+    .replace(/&/g, '');
+	messageInput.value(sanitizedMessage);
+	myMessage = messageInput.value();
+}
+
 
 
 // function that adds metatag ----------------------------------------------------------------------------------------
@@ -170,7 +193,7 @@ function resetUniverse() {
 	orbitGraphics.clear();
 	energyGraphics.clear();
 	radiationGraphics.clear();
-	waveGraphics.clear();
+	// waveGraphics.clear();
 
 	// resize the canvas, incase of device rotation / screensize change
 	resizeCanvas(windowWidth, windowHeight);
@@ -180,18 +203,19 @@ function resetUniverse() {
 	orbitGraphics.resizeCanvas(width, height);
 	energyGraphics.resizeCanvas(min(width, height), min(width, height));
 	radiationGraphics.resizeCanvas(max(width, height), max(width, height));
-	waveGraphics.resizeCanvas(width, height);
+	// waveGraphics.resizeCanvas(width, height);
 
 	// re-setup the star graphics
 	drawStars(3000, {minSize: 1, maxSize: 5, canvas: starsGraphics});
 
 	// reset the control panels and their buttons / sliders
 	resetControlPanel();
+	resetNameInput();
+	resetMessageInput();
 	resetNumberInput();
 	resetColorPicker();
 	resetCheckboxes();
 	resetSliders();
-	resetNameInput();
 	resetButtonMenu();
 
 	// change element name back to space (colorList[0])

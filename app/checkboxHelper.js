@@ -4,7 +4,7 @@ function checkboxSetup(){
 	orbitCheckbox = createCheckbox('Orbit', false);
 	energyCheckbox = createCheckbox('Energy', false);
 	radiationCheckbox = createCheckbox('Radiation', false);
-	waveCheckbox = createCheckbox('Wave', false);
+	// waveCheckbox = createCheckbox('Wave', false);
 	// signatureCheckbox = createCheckbox('Signature', false);
 	
 	// checkbox parent
@@ -12,7 +12,7 @@ function checkboxSetup(){
 	orbitCheckbox.parent(controlPanel);
 	energyCheckbox.parent(controlPanel);
 	radiationCheckbox.parent(controlPanel);
-	waveCheckbox.parent(controlPanel);
+	// waveCheckbox.parent(controlPanel);
 
 	resetCheckboxes();
 
@@ -29,8 +29,8 @@ function checkboxSetup(){
 	radiationCheckbox.touchStarted(radiationEvent);
 	radiationCheckbox.mouseClicked(radiationEvent);
 	
-	waveCheckbox.touchStarted(WaveEvent);
-	waveCheckbox.mouseClicked(WaveEvent);
+	// waveCheckbox.touchStarted(WaveEvent);
+	// waveCheckbox.mouseClicked(WaveEvent);
 }
 
 function resetCheckboxes(){
@@ -39,13 +39,13 @@ function resetCheckboxes(){
 	energyCheckbox.position(puntoCheckbox.x, puntoCheckbox.y + sliderSpacing);
 	orbitCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 3 * sliderSpacing);
 	radiationCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 4 * sliderSpacing);
-	waveCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 5 * sliderSpacing);
+	// waveCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 5 * sliderSpacing);
 
 	puntoCheckbox.checked(false);
 	orbitCheckbox.checked(false);
 	energyCheckbox.checked(false);
 	radiationCheckbox.checked(false);
-	waveCheckbox.checked(false);
+	// waveCheckbox.checked(false);
 }
 
 function puntoEvent(){
@@ -76,12 +76,12 @@ function radiationEvent(){
 	generated = false;
 }
 
-function WaveEvent(){
-	currentColorSelectionIndex = 7;
-	elementName.html(colorNameList[currentColorSelectionIndex]);
-	elementName.style('color', colorList[currentColorSelectionIndex]);
-	generated = false;
-}
+// function WaveEvent(){
+// 	currentColorSelectionIndex = 7;
+// 	elementName.html(colorNameList[currentColorSelectionIndex]);
+// 	elementName.style('color', colorList[currentColorSelectionIndex]);
+// 	generated = false;
+// }
 
 function signatureEvent(){
 	currentColorSelectionIndex = 8;
