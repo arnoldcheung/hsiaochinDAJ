@@ -265,7 +265,7 @@ function draw() {
 	mainCanvas.textFont(currentFont);
 	mainCanvas.textAlign(RIGHT, TOP);
 	mainCanvas.textSize(30);
-	mainCanvas.text(myMessage, width * 0.6, 10, width * 0.35, height * 0.25);
+	mainCanvas.text(myMessage, width * 0.6, 10,  (width - 10) - (width * 0.6), height * 0.25);
 	mainCanvas.pop();
 	
 	// generate universe number ----------------------------------------------------------------------------------------

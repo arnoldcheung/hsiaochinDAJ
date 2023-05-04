@@ -19,7 +19,7 @@ function setupNameInput(){
 	nameInput.style('width', controlPanel.width * 0.6 + 'px');
   nameInput.style('height', '20px');
 
-  nameInput.elt.addEventListener('focus', () => {
+  nameInput.elt.addEventListener('focus', function () {
     this.value = '';
     signature = true;
     signatureEvent();
@@ -56,7 +56,7 @@ function setupMessageInput(){
 	messageInput.style('width', controlPanel.width * 0.6 + 'px');
   messageInput.style('height', '20px');
 
-  messageInput.elt.addEventListener('focus', () => {
+  messageInput.elt.addEventListener('focus', function() {
     this.value = '';
     // signature = true;
     // signatureEvent();
