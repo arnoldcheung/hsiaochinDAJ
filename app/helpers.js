@@ -9,13 +9,13 @@ function togglePanel() {
 // function that toggles the color selection cycle ----------------------------------------------------------------------------------------
 
 function toggleColorSelection() {
-  currentColorSelectionIndex = (currentColorSelectionIndex + 1) % numSelectableColors;
+	currentColorSelectionIndex = (currentColorSelectionIndex + 1) % numSelectableColors;
 	elementName.html(colorNameList[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
-	
+
 	if(currentColorSelectionIndex == 2){
 		puntoCheckbox.checked(true);
-  } else if(currentColorSelectionIndex == 3){
+	} else if(currentColorSelectionIndex == 3){
 		energyCheckbox.checked(true);
 	} else if (currentColorSelectionIndex == 5){
 		orbitCheckbox.checked(true); 
@@ -31,7 +31,7 @@ function toggleColorSelection() {
 // function that toggles the font selection cycle ----------------------------------------------------------------------------------------
 
 function toggleFontSelection() {
-  currentFontIndex = (currentFontIndex + 1) % numSelectableFonts;
+  	currentFontIndex = (currentFontIndex + 1) % numSelectableFonts;
 	// elementName.html(colorNameList[currentColorSelectionIndex]);
 	currentFont = fonts[currentFontIndex];
 }
@@ -53,16 +53,16 @@ function setColor(){
 // function that resets the sketch when screen is resized ----------------------------------------------------------------------------------------
 
 function windowResized() {
-  resetUniverse();
+	resetUniverse();
 }
 
 // Event function for number input, allow only numbers ----------------------------------------------------------------------------------------
 
 function validateNumberInput() {
-  let currentValue = numberInput.value();
-  let sanitizedValue = currentValue.replace(/[^0-9]/g, '');
-	
-  numberInput.value(sanitizedValue);
+	let currentValue = numberInput.value();
+	let sanitizedValue = currentValue.replace(/[^0-9]/g, '');
+		
+	numberInput.value(sanitizedValue);
 }
 
 // Event function for name input, sanitises input ----------------------------------------------------------------------------------------
@@ -71,10 +71,11 @@ function sanitizeNameInput(inputText) {
 	signature = true;
 	const currentNameInput = nameInput.value();
 	const sanitizedName = currentNameInput
-	.replace(/</g, '')
-    .replace(/>/g, '')
-    .replace(/&/g, '');
+		.replace(/</g, '')
+		.replace(/>/g, '')
+		.replace(/&/g, '');
 	nameInput.value(sanitizedName);
+	mySignature = nameInput.value();
 }
 
 // Event function for message input, sanitises input ----------------------------------------------------------------------------------------
@@ -82,12 +83,49 @@ function sanitizeNameInput(inputText) {
 function sanitizeMessageInput(inputText) {
 	// signature = true;
 	const currentMessageInput = messageInput.value();
-	const sanitizedMessage = currentmessageInput
-	.replace(/</g, '')
-    .replace(/>/g, '')
-    .replace(/&/g, '');
+	const sanitizedMessage = currentMessageInput
+		.replace(/</g, '')
+		.replace(/>/g, '')
+		.replace(/&/g, '');
 	messageInput.value(sanitizedMessage);
 	myMessage = messageInput.value();
+}
+
+function displayMessageWithLineBreaks(myMessage){
+
+	mainCanvas.push();
+	mainCanvas.fill(colorList[8]);
+	mainCanvas.textFont(currentFont);
+	mainCanvas.textAlign(LEFT, TOP);
+	mainCanvas.textSize(30);
+
+	// Display the message with line breaks
+
+	let lineHeight = 35;
+	let maxWidth = mainCanvas.width * 0.25;  // Set the maximum width for the text block
+	let x = 15;
+	let y = 10;
+	
+	let words = myMessage.split(' ');
+	let currentLine = '';
+	
+	for (let i = 0; i < words.length; i++) {
+		let prospectiveLine = currentLine + words[i] + ' ';
+		let prospectiveLineWidth = textWidth(prospectiveLine);
+	
+		if (prospectiveLineWidth > maxWidth) {
+		// Draw the current line and move to the next line
+		text(currentLine, x, y);
+		y += lineHeight;
+		currentLine = '';
+		}
+	
+		currentLine += words[i] + ' ';
+	}
+	
+	// Draw the remaining text
+	mainCanvas.text(currentLine, x, y);
+	mainCanvas.pop();
 }
 
 

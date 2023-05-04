@@ -10,6 +10,7 @@ let elementName; // element name Div element
 
 // buttons ----------------------------------------------------------------------------------------
 let generateButton;
+let fontButton;
 let nextElementButton;
 let hideShowButton; // the button toggle that turns the controlPanel on & off (will rename)
 let captureButton;
@@ -70,7 +71,15 @@ let growSize; // spped of the energy shapes grow
 let layerSize; // thickness of the energy
 
 // font ----------------------------------------------------------------------------------------
-let font = 'Courier New'; // on sketch label font
+let fonts = [
+	'Arial',
+	'Courier New',
+	'Georgia',
+	'Times New Roman',
+	'Verdana' ];
+let currentFont;
+let currentFontIndex = 0;
+let numSelectableFonts = fonts.length;
 
 // text and messages ----------------------------------------------------------------------------------------
 let mySignature = '';
@@ -240,29 +249,22 @@ function draw() {
 	if(signature){
 		mainCanvas.push();
 		mainCanvas.fill(colorList[8]);
-		mainCanvas.textFont(font);
+		mainCanvas.textFont(currentFont);
 		mainCanvas.textAlign(RIGHT, BOTTOM);
 		mainCanvas.textSize(20);
-		mainCanvas.text(nameInput.value() + '@MGM', width - 10, height - 5);
+		mainCanvas.text(mySignature + ' @MGM', width - 10, height - 5);
 		mainCanvas.pop();
 	}
 
 	// Message ----------------------------------------------------------------------------------------
-	mainCanvas.push();
-	mainCanvas.fill(colorList[8]);
-	mainCanvas.textFont(font);
-	mainCanvas.textAlign(LEFT, TOP);
-	mainCanvas.textSize(20);
-	mainCanvas.text(messageInput.value(), 10, 5);
-	mainCanvas.pop();
-	
+	displayMessageWithLineBreaks(myMessage);
 	
 	// generate universe number ----------------------------------------------------------------------------------------
 	
 	if(generated){
 		mainCanvas.push();
 		mainCanvas.fill(colorList[8]);
-		mainCanvas.textFont(font);
+		mainCanvas.textFont(currentFont);
 		mainCanvas.textAlign(CENTER, BOTTOM);
 		mainCanvas.textSize(20);
 		mainCanvas.text(universeNumber, width / 2, height - 5);
@@ -288,7 +290,7 @@ function draw() {
 	mainCanvas.textFont(font);
 	mainCanvas.textAlign(LEFT, TOP);
 	mainCanvas.textSize(100);
-	mainCanvas.text('Test 40', 0, 0);
+	mainCanvas.text('Test 41', 0, 0);
 	mainCanvas.pop();
 
 

@@ -28,6 +28,17 @@ function setupNameInput(){
 	nameInput.input(sanitizeNameInput);
 	nameInput.touchStarted(signatureEvent);
 	nameInput.mouseClicked(signatureEvent);
+
+
+   // The font button next to the name input ----------------------------------------------------------------------------------------
+
+  fontButton = createButton('Font');
+  fontButton.parent(controlPanel);
+  fontButton.style('height', '20px');
+  fontButton.style('font-size', '16px');
+  fontButton.position(nameInput.x + nameInput.width + 20, nameInput.y);
+  fontButton.mouseClicked();
+  fontButton.touchEnded(generateUnivrse);
 }
 
 
@@ -188,12 +199,14 @@ function resetNameInput(){
 	nameInput.position(30, 40); // ***************************************************************************
 	nameInput.style('width', controlPanel.width * 0.6 + 'px');
   nameInput.style('height', '20px');
+
+  fontButton.position(nameInput.x + nameInput.width + 20, nameInput.y);
 }
 
 function resetMessageInput(){
-	nameInput.position(30, nameInput.y + 40); // ***************************************************************************
-	nameInput.style('width', controlPanel.width * 0.6 + 'px');
-  nameInput.style('height', '20px');
+	messageInput.position(30, nameInput.y + 40); // ***************************************************************************
+	messageInput.style('width', controlPanel.width * 0.6 + 'px');
+  messageInput.style('height', '20px');
 }
 
 function resetNumberInput(){
