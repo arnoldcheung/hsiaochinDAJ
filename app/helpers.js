@@ -21,10 +21,6 @@ function toggleColorSelection() {
 		orbitCheckbox.checked(true); 
 	} else if (currentColorSelectionIndex == 6){
 		radiationCheckbox.checked(true); 
-	} else if (currentColorSelectionIndex == 7){
-		waveCheckbox.checked(true);
-	} else if (currentColorSelectionIndex == 8){
-		signatureCheckbox.checked(true);
 	}
 }
 
@@ -76,6 +72,10 @@ function sanitizeNameInput(inputText) {
 		.replace(/&/g, '');
 	nameInput.value(sanitizedName);
 	mySignature = nameInput.value();
+	
+	if(nameInput.value() == ''){
+		signature = false;
+	}
 }
 
 // Event function for message input, sanitises input ----------------------------------------------------------------------------------------

@@ -95,7 +95,6 @@ let colorList = ['#021E3A', // bg
 				'#3DE049', // energy 2
 				'#FFFFFF', // orbit
 				'#AEF064', // radiation
-				'#FF8AFF', // wave
 				'#FFFFFF'] // signature
 
 let colorNameList = ['Space',
@@ -105,7 +104,6 @@ let colorNameList = ['Space',
 					'Energy Two',
 					'Orbit',
 					'Radiation', 
-					'Wave',
 					'Signature'];
 
 let numSelectableColors = colorList.length;
@@ -248,7 +246,7 @@ function draw() {
 	// signature ----------------------------------------------------------------------------------------
 	if(signature){
 		mainCanvas.push();
-		mainCanvas.fill(colorList[8]);
+		mainCanvas.fill(colorList[7]);
 		mainCanvas.textFont(currentFont);
 		mainCanvas.textAlign(RIGHT, BOTTOM);
 		mainCanvas.textSize(20);
@@ -261,7 +259,7 @@ function draw() {
 
 	mainCanvas.push();
 	// mainCanvas.rectMode(CORNERS);
-	mainCanvas.fill(colorList[8]);
+	mainCanvas.fill(colorList[7]);
 	mainCanvas.textFont(currentFont);
 	mainCanvas.textAlign(RIGHT, TOP);
 	mainCanvas.textSize(30);
@@ -272,7 +270,7 @@ function draw() {
 	
 	if(generated){
 		mainCanvas.push();
-		mainCanvas.fill(colorList[8]);
+		mainCanvas.fill(colorList[7]);
 		mainCanvas.textFont(currentFont);
 		mainCanvas.textAlign(CENTER, BOTTOM);
 		mainCanvas.textSize(20);
