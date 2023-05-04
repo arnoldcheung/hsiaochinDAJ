@@ -260,12 +260,12 @@ function draw() {
 	// displayMessageWithLineBreaks(myMessage);
 
 	mainCanvas.push();
-	mainCanvas.rectMode(CORNERS);
+	// mainCanvas.rectMode(CORNERS);
 	mainCanvas.fill(colorList[8]);
 	mainCanvas.textFont(currentFont);
 	mainCanvas.textAlign(RIGHT, TOP);
 	mainCanvas.textSize(30);
-	mainCanvas.text(myMessage, width * 0.6, height * 0.25, width - 10, 10);
+	mainCanvas.text(myMessage, width * 0.6, 10, width * 0.35, height * 0.25);
 	mainCanvas.pop();
 	
 	// generate universe number ----------------------------------------------------------------------------------------
