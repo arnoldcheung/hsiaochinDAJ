@@ -102,7 +102,7 @@ let colorNameList = ['Space',
 					'Punto',
 					'Energy One',
 					'Energy Two',
-					'Orbit',
+					'Vitality',
 					'Radiation', 
 					'Signature'];
 

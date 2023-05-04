@@ -1,7 +1,7 @@
 function checkboxSetup(){
 	//checkbox definition
 	puntoCheckbox = createCheckbox('Punto', false);
-	orbitCheckbox = createCheckbox('Orbit', false);
+	orbitCheckbox = createCheckbox('Vitality', false);
 	energyCheckbox = createCheckbox('Energy', false);
 	radiationCheckbox = createCheckbox('Radiation', false);
 	// waveCheckbox = createCheckbox('Wave', false);
