@@ -287,7 +287,7 @@ function draw() {
 
 	mainCanvas.push();
 	mainCanvas.fill('#FF0000');
-	mainCanvas.textFont(font);
+	mainCanvas.textFont(fonts[0]);
 	mainCanvas.textAlign(LEFT, TOP);
 	mainCanvas.textSize(100);
 	mainCanvas.text('Test 43', 0, 0);
