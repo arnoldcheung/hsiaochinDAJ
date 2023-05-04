@@ -84,7 +84,7 @@ function radiationEvent(){
 // }
 
 function signatureEvent(){
-	currentColorSelectionIndex = 8;
+	currentColorSelectionIndex = 7;
 	elementName.html(colorNameList[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
 }
