@@ -91,42 +91,42 @@ function sanitizeMessageInput(inputText) {
 	myMessage = messageInput.value();
 }
 
-function displayMessageWithLineBreaks(myMessage){
+// function displayMessageWithLineBreaks(myMessage){
 
-	mainCanvas.push();
-	mainCanvas.fill(colorList[8]);
-	mainCanvas.textFont(currentFont);
-	mainCanvas.textAlign(LEFT, TOP);
-	mainCanvas.textSize(30);
+// 	mainCanvas.push();
+// 	mainCanvas.fill(colorList[8]);
+// 	mainCanvas.textFont(currentFont);
+// 	mainCanvas.textAlign(LEFT, TOP);
+// 	mainCanvas.textSize(30);
 
-	// Display the message with line breaks
+// 	// Display the message with line breaks
 
-	let lineHeight = 35;
-	let maxWidth = mainCanvas.width * 0.25;  // Set the maximum width for the text block
-	let x = 15;
-	let y = 10;
+// 	let lineHeight = 35;
+// 	let maxWidth = mainCanvas.width * 0.25;  // Set the maximum width for the text block
+// 	let x = 15;
+// 	let y = 10;
 	
-	let words = myMessage.split(' ');
-	let currentLine = '';
+// 	let words = myMessage.split(' ');
+// 	let currentLine = '';
 	
-	for (let i = 0; i < words.length; i++) {
-		let prospectiveLine = currentLine + words[i] + ' ';
-		let prospectiveLineWidth = textWidth(prospectiveLine);
+// 	for (let i = 0; i < words.length; i++) {
+// 		let prospectiveLine = currentLine + words[i] + ' ';
+// 		let prospectiveLineWidth = textWidth(prospectiveLine);
 	
-		if (prospectiveLineWidth > maxWidth) {
-		// Draw the current line and move to the next line
-		text(currentLine, x, y);
-		y += lineHeight;
-		currentLine = '';
-		}
+// 		if (prospectiveLineWidth > maxWidth) {
+// 		// Draw the current line and move to the next line
+// 		mainCanvas.text(currentLine, x, y);
+// 		y += lineHeight;
+// 		currentLine = '';
+// 		}
 	
-		currentLine += words[i] + ' ';
-	}
+// 		currentLine += words[i] + ' ';
+// 	}
 	
-	// Draw the remaining text
-	mainCanvas.text(currentLine, x, y);
-	mainCanvas.pop();
-}
+// 	// Draw the remaining text
+// 	mainCanvas.text(currentLine, x, y);
+// 	mainCanvas.pop();
+// }
 
 
 

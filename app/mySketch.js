@@ -72,8 +72,8 @@ let layerSize; // thickness of the energy
 
 // font ----------------------------------------------------------------------------------------
 let fonts = [
-	'Arial',
 	'Courier New',
+	'Arial',
 	'Georgia',
 	'Times New Roman',
 	'Verdana' ];
@@ -258,6 +258,15 @@ function draw() {
 
 	// Message ----------------------------------------------------------------------------------------
 	displayMessageWithLineBreaks(myMessage);
+
+	mainCanvas.push();
+	mainCanvas.rectMode(CORNERS);
+	mainCanvas.fill(colorList[8]);
+	mainCanvas.textFont(currentFont);
+	mainCanvas.textAlign(RIGHT, TOP);
+	mainCanvas.textSize(30);
+	mainCanvas.text(myMessage, width * 0.6, height * 0.25, width - 10, 10);
+	mainCanvas.pop();
 	
 	// generate universe number ----------------------------------------------------------------------------------------
 	
