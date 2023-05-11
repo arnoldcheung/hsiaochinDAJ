@@ -235,6 +235,8 @@ function resetUniverse() {
 	radiationGraphics.clear();
 	// waveGraphics.clear();
 
+	punto_r = initial_punto_r;
+
 	// resize the canvas, incase of device rotation / screensize change
 	resizeCanvas(windowWidth, windowHeight);
 	mainCanvas.resizeCanvas(width, height);

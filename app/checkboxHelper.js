@@ -1,9 +1,9 @@
 function checkboxSetup(){
 	//checkbox definition
-	puntoCheckbox = createCheckbox('Punto', false);
-	orbitCheckbox = createCheckbox('Vitality', false);
-	energyCheckbox = createCheckbox('Energy', false);
-	radiationCheckbox = createCheckbox('Radiation', false);
+	puntoCheckbox = createCheckbox('Punto', true);
+	orbitCheckbox = createCheckbox('Vitality', true);
+	energyCheckbox = createCheckbox('Energy', true);
+	radiationCheckbox = createCheckbox('Radiation', true);
 	// waveCheckbox = createCheckbox('Wave', false);
 	// signatureCheckbox = createCheckbox('Signature', false);
 	
@@ -41,10 +41,10 @@ function resetCheckboxes(){
 	radiationCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 4 * sliderSpacing);
 	// waveCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 5 * sliderSpacing);
 
-	puntoCheckbox.checked(false);
-	orbitCheckbox.checked(false);
-	energyCheckbox.checked(false);
-	radiationCheckbox.checked(false);
+	puntoCheckbox.checked(true);
+	orbitCheckbox.checked(true);
+	energyCheckbox.checked(true);
+	radiationCheckbox.checked(true);
 	// waveCheckbox.checked(false);
 }
 
