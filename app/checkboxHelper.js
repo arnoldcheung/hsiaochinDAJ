@@ -87,4 +87,12 @@ function signatureEvent(){
 	currentColorSelectionIndex = 7;
 	elementName.html(colorNameList[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
+
+	signature = false;
+}
+
+function messageEvent(){
+	currentColorSelectionIndex = 7;
+	elementName.html(colorNameList[currentColorSelectionIndex]);
+	elementName.style('color', colorList[currentColorSelectionIndex]);
 }

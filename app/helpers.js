@@ -222,6 +222,8 @@ function resetUniverse() {
 	// resets flags
 	generated = false;
 	signature = false;
+	mySignature = '';
+	myMessage = '';
 
 	// clears all the canvas and graphics
 	clear();

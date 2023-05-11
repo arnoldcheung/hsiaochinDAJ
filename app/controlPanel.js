@@ -59,7 +59,7 @@ function setupMessageInput(){
   messageInput.elt.addEventListener('focus', function() {
     this.value = '';
     // signature = true;
-    // signatureEvent();
+    messageEvent();
   });
 
 	messageInput.input(sanitizeMessageInput);
@@ -199,6 +199,7 @@ function resetNameInput(){
 	nameInput.position(30, 40); // ***************************************************************************
 	nameInput.style('width', controlPanel.width * 0.6 + 'px');
   nameInput.style('height', '20px');
+  nameInput.value('Your Signature (Optional) ');
 
   fontButton.position(nameInput.x + nameInput.width + 20, nameInput.y);
 }
@@ -207,6 +208,8 @@ function resetMessageInput(){
 	messageInput.position(30, nameInput.y + 40); // ***************************************************************************
 	messageInput.style('width', controlPanel.width * 0.6 + 'px');
   messageInput.style('height', '20px');
+  messageInput.value('Your Message (Optional) ');
+
 }
 
 function resetNumberInput(){
@@ -214,6 +217,7 @@ function resetNumberInput(){
 	numberInput.style('width', controlPanel.width * 0.6 + 'px');
 	numberInput.style('height', '20px');
 	numberInput.position(30, messageInput.y + 40); // ***************************************************************************
+  numberInput.value('Create your universe with 8 Numbers ...');
 
 	generateButton.position(numberInput.x + numberInput.width + 20, numberInput.y);
 

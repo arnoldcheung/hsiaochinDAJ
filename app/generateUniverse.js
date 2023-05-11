@@ -2,7 +2,7 @@
 
 function generateUniverse(){
 	
-	resetUniverse();
+	// resetUniverse();
 			
 	let inputNumber = numberInput.value();
 	if(inputNumber.length < 8){
