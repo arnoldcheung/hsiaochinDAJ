@@ -146,8 +146,8 @@ async function captureCanvas(){
 	// mainCanvas.save('universe.png');
 
 	// Initialize Cloudinary
-	const cloudName = 'dbvqnmaio';
-	const unsignedUploadPreset = 'nomzit8e';
+	const cloudName = 'dfipkxvuc';
+	const unsignedUploadPreset = 'olv6o5vs';
 
 	// get elements
 	const modal = document.getElementById('modal');
