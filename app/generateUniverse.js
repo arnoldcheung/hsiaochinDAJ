@@ -61,7 +61,7 @@ function generatePunto(numberArray){
 	// Punto layer 1 ----------------------------------------------------------------------------------------
 	// punto color
 	let hexColor = numArrayToHex(numberArray, [2, 7, 3, 5, 1, 4]);
-	hexColor = modifyRGBwithHSB(hexColor, [0, 360], [0, 100], [0, 100]);
+	hexColor = modifyRGBwithHSB(hexColor, [0, 360], [50, 100], [0, 100]);
 	colorList[2] = hexColor;
 	
 	// Punto Size
@@ -74,7 +74,7 @@ function generatePunto(numberArray){
 	// Punto layer 2 ----------------------------------------------------------------------------------------
 	// punto color 2
 	hexColor = numArrayToHex(numberArray, [0, 2, 5, 1, 7, 6]);
-	hexColor = modifyRGBwithHSB(hexColor, [360, 0], [100, 0], [100, 0]);
+	hexColor = modifyRGBwithHSB(hexColor, [360, 0], [100, 70], [100, 0]);
 	colorList[2] = hexColor;
 	
 	punto_r = punto_r * map(numberArray[1], 0, 9, 0.7, 0.95);
@@ -85,7 +85,7 @@ function generatePunto(numberArray){
 	// Punto layer 3 ----------------------------------------------------------------------------------------
 	// punto color 3
 	hexColor = numArrayToHex(numberArray, [7, 1, 6, 2, 3, 4]);
-	hexColor = modifyRGBwithHSB(hexColor, [0, 360], [0, 100], [0, 100]);
+	hexColor = modifyRGBwithHSB(hexColor, [0, 360], [50, 100], [0, 100]);
 	colorList[2] = hexColor;
 	
 	punto_r = punto_r * map(numberArray[3], 0, 9, 0.6, 0.9);
@@ -95,7 +95,7 @@ function generatePunto(numberArray){
 	// Punto layer 4 ----------------------------------------------------------------------------------------
 	// punto color 4
 	hexColor = numArrayToHex(numberArray, [3, 2, 4, 1, 0, 6]);
-	hexColor = modifyRGBwithHSB(hexColor, [360, 0], [100, 0], [100, 0]);
+	hexColor = modifyRGBwithHSB(hexColor, [360, 0], [100, 50], [100, 0]);
 	colorList[2] = hexColor;
 	
 	punto_r = punto_r * map(numberArray[5], 0, 9, 0.6, 0.9);
@@ -117,12 +117,12 @@ function generateEnergy(numberArray){
 	
 	// energy one
 	let hexColor = numArrayToHex(numberArray, [1, 0, 7, 6, 2, 3]);
-	//hexColor = modifyRGBwithHSB(hexColor, [0, 360], [50, 100], [50, 100]);
+	hexColor = modifyRGBwithHSB(hexColor, [0, 360], [50, 100], [50, 100]);
 	colorList[3] = hexColor;
 	
 	// energy two
 	hexColor = numArrayToHex(numberArray, [7, 3, 6, 0, 5, 1]);
-	hexColor = modifyRGBwithHSB(hexColor, [360, 0], [100, 0], [100, 0]);
+	hexColor = modifyRGBwithHSB(hexColor, [360, 0], [100, 70], [100, 0]);
 	colorList[4] = hexColor;
 	
 	// energySize
@@ -146,7 +146,7 @@ function generateRadiation(numberArray){
 	
 	// radiation color
 	let hexColor = numArrayToHex(numberArray, [3, 7, 2, 6, 1, 0]);
-	// let backgroundColor = modifyRGBwithHSB(hexColor, [0, 360], [50, 100], [50, 100]);
+	hexColor = modifyRGBwithHSB(hexColor, [0, 360], [70, 100], [50, 100]);
 	colorList[6] = hexColor;
 	
 	// radiation size

@@ -13,7 +13,7 @@ function setupBottomBanner(){
     bottomBannerGraphics.textStyle(ITALIC);
     bottomBannerGraphics.textAlign(RIGHT, BOTTOM);
     bottomBannerGraphics.textSize(20);
-    bottomBannerGraphics.text('Hsiao Chin Exhibition 2023 @ MGM', bottomBannerGraphics.width - 10, bottomBannerGraphics.height / 2);
+    bottomBannerGraphics.text("《超元‧萬象: 蕭勤的藝術》‘To Infinity and Beyond: The Art of Hsiao Chin’ ", bottomBannerGraphics.width - 10, bottomBannerGraphics.height / 2);
     bottomBannerGraphics.pop();
 
 }

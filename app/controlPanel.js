@@ -222,7 +222,7 @@ function setupButtonMenu(){
   // resetButton.style('height', '20px');
   // resetButton.style('font-size', '16px');
 
-  exhbitionTitle = createDiv("Hsiao Chin Exhibition 2023 @ MGM");
+  exhbitionTitle = createDiv("《超元‧萬象: 蕭勤的藝術》‘To Infinity and Beyond: The Art of Hsiao Chin’ ");
   exhbitionTitle.parent(buttonMenuDiv);
   exhbitionTitle.style("font-family", "Times New Roman, serif");
   exhbitionTitle.style("font-style", "italic");
