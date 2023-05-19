@@ -86,40 +86,51 @@ input[type=tel]:focus {
 #elementName {
 	font-family: Helvetica, sans-serif;
 	font-weight: bold;
-	font-size: 40px;
+	font-size: 30px;
 	-webkit-text-stroke-width: 0px;
   -webkit-text-stroke-color: black;
 }
 
 
+.controlPanelText {
+  font-family: "Gill Sans", sans-serif;
+  font-size: 18px;
+  color: #272727;
+}
 
 /* CSS */
-.button-74 {
-  background-color: #fbeee0;
-  border: 2px solid #422800;
-  border-radius: 30px;
-  box-shadow: #422800 4px 4px 0 0;
-  color: #422800;
-  cursor: pointer;
-  display: inline-block;
+.button-38 {
+  background-color: #FFFFFF;
+  border: 0;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
   font-weight: 600;
-  font-size: 18px;
-  padding: 0 18px;
-  line-height: 50px;
+  line-height: 1.25rem;
+  padding: .75rem 1rem;
   text-align: center;
-  text-decoration: none;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
 
-.button-74:hover {
-  background-color: #fff;
+.button-38:hover {
+  background-color: rgb(249,250,251);
 }
 
-.button-74:active {
-  box-shadow: #422800 2px 2px 0 0;
-  transform: translate(2px, 2px);
+.button-38:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.button-38:focus-visible {
+  box-shadow: none;
 }
 
 @media (min-width: 768px) {

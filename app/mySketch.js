@@ -26,6 +26,10 @@ let radiationGraphics;
 // let waveGraphics;
 let buttonMenuDiv;
 
+let buttonMenuHeight = 70;
+
+let bottomBannerGraphics;
+
 // flag to show signature or not ----------------------------------------------------------------------------------------
 let signature = false;
 
@@ -41,7 +45,9 @@ let universeNumber;
 
 // sliders ----------------------------------------------------------------------------------------
 
-let sliderSpacing = 35;
+let sliderIntroText;
+
+let sliderSpacing = 40;
 
 let size_slider;
 
@@ -100,8 +106,8 @@ let colorList = ['#021E3A', // bg
 let colorNameList = ['Space',
 					'Stars',
 					'Punto',
-					'Energy One',
-					'Energy Two',
+					'Energy 1',
+					'Energy 2',
 					'Vitality',
 					'Radiation', 
 					'Signature'];
@@ -113,6 +119,16 @@ let currentColorSelectionIndex = 0;
 // orbit variable ----------------------------------------------------------------------------------------
 const numCircles = 1200;
 let circleData = [];
+
+
+// mgm logo
+let logo;
+let logoImg;
+let exhbitionTitle;
+
+function preload() {
+  logo = loadImage("assets/logos/MGM 3D Logo.png");
+}
 
 function setup() {
 	createMetaTag();
@@ -165,6 +181,7 @@ function setup() {
 	// Setup the three buttons at the bottom ----------------------------------------------------------------------------------------
 
 	setupButtonMenu();
+	setupBottomBanner();
 
 	togglePanel(); //turn panel off at the beginning
 }
@@ -206,7 +223,7 @@ function draw() {
 	// }
 	
 	// radiation graphics ----------------------------------------------------------------------------------------
-	if(radiationCheckbox.checked()){
+	if(radiationSize > 0.1){
 		drawRadiation();
 		mainCanvas.push();
 		mainCanvas.imageMode(CENTER);
@@ -217,14 +234,14 @@ function draw() {
 	}
 	
 	// punto graphics ----------------------------------------------------------------------------------------
-	if(puntoCheckbox.checked()){
-		drawPunto();
-		mainCanvas.image(puntoGraphics, 0, 0); // the circle
-	}
+	// if(puntoCheckbox.checked()){
+	drawPunto();
+	mainCanvas.image(puntoGraphics, 0, 0); // the circle
+	// }
 
 	
 	// Orbit graphics ----------------------------------------------------------------------------------------
-	if(orbitCheckbox.checked()){
+	if(orbit_speed > -5){
 		drawOrbit();
 		mainCanvas.push();
 		mainCanvas.tint(colorList[5]);
@@ -233,7 +250,7 @@ function draw() {
 	}
 	
 	// energy graphics ----------------------------------------------------------------------------------------
-	if(energyCheckbox.checked()){
+	if(energyHeight > -600){
 		drawEnergy();
 		mainCanvas.push();
 		mainCanvas.translate(width / 2, height / 2);
@@ -250,7 +267,7 @@ function draw() {
 		mainCanvas.textFont(currentFont);
 		mainCanvas.textAlign(RIGHT, BOTTOM);
 		mainCanvas.textSize(20);
-		mainCanvas.text(mySignature + ' @MGM', width - 10, height - 5);
+		mainCanvas.text(mySignature + ' @MGM', width - 10, height - 5 - buttonMenuHeight);
 		mainCanvas.pop();
 	}
 
@@ -274,9 +291,11 @@ function draw() {
 		mainCanvas.textFont(currentFont);
 		mainCanvas.textAlign(CENTER, BOTTOM);
 		mainCanvas.textSize(20);
-		mainCanvas.text(universeNumber, width / 2, height - 5);
+		mainCanvas.text(universeNumber, width / 2, height - 5 - buttonMenuHeight);
 		mainCanvas.pop();
 	}
+
+	mainCanvas.image(bottomBannerGraphics, 0, height - buttonMenuHeight);
 		
 	// composing the canvas ----------------------------------------------------------------------------------------
 	// base

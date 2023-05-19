@@ -52,15 +52,15 @@ function sliderSetup(){
 
 function resetSliders(){
 
-	size_slider.position(radiationCheckbox.x + parseFloat(radiationCheckbox.style('width')) + 10, puntoCheckbox.y);
+	size_slider.position(movementCheckbox.x + parseFloat(movementCheckbox.style('width')) + 10, puntoCheckbox.y);
 	energyHeightSlider.position(size_slider.x, energyCheckbox.y);
-	energySizeSlider.position(size_slider.x, energyCheckbox.y + sliderSpacing);
+	energySizeSlider.position(size_slider.x, movementCheckbox.y);
 	orbit_speed_slider.position(size_slider.x, orbitCheckbox.y);
 	radiationSizeSlider.position(size_slider.x, radiationCheckbox.y);
 	// waveFrequencySlider.position(size_slider.x, waveCheckbox.y);
 
 	// slider style
-	size_slider.style('width', controlPanel.width * 0.9 - size_slider.x + 'px');
+	size_slider.style('width', controlPanel.width * 0.95 - size_slider.x + 'px');
 	energySizeSlider.style('width', size_slider.style('width'));
 	// waveFrequencySlider.style('width', size_slider.style('width'));
 	energyHeightSlider.style('width', size_slider.style('width'));
@@ -86,7 +86,7 @@ function puntoSliderEvent(){
 	currentColorSelectionIndex = 2;
 	elementName.html(colorNameList[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
-	puntoCheckbox.checked(true);
+	// puntoCheckbox.checked(true);
 	generated = false;
 }
 
@@ -94,7 +94,7 @@ function energySliderEvent(){
 	currentColorSelectionIndex = 3;
 	elementName.html(colorNameList[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
-	energyCheckbox.checked(true);
+	// energyCheckbox.checked(true);
 	generated = false;
 }
 
@@ -102,7 +102,7 @@ function orbitSliderEvent(){
 	currentColorSelectionIndex = 5;
 	elementName.html(colorNameList[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
-	orbitCheckbox.checked(true);
+	// orbitCheckbox.checked(true);
 	generated = false;
 }
 
@@ -110,7 +110,7 @@ function radiationSliderEvent(){
 	currentColorSelectionIndex = 6;
 	elementName.html(colorNameList[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
-	radiationCheckbox.checked(true);
+	// radiationCheckbox.checked(true);
 	generated = false;
 }
 

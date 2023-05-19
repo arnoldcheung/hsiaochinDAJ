@@ -1,33 +1,55 @@
 function checkboxSetup(){
+	// slider intro text
+	sliderIntroText = createDiv('⬅ Adjust the composition ⮕');
+	sliderIntroText.parent(controlPanel);
+	sliderIntroText.addClass('controlPanelText');
+	sliderIntroText.position(iroPickerDiv.x, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) + 15);	
+
 	//checkbox definition
-	puntoCheckbox = createCheckbox('Punto', true);
-	orbitCheckbox = createCheckbox('Vitality', true);
-	energyCheckbox = createCheckbox('Energy', true);
-	radiationCheckbox = createCheckbox('Radiation', true);
+	// puntoCheckbox = createCheckbox('Punto', true);
+	// orbitCheckbox = createCheckbox('Vitality', true);
+	// energyCheckbox = createCheckbox('Energy', true);
+	// movementCheckbox = createCheckbox('Movement', true);
+	// radiationCheckbox = createCheckbox('Radiation', true);
 	// waveCheckbox = createCheckbox('Wave', false);
 	// signatureCheckbox = createCheckbox('Signature', false);
+
+	// test.....................................................................................
+	puntoCheckbox = createDiv('Punto');
+	orbitCheckbox = createDiv('Vitality');
+	energyCheckbox = createDiv('Energy');
+	movementCheckbox = createDiv('Movement');
+	radiationCheckbox = createDiv('Radiation');
 	
 	// checkbox parent
 	puntoCheckbox.parent(controlPanel);
 	orbitCheckbox.parent(controlPanel);
 	energyCheckbox.parent(controlPanel);
+	movementCheckbox.parent(controlPanel);
 	radiationCheckbox.parent(controlPanel);
 	// waveCheckbox.parent(controlPanel);
+
+	puntoCheckbox.addClass('controlPanelText');
+	puntoCheckbox.addClass('controlPanelText');
+	orbitCheckbox.addClass('controlPanelText');
+	energyCheckbox.addClass('controlPanelText');
+	movementCheckbox.addClass('controlPanelText');
+	radiationCheckbox.addClass('controlPanelText');
 
 	resetCheckboxes();
 
 	// checkbox events
-	puntoCheckbox.touchStarted(puntoEvent);
-	puntoCheckbox.mouseClicked(puntoEvent);
+	// puntoCheckbox.touchStarted(puntoEvent);
+	// puntoCheckbox.mouseClicked(puntoEvent);
 	
-	energyCheckbox.touchStarted(energyEvent);
-	energyCheckbox.mouseClicked(energyEvent);
+	// energyCheckbox.touchStarted(energyEvent);
+	// energyCheckbox.mouseClicked(energyEvent);
 	
-	orbitCheckbox.touchStarted(orbitEvent);
-	orbitCheckbox.mouseClicked(orbitEvent);
+	// orbitCheckbox.touchStarted(orbitEvent);
+	// orbitCheckbox.mouseClicked(orbitEvent);
 	
-	radiationCheckbox.touchStarted(radiationEvent);
-	radiationCheckbox.mouseClicked(radiationEvent);
+	// radiationCheckbox.touchStarted(radiationEvent);
+	// radiationCheckbox.mouseClicked(radiationEvent);
 	
 	// waveCheckbox.touchStarted(WaveEvent);
 	// waveCheckbox.mouseClicked(WaveEvent);
@@ -35,16 +57,21 @@ function checkboxSetup(){
 
 function resetCheckboxes(){
 
-	puntoCheckbox.position(iroPickerDiv.x, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) + 20);	// this position here controls all the checkbox / sliders' position relative this this
+	sliderIntroText.position(iroPickerDiv.x, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) + 15);	
+
+	puntoCheckbox.position(iroPickerDiv.x, sliderIntroText.y + 35);	// this position here controls all the checkbox / sliders' position relative this this
+	// puntoCheckbox.position(iroPickerDiv.x, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) + 20);	// this position here controls all the checkbox / sliders' position relative this this
 	energyCheckbox.position(puntoCheckbox.x, puntoCheckbox.y + sliderSpacing);
+	movementCheckbox.position(puntoCheckbox.x, puntoCheckbox.y + 2 * sliderSpacing);
 	orbitCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 3 * sliderSpacing);
 	radiationCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 4 * sliderSpacing);
 	// waveCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 5 * sliderSpacing);
 
-	puntoCheckbox.checked(true);
-	orbitCheckbox.checked(true);
-	energyCheckbox.checked(true);
-	radiationCheckbox.checked(true);
+	// puntoCheckbox.checked(true);
+	// orbitCheckbox.checked(true);
+	// energyCheckbox.checked(true);
+	// movementCheckbox.checked(true);
+	// radiationCheckbox.checked(true);
 	// waveCheckbox.checked(false);
 }
 

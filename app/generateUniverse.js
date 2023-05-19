@@ -5,6 +5,12 @@ function generateUniverse(){
 	// resetUniverse();
 			
 	let inputNumber = numberInput.value();
+
+	if(inputNumber == 'Create your universe with 8 Numbers ...'){
+		return;
+	}
+
+
 	if(inputNumber.length < 8){
 		let numNeeded = 8 - inputNumber.length;
 		for(let i=0; i < numNeeded; i++){
@@ -50,7 +56,7 @@ function generateStars(numberArray){
 // Generate Punto Function ----------------------------------------------------------------------------------------
 function generatePunto(numberArray){
 	
-	puntoCheckbox.checked(true);
+	// puntoCheckbox.checked(true);
 	
 	// Punto layer 1 ----------------------------------------------------------------------------------------
 	// punto color
@@ -102,12 +108,12 @@ function generatePunto(numberArray){
 // Generate Energy Function ----------------------------------------------------------------------------------------
 function generateEnergy(numberArray){
 	
-	if(parseInt(numberArray[1] + numberArray[3], 10) < 30){
-		energyCheckbox.checked(false);
-		return;
-	}
+	// if(parseInt(numberArray[1] + numberArray[3], 10) < 30){
+	// 	energyCheckbox.checked(false);
+	// 	return;
+	// }
 	
-	energyCheckbox.checked(true);
+	// energyCheckbox.checked(true);
 	
 	// energy one
 	let hexColor = numArrayToHex(numberArray, [1, 0, 7, 6, 2, 3]);
@@ -131,12 +137,12 @@ function generateEnergy(numberArray){
 // Generate Radiation Function ----------------------------------------------------------------------------------------
 function generateRadiation(numberArray){
 	
-	if(parseInt(numberArray[7] + numberArray[0], 10) < 20){
-		radiationCheckbox.checked(false);
-		return;
-	}
+	// if(parseInt(numberArray[7] + numberArray[0], 10) < 20){
+	// 	radiationCheckbox.checked(false);
+	// 	return;
+	// }
 	
-	radiationCheckbox.checked(true);
+	// radiationCheckbox.checked(true);
 	
 	// radiation color
 	let hexColor = numArrayToHex(numberArray, [3, 7, 2, 6, 1, 0]);
@@ -151,12 +157,12 @@ function generateRadiation(numberArray){
 // Generate Orbit Function ----------------------------------------------------------------------------------------
 function generateOrbit(numberArray){
 	
-	if(parseInt(numberArray[6] + numberArray[2], 10) < 20){
-		orbitCheckbox.checked(false);
-		return;
-	}
+	// if(parseInt(numberArray[6] + numberArray[2], 10) < 20){
+	// 	orbitCheckbox.checked(false);
+	// 	return;
+	// }
 	
-	orbitCheckbox.checked(true);
+	// orbitCheckbox.checked(true);
 	
 	// orbit color
 	let hexColor = numArrayToHex(numberArray, [4, 1, 0, 2, 3, 5]);

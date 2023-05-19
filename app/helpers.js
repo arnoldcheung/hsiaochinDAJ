@@ -13,15 +13,15 @@ function toggleColorSelection() {
 	elementName.html(colorNameList[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
 
-	if(currentColorSelectionIndex == 2){
-		puntoCheckbox.checked(true);
-	} else if(currentColorSelectionIndex == 3){
-		energyCheckbox.checked(true);
-	} else if (currentColorSelectionIndex == 5){
-		orbitCheckbox.checked(true); 
-	} else if (currentColorSelectionIndex == 6){
-		radiationCheckbox.checked(true); 
-	}
+	// if(currentColorSelectionIndex == 2){
+	// 	puntoCheckbox.checked(true);
+	// } else if(currentColorSelectionIndex == 3){
+	// 	energyCheckbox.checked(true);
+	// } else if (currentColorSelectionIndex == 5){
+	// 	orbitCheckbox.checked(true); 
+	// } else if (currentColorSelectionIndex == 6){
+	// 	radiationCheckbox.checked(true); 
+	// }
 }
 
 // function that toggles the font selection cycle ----------------------------------------------------------------------------------------
@@ -41,7 +41,7 @@ function setColor(){
 	punto_r = 10;
 	
 	// not set generated flag to false if it is for signature
-	if(currentColorSelectionIndex != 8) { 
+	if(currentColorSelectionIndex != 7) { 
 		generated = false;
 	}
 }
@@ -237,6 +237,16 @@ function resetUniverse() {
 
 	punto_r = initial_punto_r;
 
+	// reset the control panels and their buttons / sliders
+	resetControlPanel();
+	resetNameInput();
+	resetMessageInput();
+	resetNumberInput();
+	resetColorPicker();
+	resetCheckboxes();
+	resetSliders();
+	resetButtonMenu();
+
 	// resize the canvas, incase of device rotation / screensize change
 	resizeCanvas(windowWidth, windowHeight);
 	mainCanvas.resizeCanvas(width, height);
@@ -250,15 +260,7 @@ function resetUniverse() {
 	// re-setup the star graphics
 	drawStars(3000, {minSize: 1, maxSize: 5, canvas: starsGraphics});
 
-	// reset the control panels and their buttons / sliders
-	resetControlPanel();
-	resetNameInput();
-	resetMessageInput();
-	resetNumberInput();
-	resetColorPicker();
-	resetCheckboxes();
-	resetSliders();
-	resetButtonMenu();
+
 
 	// change element name back to space (colorList[0])
 	elementName.html(colorNameList[currentColorSelectionIndex]);

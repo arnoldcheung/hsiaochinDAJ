@@ -3,7 +3,7 @@ function setupControlPanel(){
   controlPanel = createDiv();
   controlPanel.class('controlPanel');
   controlPanel.position(0, 0);
-	controlPanel.style('width', width * 0.4 + 'px');
+	controlPanel.style('width', width * 0.27 + 'px');
   controlPanel.style('height', height + 'px');
   controlPanel.style('background-color', 'rgba(255,255,255,0.6)');
   controlPanel.style('display', 'block');
@@ -33,10 +33,11 @@ function setupNameInput(){
    // The font button next to the name input ----------------------------------------------------------------------------------------
 
   fontButton = createButton('Font');
+  fontButton.addClass('button-38');
   fontButton.parent(controlPanel);
-  fontButton.style('height', '20px');
-  fontButton.style('font-size', '16px');
-  fontButton.position(nameInput.x + nameInput.width + 20, nameInput.y);
+  // fontButton.style('height', '20px');
+  // fontButton.style('font-size', '16px');
+  fontButton.position(nameInput.x + nameInput.width + 20, nameInput.y - fontButton.height / 2);
   fontButton.mouseClicked(toggleFontSelection);
   fontButton.touchEnded(toggleFontSelection);
 }
@@ -84,7 +85,12 @@ function setupMessageInput(){
 
 // sets up the Number input field ----------------------------------------------------------------------------------------
 function setupNumberInput(){
-	numberInput = createInput('Create your universe with 8 Numbers ...');
+  generateIntroText = createDiv('Generate your unique artwork');
+	generateIntroText.parent(controlPanel);
+	generateIntroText.addClass('controlPanelText');
+	generateIntroText.position(messageInput.x, messageInput.y + messageInput.height + 15);	
+
+	numberInput = createInput('Enter your 8 digit code');
 	numberInput.parent(controlPanel);
 	
 	numberInput.elt.addEventListener('focus', function() {
@@ -98,23 +104,25 @@ function setupNumberInput(){
 	numberInput.attribute('pattern', '\\d*');
 	numberInput.attribute('maxlength', '8');
 	numberInput.input(validateNumberInput);
-	numberInput.position(30, messageInput.y + 40); // ***************************************************************************
+	numberInput.position(30, generateIntroText.y + generateIntroText.height + 15); // ***************************************************************************
 
   // The go button next to the number input ----------------------------------------------------------------------------------------
 	
 	generateButton = createButton('Go');
+  generateButton.addClass('button-38');
 	generateButton.parent(controlPanel);
-  generateButton.style('height', '20px');
-  generateButton.style('font-size', '16px');
-	generateButton.position(numberInput.x + numberInput.width + 20, numberInput.y);
+  // generateButton.style('height', '20px');
+  // generateButton.style('font-size', '16px');
+	generateButton.position(numberInput.x + numberInput.width + 20, numberInput.y - generateButton.height / 2);
 	generateButton.mouseClicked(generateUniverse);
 	generateButton.touchEnded(generateUniverse);
   
   // The text below the number input ----------------------------------------------------------------------------------------
 
-  orTxt = createDiv('or create your universe manually ...');
+  orTxt = createDiv('Or create your universe manually');
 	orTxt.parent(controlPanel);
-	orTxt.position(numberInput.x, numberInput.y + 30);
+  orTxt.addClass('controlPanelText');
+	orTxt.position(numberInput.x, numberInput.y + 35);
 }
 
 // Sets up the color picker section ----------------------------------------------------------------------------------------\
@@ -124,25 +132,34 @@ function setupColorPicker(){
 	elementName = createDiv(colorNameList[currentColorSelectionIndex]);
 	elementName.id("elementName")
 	elementName.style('color', colorList[currentColorSelectionIndex]);
-	elementName.position(numberInput.x, orTxt.y + 20); // ***************************************************************************
+	elementName.position(numberInput.x, orTxt.y + 30); // ***************************************************************************
 	elementName.parent(controlPanel);
 		
 	// Create a button to toggle color selection ----------------------------------------------------------------------------------------
-  nextElementButton = createButton("Next Element");
+  nextElementButton = createButton("Next");
+  nextElementButton.addClass('button-38');
   nextElementButton.parent(controlPanel);
 
-  nextElementButton.position(elementName.x, elementName.y + parseFloat(elementName.style('height')) + 10);
+  nextElementButton.position(fontButton.x + fontButton.width - nextElementButton.width, elementName.y);
+  // nextElementButton.position(elementName.x, elementName.y + parseFloat(elementName.style('height')) + 10);
+
   nextElementButton.mouseClicked(toggleColorSelection);
 
-  nextElementButton.style('height', '20px');
-  nextElementButton.style('font-size', '16px');
+  // nextElementButton.style('height', '20px');
+  // nextElementButton.style('font-size', '16px');
+
+  // color intro text -----------------------------------------------------------------------------------
+  colorIntroText = createDiv('Choose the color of elements');
+	colorIntroText.parent(controlPanel);
+	colorIntroText.addClass('controlPanelText');
+	colorIntroText.position(orTxt.x, elementName.y + elementName.height + 10);	
 
   // Sets up the color picker ----------------------------------------------------------------------------------------\
 	iroPickerDiv = createDiv();
 	iroPickerDiv.parent(controlPanel);
 	iroPickerDiv.id("iroPickerDiv")
 
-	iroPickerDiv.position(30, nextElementButton.y + 40);
+	iroPickerDiv.position(30, colorIntroText.y + colorIntroText.height + 10);
 	
 	iroP = new iro.ColorPicker('#iroPickerDiv',  {
     width: min(width * 0.7, controlPanel.height * 0.25),
@@ -155,34 +172,65 @@ function setupColorPicker(){
 function setupButtonMenu(){
   
   buttonMenuDiv = createDiv();
+
+  buttonMenuDiv.position(0, height - buttonMenuHeight);
+	buttonMenuDiv.style('width', width + 'px');
+  buttonMenuDiv.style('height', buttonMenuHeight + 'px');
+  buttonMenuDiv.style('background-color', 'rgba(255,255,255,255)');
+  buttonMenuDiv.style('display', 'block');
   buttonMenuDiv.addClass('controlPanel');
+
+  // Create an image element for the logo and add it to the menu bar div
+  logoImg = createImg("assets/logos/MGM 3D Logo.png", "Logo");
+
+  logoImg.parent(buttonMenuDiv);
+
+  logoImg.style("height", "100%");
+  logoImg.style("margin-left", "10px"); // Add some left margin to position it from the left edge
+  // logoImg.position(0, 0);
+
 
   // Create a button to toggle the control panel ----------------------------------------------------------------------------------------
   hideShowButton = createButton("Hide Control");
   hideShowButton.parent(buttonMenuDiv);
-  hideShowButton.position(30, height - 50);
+  hideShowButton.addClass('button-38');
+  hideShowButton.position(100, (buttonMenuDiv.height/2 - hideShowButton.height));
   hideShowButton.mouseClicked(togglePanel);
 
-  hideShowButton.style('height', '20px');
-  hideShowButton.style('font-size', '16px');
+  // hideShowButton.style('height', '20px');
+  // hideShowButton.style('font-size', '16px');
   
   // Create a button to capture the canvas ----------------------------------------------------------------------------------------
   captureButton = createButton("Capture");
   captureButton.parent(buttonMenuDiv);
-  captureButton.position(hideShowButton.x + hideShowButton.width + 60, height - 50);
+  captureButton.addClass('button-38');
+
+  captureButton.position(hideShowButton.x + hideShowButton.width + 60, hideShowButton.y);
   captureButton.mouseClicked(captureCanvas);
 
-  captureButton.style('height', '20px');
-  captureButton.style('font-size', '16px');
+  // captureButton.style('height', '20px');
+  // captureButton.style('font-size', '16px');
 
   // Create a button to reset ----------------------------------------------------------------------------------------
   resetButton = createButton("Reset");
   resetButton.parent(buttonMenuDiv);
-  resetButton.position(captureButton.x + captureButton.width + 60, height - 50);
+  resetButton.addClass('button-38');
+
+  resetButton.position(captureButton.x + captureButton.width + 60, hideShowButton.y);
   resetButton.mouseClicked(resetUniverse);
 
-  resetButton.style('height', '20px');
-  resetButton.style('font-size', '16px');
+  // resetButton.style('height', '20px');
+  // resetButton.style('font-size', '16px');
+
+  exhbitionTitle = createDiv("Hsiao Chin Exhibition 2023 @ MGM");
+  exhbitionTitle.parent(buttonMenuDiv);
+  exhbitionTitle.style("font-family", "Times New Roman, serif");
+  exhbitionTitle.style("font-style", "italic");
+  exhbitionTitle.style("font-size", "18px");
+  exhbitionTitle.style("position", "absolute");
+  exhbitionTitle.style("bottom", "20px");
+  exhbitionTitle.style("right", "20px");
+  // exhbitionTitle.style("margin-right", "40");
 }
 
 
@@ -191,7 +239,7 @@ function setupButtonMenu(){
 
 function resetControlPanel(){
   controlPanel.position(0, 0);
-	controlPanel.style('width', width * 0.4 + 'px');
+	controlPanel.style('width', width * 0.27 + 'px');
   controlPanel.style('height', height + 'px');
 }
 
@@ -201,7 +249,7 @@ function resetNameInput(){
   nameInput.style('height', '20px');
   nameInput.value('Your Signature (Optional) ');
 
-  fontButton.position(nameInput.x + nameInput.width + 20, nameInput.y);
+  fontButton.position(nameInput.x + nameInput.width + 20, nameInput.y - fontButton.height / 2);
 }
 
 function resetMessageInput(){
@@ -214,30 +262,41 @@ function resetMessageInput(){
 
 function resetNumberInput(){
 
+  generateIntroText.position(messageInput.x, messageInput.y + messageInput.height + 15);	
+
 	numberInput.style('width', controlPanel.width * 0.6 + 'px');
 	numberInput.style('height', '20px');
-	numberInput.position(30, messageInput.y + 40); // ***************************************************************************
-  numberInput.value('Create your universe with 8 Numbers ...');
+	numberInput.position(30, generateIntroText.y + generateIntroText.height + 15); // ***************************************************************************
+  numberInput.value('Enter your 8 digit code');
 
-	generateButton.position(numberInput.x + numberInput.width + 20, numberInput.y);
+	generateButton.position(numberInput.x + numberInput.width + 20, numberInput.y - generateButton.height / 2);
 
-	orTxt.position(numberInput.x, numberInput.y + 30);
+	orTxt.position(numberInput.x, numberInput.y + 35);
 }
 
 function resetColorPicker(){
 
-	elementName.position(numberInput, orTxt.y + 20); // ***************************************************************************
+	elementName.position(numberInput, orTxt.y + 30); // ***************************************************************************
 
- 	nextElementButton.position(elementName.x, elementName.y + parseFloat(elementName.style('height')) + 10);
+  nextElementButton.position(fontButton.x + fontButton.width - nextElementButton.width, elementName.y);
 
-	iroPickerDiv.position(30, nextElementButton.y + 40);
+  colorIntroText.position(orTxt.x, elementName.y + elementName.height + 10);	
+
+	iroPickerDiv.position(30, colorIntroText.y + colorIntroText.height + 10);
 	
   iroP.resize(min(width * 0.7, controlPanel.height * 0.25))
 }
 
 
 function resetButtonMenu(){
-    hideShowButton.position(30, height - 50);
-    captureButton.position(hideShowButton.x + hideShowButton.width + 60, height - 50);
-    resetButton.position(captureButton.x + captureButton.width + 60, height - 50);
+  buttonMenuDiv.position(0, height - buttonMenuHeight);
+	buttonMenuDiv.style('width', width + 'px');
+  buttonMenuDiv.style('height', buttonMenuHeight + 'px');
+  buttonMenuDiv.style('background-color', 'rgba(255,255,255,255)');
+
+  // logoImg.position(0, 0);
+
+  hideShowButton.position(100, (buttonMenuDiv.height/2 - hideShowButton.height));
+  captureButton.position(hideShowButton.x + hideShowButton.width + 60, hideShowButton.y);
+  resetButton.position(captureButton.x + captureButton.width + 60, hideShowButton.y);
 }
