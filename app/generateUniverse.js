@@ -2,7 +2,7 @@
 
 function generateUniverse(){
 	
-	resetUniverse();
+	// resetUniverse();
 			
 	let inputNumber = numberInput.value();
 	if(inputNumber.length < 8){
@@ -25,7 +25,7 @@ function generateUniverse(){
 	generateEnergy(numberArray);
 	generateRadiation(numberArray);
 	generateOrbit(numberArray);
-	generateWave(numberArray);
+	// generateWave(numberArray);
 	
 	generated = true;
 	
@@ -169,24 +169,24 @@ function generateOrbit(numberArray){
 }
 
 // Generate Wave Function ----------------------------------------------------------------------------------------
-function generateWave(numberArray){
+// function generateWave(numberArray){
 	
-	if(parseInt(numberArray[1] + numberArray[3], 10) > 20){
-		waveCheckbox.checked(false);
-		return;
-	}
+// 	if(parseInt(numberArray[1] + numberArray[3], 10) > 20){
+// 		waveCheckbox.checked(false);
+// 		return;
+// 	}
 	
-waveCheckbox.checked(true);
+// waveCheckbox.checked(true);
 	
-	// wave color
-	let hexColor = numArrayToHex(numberArray, [5, 0, 4, 2, 6, 7]);
-	// hexColor = modifyRGBwithHSB(hexColor, [0, 360], [0, 100], [0, 100]);
-	colorList[7] = hexColor;
+// 	// wave color
+// 	let hexColor = numArrayToHex(numberArray, [5, 0, 4, 2, 6, 7]);
+// 	// hexColor = modifyRGBwithHSB(hexColor, [0, 360], [0, 100], [0, 100]);
+// 	colorList[7] = hexColor;
 	
-	// wave frequency
-	let waveFrequencyPair = parseInt(numberArray[0] + numberArray[3], 10);
-	waveFrequencySlider.value(map(waveFrequencyPair, 0, 99, 0.00001, 0.005));
-}
+// 	// wave frequency
+// 	let waveFrequencyPair = parseInt(numberArray[0] + numberArray[3], 10);
+// 	waveFrequencySlider.value(map(waveFrequencyPair, 0, 99, 0.00001, 0.005));
+// }
 
 // num input to hex color helper function ----------------------------------------------------------------------------------------
 function numArrayToHex(numberArray, numChoice){

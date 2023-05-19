@@ -1,10 +1,10 @@
 function checkboxSetup(){
 	//checkbox definition
-	puntoCheckbox = createCheckbox('Punto', false);
-	orbitCheckbox = createCheckbox('Orbit', false);
-	energyCheckbox = createCheckbox('Energy', false);
-	radiationCheckbox = createCheckbox('Radiation', false);
-	waveCheckbox = createCheckbox('Wave', false);
+	puntoCheckbox = createCheckbox('Punto', true);
+	orbitCheckbox = createCheckbox('Vitality', true);
+	energyCheckbox = createCheckbox('Energy', true);
+	radiationCheckbox = createCheckbox('Radiation', true);
+	// waveCheckbox = createCheckbox('Wave', false);
 	// signatureCheckbox = createCheckbox('Signature', false);
 	
 	// checkbox parent
@@ -12,15 +12,7 @@ function checkboxSetup(){
 	orbitCheckbox.parent(controlPanel);
 	energyCheckbox.parent(controlPanel);
 	radiationCheckbox.parent(controlPanel);
-	waveCheckbox.parent(controlPanel);
-	// signatureCheckbox.parent(controlPanel);
-	
-	// puntoCheckbox.position(10, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) * 1.1);	
-	// energyCheckbox.position(puntoCheckbox.x, puntoCheckbox.y + sliderSpacing);
-	// orbitCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 3 * sliderSpacing);
-	// radiationCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 4 * sliderSpacing);
-	// waveCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 5 * sliderSpacing);
-	// signatureCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 6 * sliderSpacing);
+	// waveCheckbox.parent(controlPanel);
 
 	resetCheckboxes();
 
@@ -37,41 +29,23 @@ function checkboxSetup(){
 	radiationCheckbox.touchStarted(radiationEvent);
 	radiationCheckbox.mouseClicked(radiationEvent);
 	
-	waveCheckbox.touchStarted(WaveEvent);
-	waveCheckbox.mouseClicked(WaveEvent);
-	
-	// signatureCheckbox.touchStarted(signatureEvent);
-	// signatureCheckbox.mouseClicked(signatureEvent);
+	// waveCheckbox.touchStarted(WaveEvent);
+	// waveCheckbox.mouseClicked(WaveEvent);
 }
 
 function resetCheckboxes(){
 
-	// if(width > height) {
-	// 	puntoCheckbox.position(iroPickerDiv.x + parseFloat(iroPickerDiv.style('width')) + 10, iroPickerDiv.y);	
-
-
-	// } else {
-	// 	puntoCheckbox.position(10, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) * 1.1);	
-	// }
-
-	puntoCheckbox.position(iroPickerDiv.x, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) + 20);	
+	puntoCheckbox.position(iroPickerDiv.x, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) + 20);	// this position here controls all the checkbox / sliders' position relative this this
 	energyCheckbox.position(puntoCheckbox.x, puntoCheckbox.y + sliderSpacing);
 	orbitCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 3 * sliderSpacing);
 	radiationCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 4 * sliderSpacing);
-	waveCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 5 * sliderSpacing);
-	// signatureCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 6 * sliderSpacing);
+	// waveCheckbox.position(energyCheckbox.x, puntoCheckbox.y + 5 * sliderSpacing);
 
-	// signatureCheckbox.position(energyCheckbox.x, 50);
-
-
-	// reset checkbox values
-
-	puntoCheckbox.checked(false);
-	orbitCheckbox.checked(false);
-	energyCheckbox.checked(false);
-	radiationCheckbox.checked(false);
-	waveCheckbox.checked(false);
-	// signatureCheckbox.checked(false);
+	puntoCheckbox.checked(true);
+	orbitCheckbox.checked(true);
+	energyCheckbox.checked(true);
+	radiationCheckbox.checked(true);
+	// waveCheckbox.checked(false);
 }
 
 function puntoEvent(){
@@ -102,15 +76,23 @@ function radiationEvent(){
 	generated = false;
 }
 
-function WaveEvent(){
+// function WaveEvent(){
+// 	currentColorSelectionIndex = 7;
+// 	elementName.html(colorNameList[currentColorSelectionIndex]);
+// 	elementName.style('color', colorList[currentColorSelectionIndex]);
+// 	generated = false;
+// }
+
+function signatureEvent(){
 	currentColorSelectionIndex = 7;
 	elementName.html(colorNameList[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
-	generated = false;
+
+	signature = false;
 }
 
-function signatureEvent(){
-	currentColorSelectionIndex = 8;
+function messageEvent(){
+	currentColorSelectionIndex = 7;
 	elementName.html(colorNameList[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
 }

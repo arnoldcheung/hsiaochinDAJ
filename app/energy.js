@@ -19,12 +19,7 @@ function drawEnergy(){
 
 	if(growSize >= layerSize * 4){
 			growSize = 0;
-			// energyGraphics.rect(energyGraphics.width / 2, energyGraphics.height / 2, 10);
 	} 
 
 	energyGraphics.rect( energyGraphics.width / 2, energyGraphics.height / 2, layerSize * 0.5);
-
-	// translate(width / 2, height / 2);
-	// rotate(45);
-	// image(energyGraphics, 0, 0);
 }
