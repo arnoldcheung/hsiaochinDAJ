@@ -69,7 +69,7 @@ const translations = {
         elementList: [
             '庞图',
             '能量',
-            '动能',
+            '动态',
             '活力',
             '辐射'],
     },
