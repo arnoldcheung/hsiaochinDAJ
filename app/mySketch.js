@@ -295,7 +295,7 @@ function draw() {
 		mainCanvas.pop();
 	}
 
-	mainCanvas.image(bottomBannerGraphics, 0, height - buttonMenuHeight);
+	// mainCanvas.image(bottomBannerGraphics, 0, height - buttonMenuHeight);
 		
 	// composing the canvas ----------------------------------------------------------------------------------------
 	// base

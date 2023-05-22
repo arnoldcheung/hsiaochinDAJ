@@ -144,6 +144,7 @@ function createMetaTag() {
 // Event function for capturing the canvas, to be added with qr code function ----------------------------------------------------------------------------------------
 async function captureCanvas(){
 	// mainCanvas.save('universe.png');
+	mainCanvas.image(bottomBannerGraphics, 0, height - buttonMenuHeight);
 
 	// Initialize Cloudinary
 	const cloudName = 'dfipkxvuc';
