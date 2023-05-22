@@ -15,6 +15,7 @@ let nextElementButton;
 let hideShowButton; // the button toggle that turns the controlPanel on & off (will rename)
 let captureButton;
 let resetButton;
+let translateButton;
 
 // list of canvas and graphics stacked on top of base canvas ----------------------------------------------------------------------------------------
 let mainCanvas;
@@ -124,7 +125,7 @@ let circleData = [];
 // mgm logo
 let logo;
 let logoImg;
-let exhbitionTitle;
+let exhibitionTitleDiv;
 
 function preload() {
   logo = loadImage("assets/logos/MGM 3D Logo.png");

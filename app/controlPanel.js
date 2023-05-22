@@ -12,7 +12,7 @@ function setupControlPanel(){
 // sets up the Name input field ----------------------------------------------------------------------------------------
 function setupNameInput(){
   // Create the name input field
-  nameInput = createInput('Your Signature (Optional)'); // create the input
+  nameInput = createInput(getTranslation("nameInputDefaultInstruction")); // create the input
 	nameInput.parent(controlPanel);
   nameInput.attribute('type', 'text');
   nameInput.position(30, 40); // ***************************************************************************
@@ -32,7 +32,7 @@ function setupNameInput(){
 
    // The font button next to the name input ----------------------------------------------------------------------------------------
 
-  fontButton = createButton('Font');
+  fontButton = createButton(getTranslation("fontInstruction"));
   fontButton.addClass('button-38');
   fontButton.parent(controlPanel);
   // fontButton.style('height', '20px');
@@ -50,7 +50,7 @@ function setupNameInput(){
 // sets up the Message input field ----------------------------------------------------------------------------------------
 function setupMessageInput(){
   // Create the name input field
-  messageInput = createInput('Your Message (Optional) '); // create the input
+  messageInput = createInput(getTranslation("messageInputDefaultInstruction")); // create the input
 	messageInput.parent(controlPanel);
   messageInput.attribute('type', 'text');
   messageInput.position(30, nameInput.y + 40); // ***************************************************************************
@@ -85,12 +85,12 @@ function setupMessageInput(){
 
 // sets up the Number input field ----------------------------------------------------------------------------------------
 function setupNumberInput(){
-  generateIntroText = createDiv('Generate your unique artwork');
+  generateIntroText = createDiv(getTranslation("generateInstruction"));
 	generateIntroText.parent(controlPanel);
 	generateIntroText.addClass('controlPanelText');
 	generateIntroText.position(messageInput.x, messageInput.y + messageInput.height + 15);	
 
-	numberInput = createInput('Enter your 8 digit code');
+	numberInput = createInput(getTranslation("eightDigitInstruction"));
 	numberInput.parent(controlPanel);
 	
 	numberInput.elt.addEventListener('focus', function() {
@@ -108,7 +108,7 @@ function setupNumberInput(){
 
   // The go button next to the number input ----------------------------------------------------------------------------------------
 	
-	generateButton = createButton('Go');
+	generateButton = createButton(getTranslation("goInstruction"));
   generateButton.addClass('button-38');
 	generateButton.parent(controlPanel);
   // generateButton.style('height', '20px');
@@ -119,7 +119,7 @@ function setupNumberInput(){
   
   // The text below the number input ----------------------------------------------------------------------------------------
 
-  orTxt = createDiv('Or create your universe manually');
+  orTxt = createDiv(getTranslation("manualInstruction"));
 	orTxt.parent(controlPanel);
   orTxt.addClass('controlPanelText');
 	orTxt.position(numberInput.x, numberInput.y + 35);
@@ -129,14 +129,14 @@ function setupNumberInput(){
 function setupColorPicker(){
 
   // The name of the element ----------------------------------------------------------------------------------------\
-	elementName = createDiv(colorNameList[currentColorSelectionIndex]);
+	elementName = createDiv(getTranslation('colorNameList')[currentColorSelectionIndex]);
 	elementName.id("elementName")
 	elementName.style('color', colorList[currentColorSelectionIndex]);
 	elementName.position(numberInput.x, orTxt.y + 30); // ***************************************************************************
 	elementName.parent(controlPanel);
 		
 	// Create a button to toggle color selection ----------------------------------------------------------------------------------------
-  nextElementButton = createButton("Next");
+  nextElementButton = createButton(getTranslation("nextElementInstruction"));
   nextElementButton.addClass('button-38');
   nextElementButton.parent(controlPanel);
 
@@ -149,7 +149,7 @@ function setupColorPicker(){
   // nextElementButton.style('font-size', '16px');
 
   // color intro text -----------------------------------------------------------------------------------
-  colorIntroText = createDiv('Choose the color of elements');
+  colorIntroText = createDiv(getTranslation("colorInstruction"));
 	colorIntroText.parent(controlPanel);
 	colorIntroText.addClass('controlPanelText');
 	colorIntroText.position(orTxt.x, elementName.y + elementName.height + 10);	
@@ -191,7 +191,7 @@ function setupButtonMenu(){
 
 
   // Create a button to toggle the control panel ----------------------------------------------------------------------------------------
-  hideShowButton = createButton("Hide Control");
+  hideShowButton = createButton(getTranslation("showControlInstruction"));
   hideShowButton.parent(buttonMenuDiv);
   hideShowButton.addClass('button-38');
   hideShowButton.position(100, (buttonMenuDiv.height/2 - hideShowButton.height));
@@ -201,7 +201,7 @@ function setupButtonMenu(){
   // hideShowButton.style('font-size', '16px');
   
   // Create a button to capture the canvas ----------------------------------------------------------------------------------------
-  captureButton = createButton("Capture");
+  captureButton = createButton(getTranslation("captureInstruction"));
   captureButton.parent(buttonMenuDiv);
   captureButton.addClass('button-38');
 
@@ -212,25 +212,33 @@ function setupButtonMenu(){
   // captureButton.style('font-size', '16px');
 
   // Create a button to reset ----------------------------------------------------------------------------------------
-  resetButton = createButton("Reset");
+  resetButton = createButton(getTranslation("resetInstruction"));
   resetButton.parent(buttonMenuDiv);
   resetButton.addClass('button-38');
 
   resetButton.position(captureButton.x + captureButton.width + 60, hideShowButton.y);
   resetButton.mouseClicked(resetUniverse);
 
+  // Create a button to translate ----------------------------------------------------------------------------------------
+  translateButton = createButton(getTranslation("language"));
+  translateButton.parent(buttonMenuDiv);
+  translateButton.addClass('button-38');
+
+  translateButton.position(resetButton.x + resetButton.width + 60, hideShowButton.y);
+  translateButton.mouseClicked(toggleLanguage);
+
   // resetButton.style('height', '20px');
   // resetButton.style('font-size', '16px');
 
-  exhbitionTitle = createDiv("《超元‧萬象: 蕭勤的藝術》‘To Infinity and Beyond: The Art of Hsiao Chin’ ");
-  exhbitionTitle.parent(buttonMenuDiv);
-  exhbitionTitle.style("font-family", "Times New Roman, serif");
-  exhbitionTitle.style("font-style", "italic");
-  exhbitionTitle.style("font-size", "18px");
-  exhbitionTitle.style("position", "absolute");
-  exhbitionTitle.style("bottom", "20px");
-  exhbitionTitle.style("right", "20px");
-  // exhbitionTitle.style("margin-right", "40");
+  exhibitionTitleDiv = createDiv(getTranslation("exhibitionTitle"));
+  exhibitionTitleDiv.parent(buttonMenuDiv);
+  exhibitionTitleDiv.style("font-family", "Times New Roman, serif");
+  exhibitionTitleDiv.style("font-style", "italic");
+  exhibitionTitleDiv.style("font-size", "18px");
+  exhibitionTitleDiv.style("position", "absolute");
+  exhibitionTitleDiv.style("bottom", "20px");
+  exhibitionTitleDiv.style("right", "20px");
+  // exhibitionTitle.style("margin-right", "40");
 }
 
 
@@ -247,8 +255,9 @@ function resetNameInput(){
 	nameInput.position(30, 40); // ***************************************************************************
 	nameInput.style('width', controlPanel.width * 0.6 + 'px');
   nameInput.style('height', '20px');
-  nameInput.value('Your Signature (Optional) ');
+  nameInput.value(getTranslation("nameInputDefaultInstruction"));
 
+  fontButton.html(getTranslation("fontInstruction"));
   fontButton.position(nameInput.x + nameInput.width + 20, nameInput.y - fontButton.height / 2);
 }
 
@@ -256,30 +265,36 @@ function resetMessageInput(){
 	messageInput.position(30, nameInput.y + 40); // ***************************************************************************
 	messageInput.style('width', controlPanel.width * 0.6 + 'px');
   messageInput.style('height', '20px');
-  messageInput.value('Your Message (Optional) ');
+  messageInput.value(getTranslation("messageInputDefaultInstruction"));
 
 }
 
 function resetNumberInput(){
 
+  generateIntroText.html(getTranslation("generateInstruction"));
   generateIntroText.position(messageInput.x, messageInput.y + messageInput.height + 15);	
 
 	numberInput.style('width', controlPanel.width * 0.6 + 'px');
 	numberInput.style('height', '20px');
 	numberInput.position(30, generateIntroText.y + generateIntroText.height + 15); // ***************************************************************************
-  numberInput.value('Enter your 8 digit code');
+  numberInput.value(getTranslation("eightDigitInstruction"));
 
+  generateButton.html(getTranslation("goInstruction"));
 	generateButton.position(numberInput.x + numberInput.width + 20, numberInput.y - generateButton.height / 2);
 
+  orTxt.html(getTranslation("manualInstruction"))
 	orTxt.position(numberInput.x, numberInput.y + 35);
 }
 
 function resetColorPicker(){
 
+  elementName.html(getTranslation('colorNameList')[currentColorSelectionIndex]);
 	elementName.position(numberInput, orTxt.y + 30); // ***************************************************************************
 
+  nextElementButton.html(getTranslation("nextElementInstruction"));
   nextElementButton.position(fontButton.x + fontButton.width - nextElementButton.width, elementName.y);
 
+  colorIntroText.html(getTranslation("colorInstruction"));
   colorIntroText.position(orTxt.x, elementName.y + elementName.height + 10);	
 
 	iroPickerDiv.position(30, colorIntroText.y + colorIntroText.height + 10);
@@ -297,7 +312,15 @@ function resetButtonMenu(){
 
   // logoImg.position(0, 0);
 
+  hideShowButton.html(getTranslation("showControlInstruction"));
   hideShowButton.position(100, (buttonMenuDiv.height/2 - hideShowButton.height));
+
+  captureButton.html(getTranslation("captureInstruction"));
   captureButton.position(hideShowButton.x + hideShowButton.width + 60, hideShowButton.y);
+  
+  resetButton.html(getTranslation("resetInstruction"));
   resetButton.position(captureButton.x + captureButton.width + 60, hideShowButton.y);
+  
+  translateButton.html(getTranslation("language"));
+  translateButton.position(resetButton.x + resetButton.width + 60, hideShowButton.y);
 }
