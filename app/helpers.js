@@ -235,7 +235,7 @@ function resetUniverse() {
 	energyGraphics.clear();
 	radiationGraphics.clear();
 	// waveGraphics.clear();
-	bottomBannerGraphics.clear();
+	// bottomBannerGraphics.clear();
 
 	punto_r = initial_punto_r;
 
