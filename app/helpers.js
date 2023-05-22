@@ -234,18 +234,11 @@ function resetUniverse() {
 	energyGraphics.clear();
 	radiationGraphics.clear();
 	// waveGraphics.clear();
+	bottomBannerGraphics.clear();
 
 	punto_r = initial_punto_r;
 
-	// reset the control panels and their buttons / sliders
-	resetControlPanel();
-	resetNameInput();
-	resetMessageInput();
-	resetNumberInput();
-	resetColorPicker();
-	resetCheckboxes();
-	resetSliders();
-	resetButtonMenu();
+
 
 	// resize the canvas, incase of device rotation / screensize change
 	resizeCanvas(windowWidth, windowHeight);
@@ -256,9 +249,21 @@ function resetUniverse() {
 	energyGraphics.resizeCanvas(min(width, height), min(width, height));
 	radiationGraphics.resizeCanvas(max(width, height), max(width, height));
 	// waveGraphics.resizeCanvas(width, height);
+	bottomBannerGraphics.resizeCanvas(width, buttonMenuHeight)
 
 	// re-setup the star graphics
 	drawStars(3000, {minSize: 1, maxSize: 5, canvas: starsGraphics});
+
+
+	// reset the control panels and their buttons / sliders
+	resetControlPanel();
+	resetNameInput();
+	resetMessageInput();
+	resetNumberInput();
+	resetColorPicker();
+	resetCheckboxes();
+	resetSliders();
+	resetButtonMenu();
 
 
 

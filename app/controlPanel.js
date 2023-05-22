@@ -290,6 +290,7 @@ function resetColorPicker(){
 
 function resetButtonMenu(){
   buttonMenuDiv.position(0, height - buttonMenuHeight);
+  buttonMenuDiv.style('z-index', 100);
 	buttonMenuDiv.style('width', width + 'px');
   buttonMenuDiv.style('height', buttonMenuHeight + 'px');
   buttonMenuDiv.style('background-color', 'rgba(255,255,255,255)');
