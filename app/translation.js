@@ -77,8 +77,6 @@ const translations = {
   
 let currentLanguage = "en";
 
-console.log(getTranslation('colorNameList')[0]);
-
   // Function to get the translated text based on the current language
 function getTranslation(key) {
     return translations[currentLanguage][key];
