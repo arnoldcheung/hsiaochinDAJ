@@ -84,7 +84,7 @@ function resetSizeSlider(){
 
 function puntoSliderEvent(){
 	currentColorSelectionIndex = 2;
-	elementName.html(colorNameList[currentColorSelectionIndex]);
+	elementName.html(getTranslation('colorNameList')[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
 	// puntoCheckbox.checked(true);
 	generated = false;
@@ -92,7 +92,7 @@ function puntoSliderEvent(){
 
 function energySliderEvent(){
 	currentColorSelectionIndex = 3;
-	elementName.html(colorNameList[currentColorSelectionIndex]);
+	elementName.html(getTranslation('colorNameList')[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
 	// energyCheckbox.checked(true);
 	generated = false;
@@ -100,7 +100,7 @@ function energySliderEvent(){
 
 function orbitSliderEvent(){
 	currentColorSelectionIndex = 5;
-	elementName.html(colorNameList[currentColorSelectionIndex]);
+	elementName.html(getTranslation('colorNameList')[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
 	// orbitCheckbox.checked(true);
 	generated = false;
@@ -108,7 +108,7 @@ function orbitSliderEvent(){
 
 function radiationSliderEvent(){
 	currentColorSelectionIndex = 6;
-	elementName.html(colorNameList[currentColorSelectionIndex]);
+	elementName.html(getTranslation('colorNameList')[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
 	// radiationCheckbox.checked(true);
 	generated = false;
