@@ -3,7 +3,7 @@
 function togglePanel() {
   panelVisible = !panelVisible;
   controlPanel.style('display', panelVisible ? 'block' : 'none');
-  hideShowButton.html(panelVisible ? 'Hide Control' : 'Show Control');
+  hideShowButton.html(panelVisible ? getTranslation('hideControlInstruction') : getTranslation('showControlInstruction'));
 }
 
 // function that toggles the color selection cycle ----------------------------------------------------------------------------------------
