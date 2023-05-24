@@ -272,7 +272,7 @@ function resetUniverse() {
 
 	// re-setup the star graphics
 	drawStars(3000, {minSize: 1, maxSize: 5, canvas: starsGraphics});
-
+	resetBottomBanner();
 
 	// reset the control panels and their buttons / sliders
 	resetControlPanel();
