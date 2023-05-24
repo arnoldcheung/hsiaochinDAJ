@@ -26,7 +26,7 @@ function setupNameInput(){
   });
 
 	nameInput.input(sanitizeNameInput);
-	nameInput.touchStarted(signatureEvent);
+	// nameInput.touchStarted(signatureEvent);
 	nameInput.mouseClicked(signatureEvent);
 
 
@@ -39,7 +39,7 @@ function setupNameInput(){
   // fontButton.style('font-size', '16px');
   fontButton.position(nameInput.x + nameInput.width + 20, nameInput.y - fontButton.height / 2);
   fontButton.mouseClicked(toggleFontSelection);
-  fontButton.touchEnded(toggleFontSelection);
+  // fontButton.touchEnded(toggleFontSelection);
 }
 
 
@@ -88,6 +88,7 @@ function setupNumberInput(){
   generateIntroText = createDiv(getTranslation("generateInstruction"));
 	generateIntroText.parent(controlPanel);
 	generateIntroText.addClass('controlPanelText');
+  // generateIntroText.addClass('en-font');
 	generateIntroText.position(messageInput.x, messageInput.y + messageInput.height + 15);	
 
 	numberInput = createInput(getTranslation("eightDigitInstruction"));
@@ -122,6 +123,7 @@ function setupNumberInput(){
   orTxt = createDiv(getTranslation("manualInstruction"));
 	orTxt.parent(controlPanel);
   orTxt.addClass('controlPanelText');
+  // orTxt.addClass('en-font');
 	orTxt.position(numberInput.x, numberInput.y + 35);
 }
 
@@ -152,6 +154,7 @@ function setupColorPicker(){
   colorIntroText = createDiv(getTranslation("colorInstruction"));
 	colorIntroText.parent(controlPanel);
 	colorIntroText.addClass('controlPanelText');
+  // colorIntroText.addClass('en-font');
 	colorIntroText.position(orTxt.x, elementName.y + elementName.height + 10);	
 
   // Sets up the color picker ----------------------------------------------------------------------------------------\

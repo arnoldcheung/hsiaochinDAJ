@@ -30,6 +30,8 @@ function toggleFontSelection() {
   	currentFontIndex = (currentFontIndex + 1) % numSelectableFonts;
 	// elementName.html(colorNameList[currentColorSelectionIndex]);
 	currentFont = fonts[currentFontIndex];
+
+	console.log(currentFontIndex);
 }
 
 
@@ -242,6 +244,19 @@ function resetUniverse() {
 
 	punto_r = initial_punto_r;
 
+
+	
+	controlPanel.removeClass('en-font');
+	controlPanel.removeClass('zh-font');
+  
+	if(currentLanguage == 'en'){
+		controlPanel.addClass('en-font');
+		// console.log('add en font')
+	} else if (currentLanguage == 'zh'){
+		controlPanel.addClass('zh-font');
+		// console.log('add zh font')
+	}
+  
 
 
 	// resize the canvas, incase of device rotation / screensize change

@@ -78,15 +78,18 @@ let growSize; // spped of the energy shapes grow
 let layerSize; // thickness of the energy
 
 // font ----------------------------------------------------------------------------------------
-let fonts = [
-	'Courier New',
-	'Arial',
-	'Georgia',
-	'Times New Roman',
-	'Verdana' ];
+// let fonts = [
+// 	'Courier New',
+// 	'Arial',
+// 	'Georgia',
+// 	'Times New Roman',
+// 	'Verdana' ];
+
+let fonts;
+
 let currentFontIndex = 0;
-let currentFont = fonts[currentFontIndex];
-let numSelectableFonts = fonts.length;
+let currentFont;
+let numSelectableFonts;
 
 // text and messages ----------------------------------------------------------------------------------------
 let mySignature = '';
@@ -128,7 +131,25 @@ let logoImg;
 let exhibitionTitleDiv;
 
 function preload() {
-  logo = loadImage("assets/logos/MGM 3D Logo.png");
+	logo = loadImage("assets/logos/MGM 3D Logo.png");
+
+	enFont1 = loadFont("assets/fonts/FontsFree-Net-Proxima-Nova-Sbold.otf");
+	enFont2 = loadFont("assets/fonts/Cinzel-ExtraBold.ttf");
+	enFont3 = loadFont("assets/fonts/VinaSans-Regular.ttf");
+	zhFont1 = loadFont("assets/fonts/NotoSerifHK-SemiBold.ttf");
+	zhFont2 = loadFont("assets/fonts/NotoSansTC-Bold.otf");
+	zhFont3 = loadFont("assets/fonts/NotoSerifJP-Medium.otf");
+
+	fonts = [
+		enFont1,
+		enFont2,
+		enFont3,
+		zhFont1,
+		zhFont2,
+		zhFont3]
+
+	currentFont = fonts[currentFontIndex];
+	numSelectableFonts = fonts.length;
 }
 
 function setup() {
@@ -185,6 +206,8 @@ function setup() {
 	setupBottomBanner();
 
 	togglePanel(); //turn panel off at the beginning
+
+	resetUniverse();
 }
 
 function draw() {

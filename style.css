@@ -10,6 +10,16 @@ body {
   position: fixed;
 }
 
+@font-face {
+  font-family: 'Control Panel Font EN';
+  src: url('assets/fonts/FontsFree-Net-Proxima-Nova-Sbold.otf');
+}
+
+@font-face {
+  font-family: 'Control Panel Font ZH';
+  src: url('assets/fonts/NotoSerifHK-SemiBold.ttf');
+}
+
 .controlPanel * {
   touch-action: auto;
 }
@@ -92,10 +102,24 @@ input[type=tel]:focus {
 }
 
 
-.controlPanelText {
+/* .controlPanelText {
   font-family: "Gill Sans", sans-serif;
   font-size: 18px;
   color: #272727;
+} */
+
+.controlPanelText {
+  font-size: 18px;
+  color: #272727;
+}
+
+.en-font {
+  font-family:  'Control Panel Font EN';
+}
+
+.zh-font {
+  font-family:  'Control Panel Font ZH';
+  /* font-size: 30px; */
 }
 
 /* CSS */
