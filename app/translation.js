@@ -1,7 +1,7 @@
 // Dictionary of translations
 const translations = {
     en: {
-        language: "en",
+        language: "中",
         nameInputDefaultInstruction: "Your Signature (Optional)",
         messageInputDefaultInstruction: "Your Message (Optional) ",
         fontInstruction: "Font",
@@ -20,7 +20,7 @@ const translations = {
 
         colorNameList: [
             'Space',
-            'Stars',
+            'Chi',
             'Punto',
             'Energy 1',
             'Energy 2',
@@ -39,39 +39,39 @@ const translations = {
 
 
     zh: {
-        language: "簡中",
-        nameInputDefaultInstruction: "您的签名（可选）",
-        messageInputDefaultInstruction: "您的留言（可选）",
-        fontInstruction: "字体",
-        generateInstruction: "生成您的独特艺术品",
+        language: "en",
+        nameInputDefaultInstruction: "您的簽名（可選）",
+        messageInputDefaultInstruction: "您的留言（可選）",
+        fontInstruction: "字體",
+        generateInstruction: "生成您的獨特藝術品",
         goInstruction: "生成",
-        eightDigitInstruction: "输入您的8位代码",
-        manualInstruction: "或手动创建您的宇宙",
-        nextElementInstruction: "换元素",
-        colorInstruction: "选择元素的颜色",
-        hideControlInstruction: "隐藏控制",
-        showControlInstruction: "显示控制",
-        captureInstruction: "截图",
+        eightDigitInstruction: "輸入您的8位代碼",
+        manualInstruction: "或手動創建您的宇宙",
+        nextElementInstruction: "換元素",
+        colorInstruction: "選擇元素的顏色",
+        hideControlInstruction: "隱藏控制",
+        showControlInstruction: "顯示控制",
+        captureInstruction: "截圖",
         resetInstruction: "重置",
-        adjustSliderInstruction: '⬅调整构图⮕',
+        adjustSliderInstruction: '⬅調整構圖⮕',
         exhibitionTitle: "《超元‧萬象: 蕭勤的藝術》‘To Infinity and Beyond: The Art of Hsiao Chin’",
 
         colorNameList: [
             '宇宙',
-            '星尘',
-            '庞图',
+            '炁',
+            '龐圖',
             '能量 1',
             '能量 2',
-            '活力',
-            '辐射', 
-            '字体'],
+            '生命力',
+            '放射', 
+            '字體'],
 
         elementList: [
-            '庞图',
+            '龐圖',
             '能量',
-            '动态',
-            '活力',
-            '辐射'],
+            '動態',
+            '生命力',
+            '放射;'],
     },
   };
   
