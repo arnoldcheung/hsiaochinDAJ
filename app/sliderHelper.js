@@ -52,7 +52,14 @@ function sliderSetup(){
 
 function resetSliders(){
 
-	size_slider.position(movementCheckbox.x + parseFloat(movementCheckbox.style('width')) + 10, puntoCheckbox.y);
+	let longestName;
+	if(currentLanguage == 'en'){
+		longestName = movementCheckbox;
+	} else if (currentLanguage == 'zh'){
+		longestName = orbitCheckbox;
+	}
+
+	size_slider.position(longestName.x + parseFloat(longestName.style('width')) + 10, puntoCheckbox.y);
 	energyHeightSlider.position(size_slider.x, energyCheckbox.y);
 	energySizeSlider.position(size_slider.x, movementCheckbox.y);
 	orbit_speed_slider.position(size_slider.x, orbitCheckbox.y);
