@@ -1,4 +1,4 @@
-currentPixelDensity = 2;
+currentPixelDensity = 1;
 
 // Control Panel Setup ----------------------------------------------------------------------------------------
 let panelVisible = true; // boolean to check if controlPanel is currently visible
@@ -186,13 +186,14 @@ function setup() {
 	// Setup control panel ----------------------------------------------------------------------------------------
 	setupControlPanel();
 
+	setupNumberInput();
+
 	setupNameInput();
 
 	setupMessageInput();
 	
-	setupNumberInput();
 	
-	setupColorPicker();
+	
 	
 	// Create Checkboxes ----------------------------------------------------------------------------------------
 	checkboxSetup();
@@ -200,6 +201,9 @@ function setup() {
 	// Create sliders ----------------------------------------------------------------------------------------
 	sliderSetup();
 	
+	setupColorPicker();
+
+
 	// Setup the three buttons at the bottom ----------------------------------------------------------------------------------------
 
 	setupButtonMenu();
@@ -226,8 +230,8 @@ function draw() {
 	energyHeight = energyHeightSlider.value();
 		
 	size_slider.input(() => {
-    punto_r = size_slider.value();
-  });
+		punto_r = size_slider.value();
+	});
 	
 	radiationSize = radiationSizeSlider.value();
 	
@@ -291,7 +295,10 @@ function draw() {
 		mainCanvas.textFont(currentFont);
 		mainCanvas.textAlign(RIGHT, BOTTOM);
 		mainCanvas.textSize(20);
-		mainCanvas.text(mySignature + ' @MGM', width - 10, height - 5 - buttonMenuHeight);
+
+		universeNumberDisplay = generated ? universeNumber : '';
+
+		mainCanvas.text(universeNumberDisplay + ' ' + mySignature + ' @MGM', width - 10, height - 10);
 		mainCanvas.pop();
 	}
 
@@ -309,15 +316,15 @@ function draw() {
 	
 	// generate universe number ----------------------------------------------------------------------------------------
 	
-	if(generated){
-		mainCanvas.push();
-		mainCanvas.fill(colorList[7]);
-		mainCanvas.textFont(currentFont);
-		mainCanvas.textAlign(CENTER, BOTTOM);
-		mainCanvas.textSize(20);
-		mainCanvas.text(universeNumber, width / 2, height - 5 - buttonMenuHeight);
-		mainCanvas.pop();
-	}
+	// if(generated){
+	// 	mainCanvas.push();
+	// 	mainCanvas.fill(colorList[7]);
+	// 	mainCanvas.textFont(currentFont);
+	// 	mainCanvas.textAlign(CENTER, BOTTOM);
+	// 	mainCanvas.textSize(20);
+	// 	mainCanvas.text(universeNumber, width / 2, height - 5 - buttonMenuHeight);
+	// 	mainCanvas.pop();
+	// }
 
 	// mainCanvas.image(bottomBannerGraphics, 0, height - buttonMenuHeight);
 		

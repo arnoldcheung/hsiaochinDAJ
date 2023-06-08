@@ -113,6 +113,12 @@ input[type=tel]:focus {
   color: #272727;
 }
 
+.dajTitleText {
+  font-size: 24px;
+  color: #272727;
+}
+
+
 .en-font {
   font-family:  'Control Panel Font EN';
 }
@@ -125,6 +131,8 @@ input[type=tel]:focus {
 /* CSS */
 .button-38 {
   background-color: #FFFFFF;
+  width: 125px;
+  height: 25px;
   border: 0;
   border-radius: .5rem;
   box-sizing: border-box;
@@ -133,7 +141,7 @@ input[type=tel]:focus {
   font-size: .875rem;
   font-weight: 600;
   line-height: 1.25rem;
-  padding: .75rem 1rem;
+  /* padding: .75rem 1rem; */
   text-align: center;
   text-decoration: none #D1D5DB solid;
   text-decoration-thickness: auto;
@@ -155,6 +163,10 @@ input[type=tel]:focus {
 
 .button-38:focus-visible {
   box-shadow: none;
+}
+
+.panel-button{
+  width:60px;
 }
 
 @media (min-width: 768px) {

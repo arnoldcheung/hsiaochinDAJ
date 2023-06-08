@@ -3,7 +3,7 @@ function checkboxSetup(){
 	sliderIntroText = createDiv(getTranslation("adjustSliderInstruction"));
 	sliderIntroText.parent(controlPanel);
 	sliderIntroText.addClass('controlPanelText');
-	sliderIntroText.position(iroPickerDiv.x, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) + 15);	
+	// sliderIntroText.position(iroPickerDiv.x, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) + 15);	
 
 	//checkbox definition
 	// puntoCheckbox = createCheckbox('Punto', true);
@@ -58,7 +58,9 @@ function checkboxSetup(){
 function resetCheckboxes(){
 
 	sliderIntroText.html(getTranslation("adjustSliderInstruction"));
-	sliderIntroText.position(iroPickerDiv.x, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) + 15);	
+	// sliderIntroText.position(iroPickerDiv.x, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) + 15);	
+	sliderIntroText.position(numberInput.x, elementName.y + parseFloat(elementName.style('height')) + 15);	
+
 
 	puntoCheckbox.html(getTranslation('elementList')[0]);
 	orbitCheckbox.html(getTranslation('elementList')[3]);
@@ -66,7 +68,7 @@ function resetCheckboxes(){
 	movementCheckbox.html(getTranslation('elementList')[2]);
 	radiationCheckbox.html(getTranslation('elementList')[4]);
 	
-	puntoCheckbox.position(iroPickerDiv.x, sliderIntroText.y + 35);	// this position here controls all the checkbox / sliders' position relative this this
+	puntoCheckbox.position(numberInput.x, sliderIntroText.y + 35);	// this position here controls all the checkbox / sliders' position relative this this
 	// puntoCheckbox.position(iroPickerDiv.x, iroPickerDiv.y + parseFloat(iroPickerDiv.style('height')) + 20);	// this position here controls all the checkbox / sliders' position relative this this
 	energyCheckbox.position(puntoCheckbox.x, puntoCheckbox.y + sliderSpacing);
 	movementCheckbox.position(puntoCheckbox.x, puntoCheckbox.y + 2 * sliderSpacing);

@@ -31,6 +31,9 @@ function sliderSetup(){
 	
 	size_slider.touchStarted(puntoSliderEvent);
 	size_slider.mousePressed(puntoSliderEvent);
+
+	// size_slider.touchStarted(puntoSliderEvent);
+	// size_slider.mousePressed(puntoSliderEvent);
 	
 	energySizeSlider.touchStarted(energySliderEvent);
 	energySizeSlider.mousePressed(energySliderEvent);
@@ -86,16 +89,31 @@ function resetSliders(){
 
 function resetSizeSlider(){
 	size_slider.value(10);
-	punto_r = 10;
+	// punto_r = 10;
 }
 
 function puntoSliderEvent(){
 	currentColorSelectionIndex = 2;
+
+	// Map the combined integers (0-99) to the RGB color space (0-255)
+	let r = floor(random(0, 255));
+	let g = floor(random(0, 255));
+	let b = floor(random(0, 255));
+
+	// Convert the RGB values to a hex color code
+	const hexColor = '#' + hex(r, 2) + hex(g, 2) + hex(b, 2);
+
+	colorList[currentColorSelectionIndex] = hexColor;
+
 	elementName.html(getTranslation('colorNameList')[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
 	// puntoCheckbox.checked(true);
 	generated = false;
 }
+
+// function updatePuntoSize(){
+// 	punto_r = size_slider.value();
+// }
 
 function energySliderEvent(){
 	currentColorSelectionIndex = 3;

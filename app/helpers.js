@@ -31,7 +31,7 @@ function toggleFontSelection() {
 	// elementName.html(colorNameList[currentColorSelectionIndex]);
 	currentFont = fonts[currentFontIndex];
 
-	console.log(currentFontIndex);
+	// console.log(currentFontIndex);
 }
 
 
@@ -40,7 +40,7 @@ function toggleFontSelection() {
 function setColor(){
 	colorList[currentColorSelectionIndex] = iroP.color.hexString;
 	elementName.style('color', colorList[currentColorSelectionIndex]);
-	punto_r = 10;
+	// punto_r = 10;
 	
 	// not set generated flag to false if it is for signature
 	if(currentColorSelectionIndex != 7) { 
@@ -276,9 +276,10 @@ function resetUniverse() {
 
 	// reset the control panels and their buttons / sliders
 	resetControlPanel();
+	resetNumberInput();
+
 	resetNameInput();
 	resetMessageInput();
-	resetNumberInput();
 	resetColorPicker();
 	resetCheckboxes();
 	resetSliders();

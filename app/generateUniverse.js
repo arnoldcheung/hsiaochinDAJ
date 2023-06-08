@@ -3,6 +3,8 @@
 function generateUniverse(){
 	
 	// resetUniverse();
+
+	puntoGraphics.clear();
 			
 	let inputNumber = numberInput.value();
 
