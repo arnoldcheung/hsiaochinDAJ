@@ -51,6 +51,24 @@ body {
   cursor: pointer;
 }
 
+.current-selected::-webkit-slider-thumb {
+  /* -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px; */
+  background: #fffc35;
+  /* cursor: pointer; */
+}
+
+.current-selected::-moz-range-thumb {
+  /* -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px; */
+  background: #fffc35;
+  /* cursor: pointer; */
+}
+
 
 canvas {
   display: block;

@@ -68,7 +68,7 @@ function generatePunto(numberArray){
 	
 	// Punto Size
 	let puntoSizePair = parseInt(numberArray[0] + numberArray[3], 10);
-	punto_r = map(puntoSizePair, 0, 99, 50, min(width, height) * 0.6);
+	punto_r = map(puntoSizePair, 0, 99, 50, min(width, height) * 0.65);
 	
 	// draw Punto
 	drawPunto();
@@ -125,7 +125,8 @@ function generateEnergy(numberArray){
 	// energy two
 	hexColor = numArrayToHex(numberArray, [7, 3, 6, 0, 5, 1]);
 	hexColor = modifyRGBwithHSB(hexColor, [360, 0], [100, 70], [100, 0]);
-	colorList[4] = hexColor;
+	// colorList[4] = hexColor;
+	energyColor2 = hexColor;
 	
 	// energySize
 	let energySizePair = parseInt(numberArray[7] + numberArray[1], 10);
@@ -149,7 +150,7 @@ function generateRadiation(numberArray){
 	// radiation color
 	let hexColor = numArrayToHex(numberArray, [3, 7, 2, 6, 1, 0]);
 	hexColor = modifyRGBwithHSB(hexColor, [0, 360], [70, 100], [50, 100]);
-	colorList[6] = hexColor;
+	colorList[5] = hexColor;
 	
 	// radiation size
 	let radiationSizePair = parseInt(numberArray[3] + numberArray[4], 10);
@@ -169,7 +170,7 @@ function generateOrbit(numberArray){
 	// orbit color
 	let hexColor = numArrayToHex(numberArray, [4, 1, 0, 2, 3, 5]);
 	hexColor = modifyRGBwithHSB(hexColor, [360, 0], [100, 50], [100, 50]);
-	colorList[5] = hexColor;
+	colorList[4] = hexColor;
 	
 	// orbitSpeed
 	let orbitSpeedPair = parseInt(numberArray[1] + numberArray[2], 10);

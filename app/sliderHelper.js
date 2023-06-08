@@ -1,6 +1,11 @@
 function sliderSetup(){
 	//slider definition
-	size_slider = createSlider(10, min(width, height) * 0.8, 10, 1);
+
+	backgroundSlider = createSlider(0, 255, 255, 1);
+	chiSlider = createSlider(0, 255, 80, 1);
+
+
+	size_slider = createSlider(10, min(width, height) * 0.65, 10, 1);
 	energySizeSlider = createSlider(5, 50, 20, 1);
 	// waveFrequencySlider = createSlider(0.00001, 0.005, 0.001, 0.00001);
 	energyHeightSlider = createSlider(-600, 1600, 0, 1);
@@ -8,12 +13,20 @@ function sliderSetup(){
 	radiationSizeSlider = createSlider(0.1, 1, 0.5, 0.01);
 	
 	// set slider parent and classes
+	backgroundSlider.parent(controlPanel);
+	chiSlider.parent(controlPanel);
+
+
 	size_slider.parent(controlPanel);
 	energySizeSlider.parent(controlPanel);
 	// waveFrequencySlider.parent(controlPanel);
 	energyHeightSlider.parent(controlPanel);
 	orbit_speed_slider.parent(controlPanel);
 	radiationSizeSlider.parent(controlPanel);
+
+
+	backgroundSlider.class('custom-slider');
+	chiSlider.class('custom-slider');
 
 	size_slider.class('custom-slider');
 	energySizeSlider.class('custom-slider');
@@ -26,6 +39,14 @@ function sliderSetup(){
 	
 	
 	// slider events
+
+	backgroundSlider.touchStarted(backgroundSliderEvent);
+	backgroundSlider.mousePressed(backgroundSliderEvent);
+
+	chiSlider.touchStarted(chiSliderEvent);
+	chiSlider.mousePressed(chiSliderEvent);
+
+
 	size_slider.mouseReleased(resetSizeSlider);
 	size_slider.touchEnded(resetSizeSlider);
 	
@@ -62,15 +83,24 @@ function resetSliders(){
 		longestName = orbitCheckbox;
 	}
 
-	size_slider.position(longestName.x + parseFloat(longestName.style('width')) + 10, puntoCheckbox.y);
-	energyHeightSlider.position(size_slider.x, energyCheckbox.y);
-	energySizeSlider.position(size_slider.x, movementCheckbox.y);
-	orbit_speed_slider.position(size_slider.x, orbitCheckbox.y);
-	radiationSizeSlider.position(size_slider.x, radiationCheckbox.y);
+	backgroundSlider.position(longestName.x + parseFloat(longestName.style('width')) + 10, backgroundCheckbox.y);
+	chiSlider.position(backgroundSlider.x, chiCheckbox.y);
+	
+
+	size_slider.position(backgroundSlider.x, puntoCheckbox.y);
+	energyHeightSlider.position(backgroundSlider.x, energyCheckbox.y);
+	energySizeSlider.position(backgroundSlider.x, movementCheckbox.y);
+	orbit_speed_slider.position(backgroundSlider.x, orbitCheckbox.y);
+	radiationSizeSlider.position(backgroundSlider.x, radiationCheckbox.y);
 	// waveFrequencySlider.position(size_slider.x, waveCheckbox.y);
 
 	// slider style
-	size_slider.style('width', controlPanel.width * 0.95 - size_slider.x + 'px');
+
+
+	backgroundSlider.style('width', controlPanel.width * 0.9 - backgroundSlider.x + 'px');
+	chiSlider.style('width', backgroundSlider.style('width'));
+
+	size_slider.style('width', controlPanel.width * 0.9 - size_slider.x + 'px');
 	energySizeSlider.style('width', size_slider.style('width'));
 	// waveFrequencySlider.style('width', size_slider.style('width'));
 	energyHeightSlider.style('width', size_slider.style('width'));
@@ -78,6 +108,9 @@ function resetSliders(){
 	radiationSizeSlider.style('width', size_slider.style('width'));
 
 	// reset slider values
+
+	backgroundSlider.value(255);
+	chiSlider.value(80);
 
 	size_slider.value(10);
 	energySizeSlider.value(20);
@@ -92,8 +125,34 @@ function resetSizeSlider(){
 	// punto_r = 10;
 }
 
+function backgroundSliderEvent(){
+	currentColorSelectionIndex = 0;
+	elementName.html(getTranslation('colorNameList')[currentColorSelectionIndex]);
+	elementName.style('color', colorList[currentColorSelectionIndex]);
+	// energyCheckbox.checked(true);
+	generated = false;
+
+	resetCurrentSelected();
+	backgroundSlider.addClass('current-selected');
+}
+
+function chiSliderEvent(){
+	currentColorSelectionIndex = 1;
+	elementName.html(getTranslation('colorNameList')[currentColorSelectionIndex]);
+	elementName.style('color', colorList[currentColorSelectionIndex]);
+	// energyCheckbox.checked(true);
+	generated = false;
+
+	resetCurrentSelected();
+	chiSlider.addClass('current-selected');
+}
+
+
+
 function puntoSliderEvent(){
 	currentColorSelectionIndex = 2;
+
+	punto_r = 10;
 
 	// Map the combined integers (0-99) to the RGB color space (0-255)
 	let r = floor(random(0, 255));
@@ -109,6 +168,9 @@ function puntoSliderEvent(){
 	elementName.style('color', colorList[currentColorSelectionIndex]);
 	// puntoCheckbox.checked(true);
 	generated = false;
+
+	resetCurrentSelected();
+	size_slider.addClass('current-selected');
 }
 
 // function updatePuntoSize(){
@@ -121,22 +183,32 @@ function energySliderEvent(){
 	elementName.style('color', colorList[currentColorSelectionIndex]);
 	// energyCheckbox.checked(true);
 	generated = false;
+
+	resetCurrentSelected();
+	energyHeightSlider.addClass('current-selected');
+	energySizeSlider.addClass('current-selected');
 }
 
 function orbitSliderEvent(){
-	currentColorSelectionIndex = 5;
+	currentColorSelectionIndex = 4;
 	elementName.html(getTranslation('colorNameList')[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
 	// orbitCheckbox.checked(true);
 	generated = false;
+
+	resetCurrentSelected();
+	orbit_speed_slider.addClass('current-selected');
 }
 
 function radiationSliderEvent(){
-	currentColorSelectionIndex = 6;
+	currentColorSelectionIndex = 5;
 	elementName.html(getTranslation('colorNameList')[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
 	// radiationCheckbox.checked(true);
 	generated = false;
+
+	resetCurrentSelected();
+	radiationSizeSlider.addClass('current-selected');
 }
 
 // function WaveSliderEvent(){

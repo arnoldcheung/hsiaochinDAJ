@@ -257,7 +257,8 @@ function resetMessageInput(){
 
   elementName.html(getTranslation('colorNameList')[currentColorSelectionIndex]);
 	elementName.position(numberInput.x, orTxt.y + 30); // ***************************************************************************
-	// elementName.position(numberInput.x, puntoCheckbox.y + 5 * sliderSpacing); // ***************************************************************************
+	elementName.style('color', colorList[currentColorSelectionIndex]);
+  // elementName.position(numberInput.x, puntoCheckbox.y + 5 * sliderSpacing); // ***************************************************************************
 
   nextElementButton.html(getTranslation("nextElementInstruction"));
   nextElementButton.position(fontButton.x, elementName.y + 10);

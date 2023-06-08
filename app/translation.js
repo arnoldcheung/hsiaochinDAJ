@@ -26,8 +26,8 @@ const translations = {
             'Space',
             'Chi',
             'Punto',
-            'Energy 1',
-            'Energy 2',
+            'Energy',
+            // 'Energy 2',
             'Vitality',
             'Radiation', 
             'Signature'],
@@ -37,7 +37,9 @@ const translations = {
             'Energy',
             'Movement',
             'Vitality',
-            'Radiation'],
+            'Radiation',
+            'Space',
+            'Chi'],
     },
 
 
@@ -58,7 +60,7 @@ const translations = {
         showControlInstruction: "顯示控制",
         captureInstruction: "截圖",
         resetInstruction: "重置",
-        adjustSliderInstruction: '⬅調整您的宇宙構圖⮕',
+        adjustSliderInstruction: '⬅ 調整您的宇宙構圖 ⮕',
         exhibitionTitle: "《超元‧萬象: 蕭勤的藝術》‘To Infinity and Beyond: The Art of Hsiao Chin’",
 
         retrieveSketchTitle: "{{Name}}, 感謝您參與數字藝術創作",
@@ -68,8 +70,8 @@ const translations = {
             '宇宙',
             '炁',
             '龐圖',
-            '能量 1',
-            '能量 2',
+            '能量',
+            // '能量 2',
             '生命力',
             '放射', 
             '字體'],
@@ -79,7 +81,9 @@ const translations = {
             '能量',
             '動態',
             '生命力',
-            '放射'],
+            '放射',            
+            '宇宙',
+            '炁'],
     },
   };
   

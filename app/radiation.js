@@ -9,7 +9,7 @@ function drawRadiation(){
   let baseLength = radiationSize * Math.min(width, height) / (widthFactor); // Increased base length for even thicker triangles
   let heightLength = Math.sqrt(width * width + height * height);
 
-  radiationGraphics.fill(colorList[6]); // Fill the triangles with color (black in this case)
+  radiationGraphics.fill(colorList[5]); // Fill the triangles with color (black in this case)
   radiationGraphics.noStroke();
   
 	// Draw the four narrow triangles radiating from the center with pointy part aiming at the center

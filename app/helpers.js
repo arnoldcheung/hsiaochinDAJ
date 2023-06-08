@@ -13,15 +13,24 @@ function toggleColorSelection() {
 	elementName.html(getTranslation('colorNameList')[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
 
-	// if(currentColorSelectionIndex == 2){
-	// 	puntoCheckbox.checked(true);
-	// } else if(currentColorSelectionIndex == 3){
-	// 	energyCheckbox.checked(true);
-	// } else if (currentColorSelectionIndex == 5){
-	// 	orbitCheckbox.checked(true); 
-	// } else if (currentColorSelectionIndex == 6){
-	// 	radiationCheckbox.checked(true); 
-	// }
+
+	resetCurrentSelected()
+
+	if(currentColorSelectionIndex == 0){
+		backgroundSlider.addClass('current-selected');
+	} else if(currentColorSelectionIndex == 1){
+		chiSlider.addClass('current-selected');
+	} else if(currentColorSelectionIndex == 2){
+		size_slider.addClass('current-selected');
+	} else if(currentColorSelectionIndex == 3){
+		energyHeightSlider.addClass('current-selected');
+		energySizeSlider.addClass('current-selected');
+	} else if (currentColorSelectionIndex == 4){
+		orbit_speed_slider.addClass('current-selected');
+	} else if (currentColorSelectionIndex == 5){
+		radiationSizeSlider.addClass('current-selected');
+	}
+
 }
 
 // function that toggles the font selection cycle ----------------------------------------------------------------------------------------
@@ -41,6 +50,7 @@ function setColor(){
 	colorList[currentColorSelectionIndex] = iroP.color.hexString;
 	elementName.style('color', colorList[currentColorSelectionIndex]);
 	// punto_r = 10;
+	backgroundSlider.value(255); // reset background screen color alpha to 0
 	
 	// not set generated flag to false if it is for signature
 	if(currentColorSelectionIndex != 7) { 
@@ -149,7 +159,11 @@ function createMetaTag() {
 // Event function for capturing the canvas, to be added with qr code function ----------------------------------------------------------------------------------------
 async function captureCanvas(){
 	// mainCanvas.save('universe.png');
-	mainCanvas.image(bottomBannerGraphics, 0, height - buttonMenuHeight);
+	downloadCanvas.clear();
+	downloadCanvas.image(mainCanvas, 0, 0);
+	downloadCanvas.image(bottomBannerGraphics, 0, mainCanvas.height);
+
+	// mainCanvas.image(bottomBannerGraphics, 0, height - buttonMenuHeight);
 
 	// Initialize Cloudinary
 	const cloudName = 'dfipkxvuc';
@@ -166,9 +180,9 @@ async function captureCanvas(){
 	qrcodeDiv.style.display = "none";
 	
 	// Get image data from canvas
-  const imageData = mainCanvas.canvas.toDataURL('image/png');
+ 	const imageData = downloadCanvas.canvas.toDataURL('image/png');
 
-  // Upload image to Cloudinary
+ 	 // Upload image to Cloudinary
 	const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/upload`, {
 		method: 'POST',
 		headers: {
@@ -212,18 +226,30 @@ function resetUniverse() {
 
 	// reset colors
 
+	// colorList = [
+	// 	'#021E3A', // bg
+	// 	'#FFFFFF', // stars
+	// 	'#FF6400', // Punto
+	// 	'#DBFF26', // energy 1
+	// 	'#3DE049', // energy 2
+	// 	'#FFFFFF', // orbit
+	// 	'#AEF064', // radiation
+	// 	'#FFFFFF'] // signature
+
 	colorList = [
 		'#021E3A', // bg
 		'#FFFFFF', // stars
 		'#FF6400', // Punto
 		'#DBFF26', // energy 1
-		'#3DE049', // energy 2
+		// '#3DE049', // energy 2
 		'#FFFFFF', // orbit
 		'#AEF064', // radiation
-		'#FF8AFF', // wave
+		// '#FF8AFF', // wave
 		'#FFFFFF'] // signature
 
 	currentColorSelectionIndex = 0;
+
+	energyColor2 = '#3DE049';
 
 	// resets flags
 	generated = false;
@@ -234,6 +260,7 @@ function resetUniverse() {
 	// clears all the canvas and graphics
 	clear();
 	mainCanvas.background(colorList[0]);
+	downloadCanvas.clear();
 	starsGraphics.clear();
 	puntoGraphics.clear();
 	orbitGraphics.clear();
@@ -287,6 +314,21 @@ function resetUniverse() {
 
 
 
+	resetCurrentSelected()
+
+	backgroundSlider.addClass('current-selected');
+
+
 	// change element name back to space (colorList[0])
 	// elementName.html(colorNameList[currentColorSelectionIndex]);
+}
+
+function resetCurrentSelected(){
+	backgroundSlider.removeClass('current-selected');
+	chiSlider.removeClass('current-selected');
+	size_slider.removeClass('current-selected');
+	energySizeSlider.removeClass('current-selected');
+	energyHeightSlider.removeClass('current-selected');
+	orbit_speed_slider.removeClass('current-selected');
+	radiationSizeSlider.removeClass('current-selected')
 }

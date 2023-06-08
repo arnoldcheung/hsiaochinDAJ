@@ -19,6 +19,8 @@ let translateButton;
 
 // list of canvas and graphics stacked on top of base canvas ----------------------------------------------------------------------------------------
 let mainCanvas;
+let backgroundScreenGraphics;
+
 let puntoGraphics;
 let starsGraphics;
 let orbitGraphics;
@@ -30,6 +32,8 @@ let buttonMenuDiv;
 let buttonMenuHeight = 70;
 
 let bottomBannerGraphics;
+
+let downloadCanvas;
 
 // flag to show signature or not ----------------------------------------------------------------------------------------
 let signature = false;
@@ -61,12 +65,22 @@ let orbit_speed_slider;
 
 let radiationSizeSlider
 
+// newly adsded sliders ---
+let backgroundSlider;
+let chiSlider;
+let signatureSlider;
+
 // Checkboxes ----------------------------------------------------------------------------------------
 let puntoCheckbox;
 let orbitCheckbox;
 let energyCheckbox;
 let radiationCheckbox
 // let waveCheckbox;
+
+// newly adsded checkboxes ---
+let backgroundCheckbox;
+let chiCheckbox;
+let signatureCheckbox;
 
 // text inputs ----------------------------------------------------------------------------------------
 let nameInput;
@@ -98,11 +112,29 @@ let myMessage = '';
 
 // color selection toggle ----------------------------------------------------------------------------------------
 
+// let colorList = ['#021E3A', // bg
+// 				'#FFFFFF', // stars
+// 				'#FF6400', // Punto
+// 				'#DBFF26', // energy 1
+// 				'#3DE049', // energy 2
+// 				'#FFFFFF', // orbit
+// 				'#AEF064', // radiation
+// 				'#FFFFFF'] // signature
+
+// let colorNameList = ['Space',
+// 					'Stars',
+// 					'Punto',
+// 					'Energy 1',
+// 					'Energy 2',
+// 					'Vitality',
+// 					'Radiation', 
+// 					'Signature'];
+
 let colorList = ['#021E3A', // bg
 				'#FFFFFF', // stars
 				'#FF6400', // Punto
 				'#DBFF26', // energy 1
-				'#3DE049', // energy 2
+				// '#3DE049', // energy 2
 				'#FFFFFF', // orbit
 				'#AEF064', // radiation
 				'#FFFFFF'] // signature
@@ -110,14 +142,17 @@ let colorList = ['#021E3A', // bg
 let colorNameList = ['Space',
 					'Stars',
 					'Punto',
-					'Energy 1',
-					'Energy 2',
+					'Energy',
+					// 'Energy 2',
 					'Vitality',
 					'Radiation', 
 					'Signature'];
 
+
 let numSelectableColors = colorList.length;
 let currentColorSelectionIndex = 0;
+
+let energyColor2 = '#3DE049';
 
 
 // orbit variable ----------------------------------------------------------------------------------------
@@ -141,9 +176,9 @@ function preload() {
 	zhFont3 = loadFont("assets/fonts/NotoSerifJP-Medium.otf");
 
 	fonts = [
-		enFont1,
-		enFont2,
-		enFont3,
+		// enFont1,
+		// enFont2,
+		// enFont3,
 		zhFont1,
 		zhFont2,
 		zhFont3]
@@ -164,6 +199,12 @@ function setup() {
 	//create main canvas ----------------------------------------------------------------------------------------
 	mainCanvas = createGraphics(width, height);
 	mainCanvas.angleMode(DEGREES);
+
+	backgroundScreenGraphics = createGraphics(width, height);
+	backgroundScreenGraphics.background(0);
+
+	// create download Canvas ----------------------------------------------------------------------------------------
+	downloadCanvas = createGraphics(mainCanvas.width, mainCanvas.height + buttonMenuHeight);
 	
 	// create orbit cancvas ----------------------------------------------------------------------------------------
 	setupOrbit();
@@ -217,6 +258,9 @@ function setup() {
 function draw() {
  	clear(); // reset base canvas
 	mainCanvas.background(colorList[0]); // reset background
+
+
+
 	orbitGraphics.clear();  // reset orbit
 	radiationGraphics.clear();  // reset radiation
 	// waveGraphics.clear();  // reset wave
@@ -236,11 +280,27 @@ function draw() {
 	radiationSize = radiationSizeSlider.value();
 	
 	orbit_speed = orbit_speed_slider.value();
+
+	screenAlpha = backgroundSlider.value();
+	chiAlpha = chiSlider.value();
+
+
+	// background tine ----------------------------------
+	// screenAlphaHex = hex(screenAlpha, 2);
+
+	mainCanvas.push();
+	mainCanvas.tint(255, 255 - screenAlpha)
+	mainCanvas.image(backgroundScreenGraphics, 0, 0)
+	mainCanvas.pop();
+
 	
 	// Star grapghics ----------------------------------------------------------------------------------------
 
 	mainCanvas.push();
-	mainCanvas.tint(colorList[1] + '80');
+
+	chiAlphaHex = hex(chiAlpha, 2)
+
+	mainCanvas.tint(colorList[1] + chiAlphaHex);
 	mainCanvas.image(starsGraphics, 0, 0);
 	mainCanvas.pop();
 	
@@ -272,7 +332,7 @@ function draw() {
 	if(orbit_speed > -5){
 		drawOrbit();
 		mainCanvas.push();
-		mainCanvas.tint(colorList[5]);
+		mainCanvas.tint(colorList[4]);
 		mainCanvas.image(orbitGraphics, 0, 0); // the orbit
 		mainCanvas.pop();
 	}
@@ -291,7 +351,7 @@ function draw() {
 	// signature ----------------------------------------------------------------------------------------
 	if(signature){
 		mainCanvas.push();
-		mainCanvas.fill(colorList[7]);
+		mainCanvas.fill(colorList[6]);
 		mainCanvas.textFont(currentFont);
 		mainCanvas.textAlign(RIGHT, BOTTOM);
 		mainCanvas.textSize(20);
@@ -307,7 +367,7 @@ function draw() {
 
 	mainCanvas.push();
 	// mainCanvas.rectMode(CORNERS);
-	mainCanvas.fill(colorList[7]);
+	mainCanvas.fill(colorList[6]);
 	mainCanvas.textFont(currentFont);
 	mainCanvas.textAlign(RIGHT, TOP);
 	mainCanvas.textSize(30);

@@ -1,6 +1,6 @@
 function setupPunto(){
 	puntoGraphics = createGraphics(width, height);
-	initial_punto_r = puntoGraphics.min(width, height) * 0.1;
+	initial_punto_r = puntoGraphics.min(width, height) * 0.2;
 	punto_r = initial_punto_r;
 	drawPunto();
 }

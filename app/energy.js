@@ -10,7 +10,8 @@ function drawEnergy(){
 	growSize+=1;
 
 	energyGraphics.fill(colorList[3]);
-	energyGraphics.stroke(colorList[4]);
+	// energyGraphics.stroke(colorList[4]);
+	energyGraphics.stroke(energyColor2);
 	energyGraphics.strokeWeight(layerSize);
 
 	for(var i = energyGraphics.width; i > - layerSize * 4; i-=layerSize * 4){
