@@ -7,5 +7,11 @@ function setupQrcodeModal() {
 			modal.classList.remove("open");
 		});
 	});
+	const reset = document.getElementById("modal-reset");
+	reset.addEventListener("click", function (event) {
+		event.preventDefault();
+		modal.classList.remove("open");
+		resetUniverse();
+	});
 }
 setupQrcodeModal();

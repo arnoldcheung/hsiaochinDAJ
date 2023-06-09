@@ -19,7 +19,9 @@ const translations = {
         adjustSliderInstruction: '⬅ Adjust the composition ⮕',
         exhibitionTitle: "《超元‧萬象: 蕭勤的藝術》‘To Infinity and Beyond: The Art of Hsiao Chin’ ",
 
-        retrieveSketchTitle: "Thank you for joining the Digital Art Jamming {{Name}}",
+        retrieveSketchTitle: "Thank you for joining the Digital Art Jamming {{name}}",
+        retrieveSketchTitleNoName: "Thank you for joining the Digital Art Jamming",
+        retrieveSketchSubTitle: "Scan to download your universe",
         retrievingMessage: "Retrieving your Cosmo Image...", 
 
         colorNameList: [
@@ -63,7 +65,9 @@ const translations = {
         adjustSliderInstruction: '⬅ 調整您的宇宙構圖 ⮕',
         exhibitionTitle: "《超元‧萬象: 蕭勤的藝術》‘To Infinity and Beyond: The Art of Hsiao Chin’",
 
-        retrieveSketchTitle: "{{Name}}, 感謝您參與數字藝術創作",
+        retrieveSketchTitle: "{{name}}, 感謝您參與數字藝術創作",
+        retrieveSketchTitleNoName: "感謝您參與數字藝術創作",
+        retrieveSketchSubTitle: "請掃描二維碼下載你的超元宇宙",
         retrievingMessage: "您的超元宇宙圖像正在生成中...",
 
         colorNameList: [
@@ -85,20 +89,24 @@ const translations = {
             '宇宙',
             '炁'],
     },
-  };
+};
   
 let currentLanguage = "zh";
 
-  // Function to get the translated text based on the current language
-function getTranslation(key) {
-    return translations[currentLanguage][key];
-  }
+// Function to get the translated text based on the current language
+function getTranslation(key, args={}) {
+    let translation = translations[currentLanguage][key];
+    Object.entries(args).forEach(([key, value]) => {
+      translation = translation.replace(`{{${key}}}`, value)
+    })
+    return translation;
+}
   
-  // Function to toggle the language and re-render the text
-  function toggleLanguage() {
+// Function to toggle the language and re-render the text
+function toggleLanguage() {
     currentLanguage = currentLanguage === "en" ? "zh" : "en";
     // console.log(currentLanguage)
     resetUniverse(); // Re-render the sketch with the updated language
     resetUniverse(); // Re-render the sketch with the updated language
 
-  }
+}

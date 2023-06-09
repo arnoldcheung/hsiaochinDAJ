@@ -196,6 +196,7 @@ input[type=tel]:focus {
 
 /* qrcode start */
 .modal {
+  font-family: 'Control Panel Font ZH';
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -216,7 +217,8 @@ input[type=tel]:focus {
 }
 .modal-bg {
   position: absolute;
-  background: teal;
+  background: black;
+  opacity: 0.5;
   width: 100%;
   height: 100%;
 }
@@ -224,12 +226,11 @@ input[type=tel]:focus {
   border-radius: 10px;
   background: #fff;
   position: relative;
-  padding: 30px;
+  padding: 18px;
 }
 .modal-close {
-  position: absolute;
-  right: 15px;
-  top: 15px;
+  line-height: normal;
+  font-size: 24px;
   outline: none;
   appearance: none;
   color: red;
@@ -238,8 +239,11 @@ input[type=tel]:focus {
   font-weight: bold;
   cursor: pointer;
 }
-
-
+#modal-title, #modal-subtitle {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+}
 
 .spinner {
   animation: rotator 1.4s linear infinite;

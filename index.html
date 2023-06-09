@@ -8,6 +8,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
 	
 	<script src="app/mySketch.js"></script>
 	<script src="app/controlPanel.js"></script>
@@ -40,15 +41,23 @@
 	<div class="modal" id="modal">
 		<div class="modal-bg modal-exit"></div>
 		<div class="modal-container">
-			<h1>Scan to retrieve your Sketch!</h1>
-			<button class="modal-close modal-exit">X</button>
-			<div id="modal-loading">
-				<h2>Please wait a moment...</h2>
-				<svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-				 <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
-				</svg>
+			<div class="flex justify-end">
+				<button class="modal-close modal-exit">X</button>
 			</div>
-			<div id="modal-qrcode">
+			<h1 id="modal-title"></h1>
+			<h1 id="modal-subtitle"></h1>
+			<div id="modal-loading" class="h-72">
+				<h2>Please wait a moment...</h2>
+				<div class="flex justify-center items-center h-60">
+					<svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+						<circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+					</svg>
+				</div>
+			</div>
+			<div id="modal-qrcode" class="h-48 my-10">
+			</div>
+			<div class="flex justify-end">
+				<button id="modal-reset" class="button-38">Reset</button>
 			</div>
 		</div>
 	</div>

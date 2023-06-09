@@ -173,7 +173,19 @@ async function captureCanvas(){
 	const modal = document.getElementById('modal');
 	const modalLoadingDiv = document.getElementById('modal-loading');
 	const qrcodeDiv = document.getElementById('modal-qrcode');
-	
+	const modalTitle = document.getElementById("modal-title");
+	const modalSubtitle = document.getElementById("modal-subtitle");
+	const modalResetButton = document.getElementById("modal-reset");
+
+	// set modal text
+	if(mySignature){
+		modalTitle.innerText = getTranslation("retrieveSketchTitle", { name: mySignature });
+	} else {
+		modalTitle.innerText = getTranslation("retrieveSketchTitleNoName");
+	}
+	modalSubtitle.innerText = getTranslation("retrieveSketchSubTitle");
+	modalResetButton.innerText = getTranslation("resetInstruction");
+
 	// open modal
 	modal.classList.add('open');
 	modalLoadingDiv.style.display = "block";
@@ -206,7 +218,8 @@ async function captureCanvas(){
 		
 		// show the qrcode
 		modalLoadingDiv.style.display = "none";
-		qrcodeDiv.style.display = "block";
+		qrcodeDiv.style.display = "flex";
+		qrcodeDiv.style.justifyContent = "center";
 	} else {
 		console.log(await response.json());
 		throw new Error('Failed to upload image to Cloudinary');
@@ -311,7 +324,7 @@ function resetUniverse() {
 	resetCheckboxes();
 	resetSliders();
 	resetButtonMenu();
-
+	
 
 
 	resetCurrentSelected()
