@@ -196,7 +196,6 @@ input[type=tel]:focus {
 
 /* qrcode start */
 .modal {
-  font-family: 'Control Panel Font ZH';
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -240,6 +239,7 @@ input[type=tel]:focus {
   cursor: pointer;
 }
 #modal-title, #modal-subtitle {
+  font-family: 'Control Panel Font ZH';
   display: block;
   font-size: 2em;
   font-weight: bold;
