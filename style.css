@@ -226,6 +226,8 @@ input[type=tel]:focus {
   background: #fff;
   position: relative;
   padding: 18px;
+  max-width: calc(100%-36px);
+  overflow: hidden;
 }
 .modal-close {
   line-height: normal;
