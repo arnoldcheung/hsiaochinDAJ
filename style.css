@@ -245,6 +245,11 @@ input[type=tel]:focus {
   display: block;
   font-size: 2em;
   font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .spinner {
