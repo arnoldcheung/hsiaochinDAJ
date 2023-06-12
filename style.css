@@ -81,12 +81,14 @@ input[type=text]{
      border: 0px solid #2D9FD900;
      color: #ABABAB;
      padding-left: 10px;
+     font-size: 12px;
     }
     
 input[type=text]:focus {
      outline: none;
      border: 1px solid #a0d18c;
      color: #000000;
+     font-size: 12px;
 }
 
 input[type=tel]{
@@ -96,12 +98,14 @@ input[type=tel]{
      border: 0px solid #2D9FD900;
      color: #ABABAB;
      padding-left: 10px;
+     font-size: 12px;
     }
     
 input[type=tel]:focus {
      outline: none;
      border: 1px solid #a0d18c;
      color: #000000;
+     font-size: 12px;
 }
 
 /* div {
@@ -225,7 +229,7 @@ input[type=tel]:focus {
   border-radius: 10px;
   background: #fff;
   position: relative;
-  padding: 18px;
+  padding: 30px;
   max-width: calc(100%-36px);
   overflow: hidden;
 }

@@ -107,6 +107,12 @@ function setupNumberInput(){
 	numberInput.elt.addEventListener('focus', function() {
    		this.value = '';
   	});
+
+    numberInput.elt.addEventListener('blur', function() {
+    if(this.value == ''){
+      this.value = getTranslation("eightDigitInstruction");
+    }
+  });
 	
 	numberInput.attribute('type', 'tel');
 	numberInput.attribute('pattern', '\\d*');
