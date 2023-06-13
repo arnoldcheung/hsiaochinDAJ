@@ -47,7 +47,7 @@ const translations = {
 
 
     zh: {
-        language: "en",
+        language: "EN",
         dajTitle: "數字藝術創作體驗",
         nameInputDefaultInstruction: "您的名字",
         messageInputDefaultInstruction: "您的留言（可選）",
