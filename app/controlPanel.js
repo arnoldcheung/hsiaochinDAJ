@@ -309,7 +309,7 @@ function resetButtonMenu(){
 
   // logoImg.position(0, 0);
 
-  hideShowButton.html(getTranslation("showControlInstruction"));
+  hideShowButton.html(panelVisible ? getTranslation('hideControlInstruction') : getTranslation('showControlInstruction'));
   hideShowButton.position((width - 545) / 2, 35);
   // hideShowButton.position((width - 545) / 2, (buttonMenuDiv.height/2 - hideShowButton.height));
 
