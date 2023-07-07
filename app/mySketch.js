@@ -168,6 +168,13 @@ let exhibitionTitleDiv;
 function preload() {
 	logo = loadImage("assets/logos/MGM_3D_Logo.png");
 
+	logoImg = createImg("assets/logos/MGM_3D_Logo.png", "Logo");
+
+	logoImg.style("height", "30%");
+	logoImg.style("margin-left", "10px"); // Add some left margin to position it from the left edge
+	logoImg.position(0, 0)
+
+
 	enFont1 = loadFont("assets/fonts/FontsFree-Net-Proxima-Nova-Sbold.otf");
 	enFont2 = loadFont("assets/fonts/Cinzel-ExtraBold.ttf");
 	enFont3 = loadFont("assets/fonts/VinaSans-Regular.ttf");
@@ -251,6 +258,7 @@ function setup() {
 	setupBottomBanner();
 
 	togglePanel(); //turn panel off at the beginning
+
 
 	resetUniverse();
 }
@@ -376,7 +384,7 @@ function draw() {
 	mainCanvas.textFont(currentFont);
 	mainCanvas.textAlign(RIGHT, TOP);
 	mainCanvas.textSize(50);
-	mainCanvas.text('TESTING 54', width / 2, height / 2);
+	mainCanvas.text('TESTING 55', width / 2, height / 2);
 
 	//----------------------------------------------------------------------------------------
 

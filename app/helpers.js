@@ -171,6 +171,15 @@ async function captureCanvas(){
 
 	// mainCanvas.image(bottomBannerGraphics, 0, height - buttonMenuHeight);
 
+	logoImg = createImg("assets/logos/MGM_3D_Logo.png", "Logo");
+
+	logoImg.style("height", "10%");
+	logoImg.style("margin-left", "10px"); // Add some left margin to position it from the left edge
+
+	logoImg.position(width / 2, height - 40);
+	logoImg.style("z-index,", 100)
+
+
 
 
 	// Initialize Cloudinary
