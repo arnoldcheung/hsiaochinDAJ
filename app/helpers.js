@@ -161,9 +161,17 @@ async function captureCanvas(){
 	// mainCanvas.save('universe.png');
 	downloadCanvas.clear();
 	downloadCanvas.image(mainCanvas, 0, 0);
+
+	const logoHeight = bottomBannerGraphics.height;
+    const logoWidth = (logo.width / logo.height) * logoHeight;
+
+    bottomBannerGraphics.image(logo, 10, 0, logoWidth, logoHeight); // Adjust the X position and size accordingly
+
 	downloadCanvas.image(bottomBannerGraphics, 0, mainCanvas.height);
 
 	// mainCanvas.image(bottomBannerGraphics, 0, height - buttonMenuHeight);
+
+
 
 	// Initialize Cloudinary
 	const cloudName = 'dlnjyltpt';
@@ -280,7 +288,7 @@ function resetUniverse() {
 	energyGraphics.clear();
 	radiationGraphics.clear();
 	// waveGraphics.clear();
-	// bottomBannerGraphics.clear();
+	bottomBannerGraphics.clear();
 
 	punto_r = initial_punto_r;
 
