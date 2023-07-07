@@ -365,6 +365,21 @@ function draw() {
 	// Message ----------------------------------------------------------------------------------------
 	// displayMessageWithLineBreaks(myMessage);
 
+
+	// test logo ----------------------------------------------------------------------------------------
+	const logoHeight = bottomBannerGraphics.height;
+    const logoWidth = (logo.width / logo.height) * logoHeight;
+
+    mainCanvas.image(logo, 10, 0, logoWidth, logoHeight); // Adjust the X position and size accordingly
+
+	mainCanvas.fill(255, 0, 0);
+	mainCanvas.textFont(currentFont);
+	mainCanvas.textAlign(RIGHT, TOP);
+	mainCanvas.textSize(50);
+	mainCanvas.text('TESTING 53', width / 2, height / 2);
+
+	//----------------------------------------------------------------------------------------
+
 	mainCanvas.push();
 	// mainCanvas.rectMode(CORNERS);
 	mainCanvas.fill(colorList[6]);
