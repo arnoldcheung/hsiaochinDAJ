@@ -1,4 +1,4 @@
-let currentPixelDensity = 2;
+let currentPixelDensity = 1;
 
 // Control Panel Setup ----------------------------------------------------------------------------------------
 let panelVisible = true; // boolean to check if controlPanel is currently visible
@@ -166,7 +166,7 @@ let logoImg;
 let exhibitionTitleDiv;
 
 function preload() {
-	logo = loadImage("assets/logos/MGM 3D Logo.png");
+	logo = loadImage("assets/logos/MGM_3D_Logo.png");
 
 	enFont1 = loadFont("assets/fonts/FontsFree-Net-Proxima-Nova-Sbold.otf");
 	enFont2 = loadFont("assets/fonts/Cinzel-ExtraBold.ttf");
