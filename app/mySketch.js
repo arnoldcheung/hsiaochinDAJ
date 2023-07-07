@@ -376,7 +376,7 @@ function draw() {
 	mainCanvas.textFont(currentFont);
 	mainCanvas.textAlign(RIGHT, TOP);
 	mainCanvas.textSize(50);
-	mainCanvas.text('TESTING 53', width / 2, height / 2);
+	mainCanvas.text('TESTING 54', width / 2, height / 2);
 
 	//----------------------------------------------------------------------------------------
 
