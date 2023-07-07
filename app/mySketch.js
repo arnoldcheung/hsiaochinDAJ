@@ -1,4 +1,4 @@
-currentPixelDensity = 1;
+let currentPixelDensity = 2;
 
 // Control Panel Setup ----------------------------------------------------------------------------------------
 let panelVisible = true; // boolean to check if controlPanel is currently visible
@@ -52,7 +52,7 @@ let universeNumber;
 
 let sliderIntroText;
 
-let sliderSpacing = 40;
+let sliderSpacing = 35;
 
 let size_slider;
 
