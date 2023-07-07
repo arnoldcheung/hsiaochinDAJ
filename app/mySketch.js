@@ -166,9 +166,9 @@ let logoImg;
 let exhibitionTitleDiv;
 
 function preload() {
-	logo = loadImage("assets/logos/MGM_3D_Logo.png");
+	logo = loadImage("assets/logos/MGM_3D_Logo_Cropped.png");
 
-	logoImg = createImg("assets/logos/MGM_3D_Logo.png", "Logo");
+	logoImg = createImg("assets/logos/MGM_3D_Logo_Cropped.png", "Logo");
 
 	logoImg.style("height", "30%");
 	logoImg.style("margin-left", "10px"); // Add some left margin to position it from the left edge
@@ -378,16 +378,16 @@ function draw() {
 
 
 	// test logo ----------------------------------------------------------------------------------------
-	const logoHeight = bottomBannerGraphics.height;
-    const logoWidth = (logo.width / logo.height) * logoHeight;
+	// const logoHeight = bottomBannerGraphics.height;
+    // const logoWidth = (logo.width / logo.height) * logoHeight;
 
-    // mainCanvas.image(logo, 10, 0, logoWidth, logoHeight); // Adjust the X position and size accordingly
+    // // mainCanvas.image(logo, 10, 0, logoWidth, logoHeight); // Adjust the X position and size accordingly
 
-	mainCanvas.fill(255, 0, 0);
-	mainCanvas.textFont(currentFont);
-	mainCanvas.textAlign(RIGHT, TOP);
-	mainCanvas.textSize(50);
-	mainCanvas.text('TESTING 56', width / 2, height / 2);
+	// mainCanvas.fill(255, 0, 0);
+	// mainCanvas.textFont(currentFont);
+	// mainCanvas.textAlign(RIGHT, TOP);
+	// mainCanvas.textSize(50);
+	// mainCanvas.text('TESTING 57', width / 2, height / 2);
 
 	//----------------------------------------------------------------------------------------
 
