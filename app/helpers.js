@@ -165,19 +165,23 @@ async function captureCanvas(){
 	const logoHeight = bottomBannerGraphics.height;
     const logoWidth = (logo.width / logo.height) * logoHeight;
 
-    bottomBannerGraphics.image(logo, 10, 0, logoWidth, logoHeight); // Adjust the X position and size accordingly
+    // bottomBannerGraphics.image(logo, 10, 0, logoWidth, logoHeight); // Adjust the X position and size accordingly
 
 	downloadCanvas.image(bottomBannerGraphics, 0, mainCanvas.height);
 
+	// downloadContext = downloadCanvas.getContext("2d");
+
+	downloadCanvas.drawingContext.drawImage(logoImg.elt, 10, mainCanvas.height, logoWidth, logoHeight);
+
 	// mainCanvas.image(bottomBannerGraphics, 0, height - buttonMenuHeight);
 
-	logoImg = createImg("assets/logos/MGM_3D_Logo.png", "Logo");
+	// logoImg = createImg("assets/logos/MGM_3D_Logo.png", "Logo");
 
-	logoImg.style("height", "10%");
-	logoImg.style("margin-left", "10px"); // Add some left margin to position it from the left edge
+	// logoImg.style("height", "10%");
+	// logoImg.style("margin-left", "10px"); // Add some left margin to position it from the left edge
 
-	logoImg.position(width / 2, height - 40);
-	logoImg.style("z-index,", 100)
+	// logoImg.position(width / 2, height - 40);
+	// logoImg.style("z-index,", 100)
 
 
 
