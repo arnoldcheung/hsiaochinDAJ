@@ -2,10 +2,10 @@ function setupBottomBanner(){
 	bottomBannerGraphics = createGraphics(width, buttonMenuHeight);
     bottomBannerGraphics.background(255);
 
-    const logoHeight = bottomBannerGraphics.height;
-    const logoWidth = (logo.width / logo.height) * logoHeight;
+    // const logoHeight = bottomBannerGraphics.height;
+    // const logoWidth = (logo.width / logo.height) * logoHeight;
 
-    bottomBannerGraphics.image(logo, 10, 0, logoWidth, logoHeight); // Adjust the X position and size accordingly
+    // bottomBannerGraphics.image(logo, 10, 0, logoWidth, logoHeight); // Adjust the X position and size accordingly
 
     bottomBannerGraphics.push();
     bottomBannerGraphics.fill('#000000');
@@ -13,7 +13,7 @@ function setupBottomBanner(){
     bottomBannerGraphics.textStyle(ITALIC);
     bottomBannerGraphics.textAlign(RIGHT, BOTTOM);
     bottomBannerGraphics.textSize(20);
-    bottomBannerGraphics.text("《超元‧萬象: 蕭勤的藝術》‘To Infinity and Beyond: The Art of Hsiao Chin’ ", bottomBannerGraphics.width - 10, bottomBannerGraphics.height / 2);
+    bottomBannerGraphics.text("《超元‧萬象: 蕭勤的藝術》‘To Infinity and Beyond: The Art of Hsiao Chin’ ", bottomBannerGraphics.width - 20, bottomBannerGraphics.height / 2);
     bottomBannerGraphics.pop();
 
 }
@@ -22,10 +22,10 @@ function setupBottomBanner(){
 function resetBottomBanner(){
     bottomBannerGraphics.background(255);
 
-    const logoHeight = bottomBannerGraphics.height;
-    const logoWidth = (logo.width / logo.height) * logoHeight;
+    // const logoHeight = bottomBannerGraphics.height;
+    // const logoWidth = (logo.width / logo.height) * logoHeight;
 
-    bottomBannerGraphics.image(logo, 10, 0, logoWidth, logoHeight); // Adjust the X position and size accordingly
+    // bottomBannerGraphics.image(logo, 10, 0, logoWidth, logoHeight); // Adjust the X position and size accordingly
 
     bottomBannerGraphics.push();
     bottomBannerGraphics.fill('#000000');
@@ -33,7 +33,7 @@ function resetBottomBanner(){
     bottomBannerGraphics.textStyle(ITALIC);
     bottomBannerGraphics.textAlign(RIGHT, BOTTOM);
     bottomBannerGraphics.textSize(20);
-    bottomBannerGraphics.text("《超元‧萬象: 蕭勤的藝術》‘To Infinity and Beyond: The Art of Hsiao Chin’ ", bottomBannerGraphics.width - 10, bottomBannerGraphics.height - 10);
+    bottomBannerGraphics.text("《超元‧萬象: 蕭勤的藝術》‘To Infinity and Beyond: The Art of Hsiao Chin’ ", bottomBannerGraphics.width - 20, bottomBannerGraphics.height - 10);
     bottomBannerGraphics.pop();
 
 }

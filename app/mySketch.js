@@ -1,4 +1,4 @@
-currentPixelDensity = 1;
+let currentPixelDensity = 1;
 
 // Control Panel Setup ----------------------------------------------------------------------------------------
 let panelVisible = true; // boolean to check if controlPanel is currently visible
@@ -52,7 +52,7 @@ let universeNumber;
 
 let sliderIntroText;
 
-let sliderSpacing = 40;
+let sliderSpacing = 35;
 
 let size_slider;
 
@@ -166,7 +166,17 @@ let logoImg;
 let exhibitionTitleDiv;
 
 function preload() {
-	logo = loadImage("assets/logos/MGM 3D Logo.png");
+	logo = loadImage("assets/logos/MGM_3D_Logo_Cropped.png");
+
+	logoImg = createImg("assets/logos/MGM_3D_Logo_Cropped.png", "Logo");
+
+	logoImg.style("height", "30%");
+	logoImg.style("margin-left", "10px"); // Add some left margin to position it from the left edge
+	// logoImg.position(0, 0)
+
+	logoImg.hide();
+
+
 
 	enFont1 = loadFont("assets/fonts/FontsFree-Net-Proxima-Nova-Sbold.otf");
 	enFont2 = loadFont("assets/fonts/Cinzel-ExtraBold.ttf");
@@ -251,6 +261,7 @@ function setup() {
 	setupBottomBanner();
 
 	togglePanel(); //turn panel off at the beginning
+
 
 	resetUniverse();
 }
@@ -364,6 +375,21 @@ function draw() {
 
 	// Message ----------------------------------------------------------------------------------------
 	// displayMessageWithLineBreaks(myMessage);
+
+
+	// test logo ----------------------------------------------------------------------------------------
+	// const logoHeight = bottomBannerGraphics.height;
+    // const logoWidth = (logo.width / logo.height) * logoHeight;
+
+    // // mainCanvas.image(logo, 10, 0, logoWidth, logoHeight); // Adjust the X position and size accordingly
+
+	// mainCanvas.fill(255, 0, 0);
+	// mainCanvas.textFont(currentFont);
+	// mainCanvas.textAlign(RIGHT, TOP);
+	// mainCanvas.textSize(50);
+	// mainCanvas.text('TESTING 57', width / 2, height / 2);
+
+	//----------------------------------------------------------------------------------------
 
 	mainCanvas.push();
 	// mainCanvas.rectMode(CORNERS);
