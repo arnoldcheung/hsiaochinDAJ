@@ -20,7 +20,9 @@ function setupNameInput(){
   nameInput.attribute('type', 'text');
 
   nameInput.elt.addEventListener('focus', function () {
-    this.value = '';
+    if(this.value == getTranslation("nameInputDefaultInstruction")){
+      this.value = '';
+    }
     signature = true;
     signatureEvent();
   });
@@ -58,7 +60,9 @@ function setupMessageInput(){
   messageInput.attribute('type', 'text');
 
   messageInput.elt.addEventListener('focus', function() {
-    this.value = '';
+    if(this.value == getTranslation("messageInputDefaultInstruction")){
+      this.value = '';
+    }
     messageEvent();
   });
 
@@ -105,8 +109,10 @@ function setupNumberInput(){
 	numberInput.parent(controlPanel);
 	
 	numberInput.elt.addEventListener('focus', function() {
-   		this.value = '';
-  	});
+    if(this.value == getTranslation("eightDigitInstruction")){
+      this.value = '';
+    }
+  });
 
     numberInput.elt.addEventListener('blur', function() {
     if(this.value == ''){
