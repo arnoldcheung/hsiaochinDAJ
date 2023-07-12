@@ -152,7 +152,7 @@ function signatureEvent(){
 	elementName.html(getTranslation('colorNameList')[currentColorSelectionIndex]);
 	elementName.style('color', colorList[currentColorSelectionIndex]);
 
-	signature = false;
+	// signature = false;
 }
 
 function messageEvent(){
